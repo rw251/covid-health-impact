@@ -10,6 +10,6 @@ select YEAR(EntryDate), count(*) as {{SYMPTOM_CAPITAL_NO_SPACE}} from (
 	and EntryDate >= '2000-01-01'
 	group by PatID, EntryDate
 ) sub 
-group by EntryDate
+group by YEAR(EntryDate)
 order by YEAR(EntryDate);
 {{MAIN}}

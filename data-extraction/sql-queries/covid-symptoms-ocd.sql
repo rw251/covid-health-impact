@@ -10,5 +10,5 @@ select YEAR(EntryDate), count(*) as Ocd from (
 	and EntryDate >= '2000-01-01'
 	group by PatID, EntryDate
 ) sub 
-group by EntryDate
+group by YEAR(EntryDate)
 order by YEAR(EntryDate);
