@@ -131,6 +131,7 @@ exports.createSqlQueries = () => {
     })
     .map(filename => {
       doSection(filename, 'MAIN');
+      doSection(filename, 'MONTHLY_INCIDENCE');
     });
 };
 
