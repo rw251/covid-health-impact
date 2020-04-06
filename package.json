@@ -1,0 +1,8 @@
+{
+  "name": "covid-mental-health",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Richard Williams <richard.williams@manchester.ac.uk>",
+  "license": "MIT"
+}
