@@ -1,0 +1,101 @@
+E02y400	Drug-induced personality disorder
+E21..00	Personality disorders
+E21..11	Neurotic personality disorder
+E210.00	Paranoid personality disorder
+E210.11	Fanatic personality
+E211.00	Affective personality disorder
+E211000	Unspecified affective personality disorder
+E211100	Hypomanic personality disorder
+E211200	Depressive personality disorder
+E211299	Depressive personality
+E211300	Cyclothymic personality disorder
+E211z00	Affective personality disorder NOS
+E212.00	Schizoid personality disorder
+E212000	Unspecified schizoid personality disorder
+E212100	Introverted personality
+E212200	Schizotypal personality
+E212z00	Schizoid personality disorder NOS
+E213.00	Explosive personality disorder
+E213.11	Aggressive personality
+E214.00	Compulsive personality disorders
+E214.11	Anancastic personality
+E214000	Anankastic personality
+E214100	Obsessional personality
+E214z00	Compulsive personality disorder NOS
+E215.00	Histrionic personality disorders
+E215.11	Hysterical personality disorders
+E215.99	Hysterical personality
+E215000	Unspecified histrionic personality disorder
+E215200	Emotionally unstable personality
+E215300	Psychoinfantile personality
+E215z00	Histrionic personality disorder NOS
+E216.00	Inadequate personality disorder
+E217.00	Antisocial or sociopathic personality disorder
+E217.11	Amoral personality
+E21y.00	Other personality disorders
+E21y000	Narcissistic personality disorder
+E21y100	Avoidant personality disorder
+E21y200	Borderline personality disorder
+E21y300	Passive-aggressive personality disorder
+E21y400	Eccentric personality disorder
+E21y500	Immature personality disorder
+E21y600	Masochistic personality disorder
+E21y700	Psychoneurotic personality disorder
+E21y711	Neurotic personality
+E21yz00	Other personality disorder NOS
+E21z.00	Personality disorder NOS
+E21z.11	Psychopathic personality
+Eu06.00	[X]Personality and behav disorder brain dis dam and dysfunct
+Eu06000	[X]Organic personality disorder
+Eu06011	[X]Organic pseudopsychopathic personality
+Eu21.17	[X]Pseudopsychopathic schizophrenia
+Eu21.18	[X]Schizotypal personality disorder
+Eu34011	[X]Affective personality disorder
+Eu34112	[X]Depressive personality disorder
+Eu6..00	[X]Disorders of adult personality and behaviour
+Eu60.00	[X]Specific personality disorders
+Eu60000	[X]Paranoid personality disorder
+Eu60011	[X]Expansive paranoid personality disorder
+Eu60012	[X]Fanatic paranoid personality disorder
+Eu60013	[X]Querulant personality disorder
+Eu60014	[X]Sensitive paranoid personality disorder
+Eu60100	[X]Schizoid personality disorder
+Eu60200	[X]Dissocial personality disorder
+Eu60211	[X]Amoral personality disorder
+Eu60212	[X]Antisocial personality disorder
+Eu60213	[X]Asocial personality disorder
+Eu60214	[X]Psychopathic personality disorder
+Eu60215	[X]Sociopathic personality disorder
+Eu60300	[X]Emotionally unstable personality disorder
+Eu60311	[X]Aggressive personality disorder
+Eu60312	[X]Borderline personality disorder
+Eu60313	[X]Explosive personality disorder
+Eu60400	[X]Histrionic personality disorder
+Eu60411	[X]Hysterical personality disorder
+Eu60412	[X]Psychoinfantile personality disorder
+Eu60500	[X]Anankastic personality disorder
+Eu60511	[X]Compulsive personality disorder
+Eu60512	[X]Obsessional personality disorder
+Eu60513	[X]Obsessive-compulsive personality disorder
+Eu60600	[X]Anxious [avoidant] personality disorder
+Eu60700	[X]Dependent personality disorder
+Eu60711	[X]Asthenic personality disorder
+Eu60712	[X]Inadequate personality disorder
+Eu60713	[X]Passive personality disorder
+Eu60714	[X]Self defeating personality disorder
+Eu60y00	[X]Other specific personality disorders
+Eu60y11	[X]Eccentric personality disorder
+Eu60y12	[X]Haltlose type personality disorder
+Eu60y13	[X]Immature personality disorder
+Eu60y14	[X]Narcissistic personality disorder
+Eu60y15	[X]Passive-aggressive personality disorder
+Eu60y16	[X]Psychoneurotic personality disorder
+Eu60z00	[X]Personality disorder, unspecified
+Eu60z11	[X]Character neurosis NOS
+Eu60z12	[X]Pathological personality NOS
+Eu61.00	[X]Mixed and other personality disorders
+Eu6y.00	[X]Other disorders of adult personality and behaviour
+Eu6yy00	[X]Other specified disorders of adult personality/behaviour
+Eu6z.00	[X]Unspecified disorder of adult personality and behaviour
+Eu84511	[X]Autistic psychopathy
+Eu94211	[X]Affectionless psychopathy

@@ -1,0 +1,131 @@
+173f.00	Anxiety about breathlessness
+1B13.00	Anxiousness
+1B13.11	Anxiousness - symptom
+1B13.12	Anxious
+1B1V.00	C/O - panic attack
+1Bb1.00	Fear of getting cancer
+1P3..00	Compulsive behaviour
+2258.00	O/E - anxious
+2259.00	O/E - nervous
+225J.00	O/E - panic attack
+285..00	Neurotic condition, insight present
+8CAZ000	Patient given advice about management of anxiety
+8G52.00	Antiphobic therapy
+8G94.00	Anxiety management training
+8HHp.00	Referral for guided self-help for anxiety
+8IH5300	Referral for guided self-help for anxiety declined
+E20..00	Neurotic disorders
+E20..99	Neuroses
+E200.00	Anxiety states
+E200.99	Anxiety state
+E200000	Anxiety state unspecified
+E200100	Panic disorder
+E200111	Panic attack
+E200200	Generalised anxiety disorder
+E200300	Anxiety with depression
+E200400	Chronic anxiety
+E200500	Recurrent anxiety
+E200z00	Anxiety state NOS
+E202.00	Phobic disorders
+E202.11	Social phobic disorders
+E202.12	Phobic anxiety
+E202.99	Phobic state
+E202000	Phobia unspecified
+E202100	Agoraphobia with panic attacks
+E202199	Agoraphobia
+E202200	Agoraphobia without mention of panic attacks
+E202299	Agoraphobia
+E202300	Social phobia, fear of eating in public
+E202400	Social phobia, fear of public speaking
+E202500	Social phobia, fear of public washing
+E202600	Acrophobia
+E202700	Animal phobia
+E202800	Claustrophobia
+E202900	Fear of crowds
+E202A00	Fear of flying
+E202B00	Cancer phobia
+E202C00	Dental phobia
+E202E00	Fear of pregnancy
+E202z00	Phobic disorder NOS
+E202z98	Needle phobia
+E202z99	Other phobias
+E203.00	Obsessive-compulsive disorders
+E203.11	Anancastic neurosis
+E203000	Compulsive neurosis
+E203100	Obsessional neurosis
+E203z00	Obsessive-compulsive disorder NOS
+E20z.00	Neurotic disorder NOS
+E261.99	Pschogenic resp. symptoms
+E262099	Cardiac neuroses
+E262100	Cardiovascular neurosis
+E28..11	Combat fatigue
+E283100	Acute posttrauma stress state
+E28z.00	Acute stress reaction NOS
+E28z.12	Flying phobia
+E292000	Separation anxiety disorder
+E29y100	Other post-traumatic stress disorder
+E29y199	Chron post-traum stress dis
+E2D0.00	Disturbance of anxiety and fearfulness childhood/adolescent
+E2D0000	Childhood and adolescent overanxiousness disturbance
+E2D0z00	Disturbance anxiety and fearfulness childhood/adolescent NOS
+Eu05400	[X]Organic anxiety disorder
+Eu34114	[X]Persistant anxiety depression
+Eu40.00	[X]Phobic anxiety disorders
+Eu40000	[X]Agoraphobia
+Eu40011	[X]Agoraphobia without history of panic disorder
+Eu40012	[X]Panic disorder with agoraphobia
+Eu40100	[X]Social phobias
+Eu40111	[X]Anthropophobia
+Eu40112	[X]Social neurosis
+Eu40200	[X]Specific (isolated) phobias
+Eu40211	[X]Acrophobia
+Eu40212	[X]Animal phobias
+Eu40213	[X]Claustrophobia
+Eu40214	[X]Simple phobia
+Eu40299	Needle phobia
+Eu40300	[X]Needle phobia
+Eu40y00	[X]Other phobic anxiety disorders
+Eu40z00	[X]Phobic anxiety disorder, unspecified
+Eu40z11	[X]Phobia NOS
+Eu40z12	[X]Phobic state NOS
+Eu41.00	[X]Other anxiety disorders
+Eu41000	[X]Panic disorder [episodic paroxysmal anxiety]
+Eu41011	[X]Panic attack
+Eu41012	[X]Panic state
+Eu41100	[X]Generalized anxiety disorder
+Eu41111	[X]Anxiety neurosis
+Eu41112	[X]Anxiety reaction
+Eu41113	[X]Anxiety state
+Eu41200	[X]Mixed anxiety and depressive disorder
+Eu41211	[X]Mild anxiety depression
+Eu41300	[X]Other mixed anxiety disorders
+Eu41y00	[X]Other specified anxiety disorders
+Eu41y11	[X]Anxiety hysteria
+Eu41z00	[X]Anxiety disorder, unspecified
+Eu41z11	[X]Anxiety NOS
+Eu42.00	[X]Obsessive - compulsive disorder
+Eu42.12	[X]Obsessive-compulsive neurosis
+Eu42000	[X]Predominantly obsessional thoughts or ruminations
+Eu42100	[X]Predominantly compulsive acts [obsessional rituals]
+Eu42200	[X]Mixed obsessional thoughts and acts
+Eu42y00	[X]Other obsessive-compulsive disorders
+Eu42z00	[X]Obsessive-compulsive disorder, unspecified
+Eu43013	[X]Combat fatigue
+Eu43100	[X]Post - traumatic stress disorder
+Eu43111	[X]Traumatic neurosis
+Eu43300	[X]Acute post-traumatic stress disorder follow military comb
+Eu43400	[X]Chron post-traumatic stress disorder follow military comb
+Eu43500	[X]Delayed post-traumat stress disorder follow military comb
+Eu43y00	[X]Other reactions to severe stress
+Eu43z00	[X]Reaction to severe stress, unspecified
+Eu93000	[X]Separation anxiety disorder of childhood
+Eu93100	[X]Phobic anxiety disorder of childhood
+Eu93200	[X]Social anxiety disorder of childhood
+Eu93y12	[X]Childhood overanxious disorder
+Z481.00	Phobia counselling
+Z4I7.00	Acknowledging anxiety
+Z4I7100	Recognising anxiety
+Z4I7200	Alleviating anxiety
+Z4I7211	Reducing anxiety
+Z4L1.00	Anxiety counselling
+Z522600	Flooding - obsessional compulsive disorder
