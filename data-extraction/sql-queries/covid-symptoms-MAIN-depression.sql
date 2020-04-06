@@ -12,3 +12,5 @@ select YEAR(EntryDate), count(*) as Depression from (
 ) sub 
 group by YEAR(EntryDate)
 order by YEAR(EntryDate);
+
+

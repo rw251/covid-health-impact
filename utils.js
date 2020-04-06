@@ -95,27 +95,42 @@ const codesWithoutTermCode = (codes) => {
 //   writeFileSync(join(__dirname, 'data-extraction', 'sql-queries', `covid-symptoms-high-temperature-age-${lowerAge}-.sql`), ageBase);
 // }
 
-exports.createSqlQueries = () => {
+const doSection = (filename, sectionName) => {
   const template = readFileSync(join(__dirname, 'data-extraction', 'sql-queries', 'template-standard.sql'), 'utf8');
+
+  let query = template;
+  template
+    .match(/\{\{!([^}]+)\}\}/g)
+    .map(x => x.replace(/[{!}]/g,''))
+    .filter(x => x !== sectionName)
+    .forEach(unusedSection => {
+      const sectionRegex = new RegExp(`\\{\\{!${unusedSection}\\}\\}[\\s\\S]*\\{\\{${unusedSection}\\}\\}`);
+      query = query.replace(sectionRegex,"");
+    });
+
+  const symptomDashed = filename.split('.')[0];
+  const symptomCapitalCase = symptomDashed.split('-').map(x => x[0].toUpperCase() + x.slice(1)).join('');
+  const symptomLowerSpaced = symptomDashed.split('-').map(x => x.toLowerCase()).join(' ');
+  const codes = codesFromFile(join(__dirname, 'data-extraction', 'codesets', filename));
+  const allCodes = codesWithoutTermCode(codes);
+  const codeString = allCodes.join("','");
+  query = query.replace(/\{\{SYMPTOM_LOWER_SPACED\}\}/g, symptomLowerSpaced);
+  query = query.replace(/\{\{SYMPTOM_CAPITAL_NO_SPACE\}\}/g, symptomCapitalCase);
+  query = query.replace(/\{\{SYMPTOM_DASHED\}\}/g, symptomDashed);
+  query = query.replace(/\{\{CLINICAL_CODES\}\}/g, codeString);
+  const reg = new RegExp(`\\{\\{.?${sectionName}\\}\\}`, 'g');
+  query = query.replace(reg,"");
+  writeFileSync(join(__dirname, 'data-extraction', 'sql-queries', `covid-symptoms-${sectionName}-${symptomDashed}.sql`), query);
+}
+
+exports.createSqlQueries = () => { 
   readdirSync(join(__dirname, 'data-extraction', 'codesets'))
     .filter(x => {
       if(x.indexOf('.json') > -1) return false; // don't want the metadata
       return true;
     })
     .map(filename => {
-      const symptomDashed = filename.split('.')[0];
-      const symptomCapitalCase = symptomDashed.split('-').map(x => x[0].toUpperCase() + x.slice(1)).join('');
-      const symptomLowerSpaced = symptomDashed.split('-').map(x => x.toLowerCase()).join(' ');
-      const codes = codesFromFile(join(__dirname, 'data-extraction', 'codesets', filename));
-      const allCodes = codesWithoutTermCode(codes);
-      const codeString = allCodes.join("','");
-      let query = template.replace(/\{\{SYMPTOM_LOWER_SPACED\}\}/g, symptomLowerSpaced);
-      query = query.replace(/\{\{SYMPTOM_CAPITAL_NO_SPACE\}\}/g, symptomCapitalCase);
-      query = query.replace(/\{\{SYMPTOM_DASHED\}\}/g, symptomDashed);
-      query = query.replace(/\{\{CLINICAL_CODES\}\}/g, codeString);
-      query = query.replace(/\{\{!AGE\}\}[\s\S]*\{\{AGE\}\}/,"");
-      query = query.replace(/\{\{.?MAIN\}\}/g,"");
-      writeFileSync(join(__dirname, 'data-extraction', 'sql-queries', `covid-symptoms-${symptomDashed}.sql`), query);
+      doSection(filename, 'MAIN');
     });
 };
 
