@@ -1,0 +1,932 @@
+﻿H05z.	1312	Upper respiratory tract infection NOS
+N245.	1250	Shoulder pain
+G20..	1092	Essential hypertension
+C10F.	1005	Type 2 diabetes mellitus
+E2003	933	Anxiety with depression
+H06z0	791	Chest infection NOS
+H33..	721	ASTHMA
+C317.	694	Non-diabetic hyperglycaemia
+H03..	680	Acute tonsillitis
+N142.	538	Low back pain
+E200.	504	Anxiety states
+M2610	456	Acne vulgaris
+M111.	386	Atopic dermatitis/eczema
+K190.	383	Urinary tract infection, site not specified
+F4C0.	369	Acute conjunctivitis
+N094K	346	Hip pain
+G2...	345	Hypertensive disease
+N131.	328	Cervicalgia - pain in neck
+H3...	322	Chronic obstructive pulmonary disease
+Eu32z	297	[X]Depression NOS
+A79z.	287	Viral infection NOS
+F26..	284	Migraine
+B76..	274	Mole of skin
+M12z1	273	Eczema NOS
+H01..	267	Acute sinusitis
+M2z0.	255	Skin lesion
+J10y4	245	Gastro-oesophageal reflux
+F52z.	238	Otitis media NOS
+C28..	235	Vitamin D deficiency
+M2yz.	222	Skin lesion
+R021.	217	[D]Rash and other nonspecific skin eruption
+M0...	210	Skin and subcutaneous tissue infections
+H3122	208	Acute exacerbation of chronic obstructive airways disease
+F587.	202	Otalgia
+J16y4	190	Dyspepsia
+G84..	184	Haemorrhoids
+C34..	182	Gout
+F502z	178	Otitis externa NOS
+R090.	176	[D]Abdominal pain
+N143.	172	Sciatica
+C11y4	170	Impaired glucose regulation
+F504.	168	Wax in ear
+D00..	167	Iron deficiency anaemias
+K3170	162	Mastodynia - pain in breast
+M161z	161	Psoriasis NOS
+AB0..	161	Fungal infection of skin
+G5730	160	Atrial fibrillation
+H06z1	159	Lower resp tract infection
+F501.	158	Infective otitis externa
+H333.	155	Acute exacerbation of asthma
+J520z	149	Constipation NOS
+C04..	149	Hypothyroidism
+C2621	148	Vitamin B12 deficiency
+E2B..	145	Depressive disorder NEC
+AB01.	145	Fungal nail infection
+H02..	142	Acute pharyngitis
+N2450	141	Hand pain
+K5920	139	Menorrhagia
+J521.	137	Irritable bowel syndrome
+J34..	135	Hiatus hernia
+J61y9	135	Fatty liver
+AB2..	132	Thrush
+N145.	131	Back pain, unspecified
+F59..	129	Hearing loss
+M03z0	126	Cellulitis NOS
+J510.	125	Diverticulosis
+K15..	124	Cystitis
+J573.	122	Bleeding PR
+N2452	121	Pain in leg
+TC...	121	Fall - accidental
+A52..	120	Chickenpox - varicella
+C324.	118	Hyperlipidaemia NOS
+M07z.	118	Infected insect bite
+G3...	115	Ischaemic heart disease
+J1011	114	Reflux oesophagitis
+F583.	110	Tinnitus
+A07y0	109	Viral gastroenteritis
+N05..	108	Osteoarthritis
+N05z6	107	Knee osteoarthritis NOS
+N2179	106	Plantar fasciitis
+M21z1	101	Skin tag
+A53..	101	Shingles
+E2273	99	Erectile dysfunction
+D21z.	98	Anaemia unspecified
+C10E.	98	Type 1 diabetes mellitus
+C10..	97	Diabetes mellitus
+M223.	96	Seborrhoeic keratosis
+M226.	95	Actinic keratosis
+T1...	95	Motor vehicle traffic accidents (MVTA)
+R090B	95	[D]Groin pain
+M101.	94	Seborrhoeic dermatitis
+N040.	94	Rheumatoid arthritis
+F4D10	94	Hordeolum externum ( stye )
+G33..	94	Angina pectoris
+M28..	91	Urticaria
+M244.	91	Folliculitis
+H27z.	91	Flu like illness
+J43..	91	Gastroenteritis
+M12z0	90	Dermatitis NOS
+SL...	90	Overdose of drug
+K3171	86	Lump in breast
+E205.	86	Tired all the time
+AB211	86	Vaginal thrush
+A781.	86	Viral warts
+F340.	85	Carpal tunnel syndrome
+F51y0	83	Eustachian tube dysfunction
+N2132	83	Tennis elbow
+H170.	82	Hay fever - pollens
+G66..	82	Ischaemic stroke
+R021z	82	[D]Rash and other nonspecific skin eruption NOS
+J64..	81	Gallstones
+N330.	81	Osteoporosis
+G30..	80	MI - acute myocardial infarction
+G58..	79	Heart failure
+M05..	79	Impetigo
+K594.	79	Irregular menstrual cycle
+H1y1z	79	Nasal congestion
+Eu900	78	[X]Attention deficit hyperactivity disorder
+F25..	76	Epilepsy
+H060.	75	Acute bronchitis
+R0043	75	[D]Vertigo NOS
+H17..	73	Allergic rhinitis
+J578.	73	Colonic polyp
+K1903	73	Recurrent UTI
+F5611	73	Benign paroxysmal positional vertigo or nystagmus
+Eu32.	72	[X]Depressive episode
+F52..	71	Suppurative and unspecified otitis media
+N094.	71	Pain in joint - arthralgia
+R148.	71	[D]Abnormal liver function test
+H37..	70	Moderate chronic obstructive pulmonary disease
+M262.	68	Sebaceous cyst - wen
+AB200	68	Oral thrush
+A780.	68	Molluscum contagiosum
+R1y2.	68	[D]Raised blood pressure reading
+R00z2	67	[D]General aches and pains
+M1530	67	Acne rosacea
+B33..	66	Basal cell carcinoma
+G65..	66	Transient ischaemic attack
+E2001	64	Panic attack
+C380.	64	Obesity
+NyuBC	64	[X]Osteopenia
+Eu41z	63	[X]Anxiety NOS
+M03z1	63	Abscess NOS
+H062.	63	Acute lower respiratory tract infection
+J5730	62	Rectal bleeding
+M153.	62	Rosacea
+N2453	61	Pain in arm
+K4219	61	Bacterial vaginosis
+B74..	61	Lipoma
+S550.	61	Ankle sprain
+AB10.	60	Pityriasis versicolor
+Eu431	60	[X]Post - traumatic stress disorder
+F4D0.	60	Blepharitis
+K190z	60	Urinary tract infection, site not specified NOS
+J155.	60	Gastritis unspecified
+J61y1	59	Non-alcoholic fatty liver
+M0z..	59	Infected sebaceous cyst
+L04..	59	Miscarriage
+G573.	59	Atrial fibrillation and flutter
+E23..	59	Alcohol dependence syndrome
+C2B..	58	Vitamin D insufficiency
+M01z.	58	Boil NOS
+N05z5	58	Hip osteoarthritis NOS
+N0945	57	Hip joint pain
+G83..	57	Varicose veins of the legs
+C320.	57	Pure hypercholesterolaemia
+R047.	57	[D]Epistaxis
+F46..	56	Cataract
+H120.	56	Chronic rhinitis
+K197.	56	Haematuria
+K5A20	56	Hot flushes - menopausal
+H00..	55	Rhinitis - acute
+AB04.	55	Athlete's foot
+B78..	54	Fibroids
+J082.	54	Mouth ulcer
+N2451	54	Toe pain
+N239.	54	Fibromyalgia
+N210.	53	Frozen shoulder
+H36..	53	Mild chronic obstructive pulmonary disease
+G3071	53	Acute non-ST segment elevation myocardial infarction
+F4D2.	53	Chalazion (meibomian cyst)
+R0040	53	[D]Dizziness
+R065A	52	[D]Musculoskeletal chest pain
+M18z.	52	Itch
+M2300	51	Ingrowing great toe nail
+M02z.	51	Paronychia
+N20..	51	Polymyalgia rheumatica
+N248.	51	Fibromyalgia
+M2400	50	Hair loss
+K28y8	50	Testicular pain
+H13..	49	Chronic sinusitis
+N2457	49	Shoulder pain
+Fy03.	49	Obstructive sleep apnoea
+E200z	47	Anxiety state NOS
+N2157	47	Trochanteric bursitis
+G801.	47	Deep vein thrombosis
+R0222	47	[D]Lump, localized and superficial
+S646.	47	Head injury
+K271.	46	Balanitis
+M12..	46	Contact dermatitis
+M085.	45	Cellulitis of leg
+K583.	45	Dysmenorrhoea
+H2B..	45	Community acquired pneumonia
+B34..	45	Malignant neoplasm of female breast
+F51..	45	Nonsuppurative otitis media + eustachian tube disorders
+F45..	45	Glaucoma
+A7811	44	Verruca plantaris
+N2410	44	Muscle pain
+N2203	43	Trigger finger - acquired
+SN53.	43	Allergy, unspecified
+N0943	42	Wrist joint pain
+Ly0..	42	Spontaneous vertex delivery
+J51..	42	Diverticular disease
+E2781	42	Tension headache
+C361.	42	Hyponatraemia
+F13z2	42	Restless legs syndrome
+F4C03	40	Sticky eye
+C2943	40	Iron deficiency
+J32..	40	Umbilical hernia
+M0203	40	Paronychia of finger
+K596.	40	Intermenstrual bleeding - irregular
+M15y1	40	Intertrigo
+M230.	40	Ingrowing nail
+M180.	39	Pruritus ani
+M110.	39	Nappy rash
+K590.	39	Amenorrhoea
+N05zL	39	Osteoarthritis NOS, of knee
+N2471	39	Leg cramps
+J40..	39	Crohn's disease
+K20..	39	BPH - benign prostatic hypertrophy
+K50..	39	Endometriosis
+J30..	39	Inguinal hernia
+A7814	39	Plain wart
+B46..	38	Malignant neoplasm of prostate
+J046.	38	Temporomandibular joint disorders
+K532z	38	Ovarian cyst NOS
+K04C.	38	Acute kidney injury stage 1
+N05z.	38	Osteoarthritis NOS
+K59..	38	Period disorders
+SP255	38	Postoperative wound infection, unspecified
+S3z..	37	Fracture NOS
+H044.	37	Croup
+H061.	37	Acute bronchiolitis
+E112.	37	Endogenous depression first episode
+G5732	37	Paroxysmal atrial fibrillation
+J15..	36	Gastritis and duodenitis
+K597.	36	Postcoital bleeding
+X....	36	Illness and disease
+N2423	35	Neuropathic pain
+K5A1.	35	Postmenopausal bleeding
+G831.	35	Varicose eczema
+A743.	35	Hand, foot and mouth disease
+C329.	34	Hypercholesterolaemia
+H34..	34	Bronchiectasis
+M112.	34	Infantile eczema
+SK170	34	Other knee injury
+S8z..	33	Laceration NOS
+M22z.	33	Seborrhoeic wart
+M25y1	33	Hidradenitis suppurativa
+N2133	33	Olecranon bursitis
+F4C71	33	Subconjunctival haemorrhage
+G540.	32	Mitral regurgitation
+J101.	32	Oesophagitis
+G734.	32	Peripheral arterial disease
+J530.	32	Anal fissure
+K28y6	32	Epididymal cyst
+TJ00.	32	Adverse reaction to penicillins
+N33zE	32	Costochondritis
+S34..	32	Fracture of ankle
+K242.	31	Epididymo-orchitis
+H171.	31	House dust allergy
+N2470	31	Swollen legs
+N236.	31	Dupuytren's contracture
+M271.	31	Leg ulcer NOS
+M240.	31	Alopecia
+Eu84z	31	[X]Autistic spectrum disorder
+E2002	31	Generalised anxiety disorder
+A542.	31	Cold sore (herpetic)
+AB230	31	Nappy rash - candidal
+AD30.	30	Scabies
+E2900	30	Bereavement reaction
+C164.	30	Polycystic ovaries
+G5415	30	Aortic stenosis
+N2174	30	Achilles tendinitis
+J0250	30	Dental abscess
+H3y1.	30	Chron obstruct pulmonary dis wth acute exacerbation, unspec
+H051.	30	Acute upper respiratory tract infection
+R040.	30	[D]Headache
+R0042	30	[D]Light-headedness
+TE60.	30	Dog bite
+R0400	29	[D]Facial pain
+R0658	29	[D]Chest tightness
+N21z2	29	Tendonitis NOS
+N0949	29	Arthralgia of multiple joints
+M1610	29	Psoriasis unspecified
+M12z2	29	Infected eczema
+L20..	29	Spontaneous vaginal delivery
+G401.	29	Pulmonary embolism
+C2620	29	Folic acid deficiency
+E202A	29	Fear of flying
+B7J0.	29	Haemangioma
+E103.	28	Paranoid schizophrenia
+Eu01.	28	[X]Vascular dementia
+F49..	28	Impaired vision
+N221.	28	Bunion
+N1472	28	Coccygodynia
+N110.	28	Cervical spondylosis
+R0062	28	[D]Fever NOS
+U0...	27	[X]RTA - Road traffic and other transport accidents
+N114.	27	Lumbar spondylosis
+N224.	27	Ganglion and cyst of synovium, tendon and bursa
+M06..	27	Pilonidal sinus/cyst
+F466.	27	Bilateral cataracts
+F510.	27	Acute non suppurative otitis media
+D00y1	27	Microcytic hypochromic anaemia
+C165.	26	Polycystic ovarian syndrome
+C02..	26	Hyperthyroidism
+F591.	26	Sensorineural hearing loss
+N06z.	26	ARTHRITIS
+M261X	26	Acne, unspecified
+G840.	26	Internal haemorrhoids, simple
+G870.	26	Postural hypotension
+G843.	26	External haemorrhoids, simple
+J3030	26	Right inguinal hernia
+K310.	26	Mastitis
+S5700	26	Whiplash injury
+R0608	26	[D]Shortness of breath
+S30..	25	Fracture of neck of femur
+U3...	25	[X]Assault
+K53..	25	Ovarian cysts
+K120.	25	Renal calculus
+G73z.	25	Peripheral vascular disease NOS
+N30z8	25	Costochondritis NOS
+N141.	25	Acute back pain - thoracic
+M12z3	25	Hand eczema
+M2401	25	Alopecia areata
+M200.	25	Corns
+G30X0	25	Acute ST segment elevation myocardial infarction
+E240.	25	Opioid type drug dependence
+A3C..	25	Sepsis
+A57z.	25	Non specific viral rash
+A0803	24	Infectious gastroenteritis
+G3115	24	Acute coronary syndrome
+G5yy9	24	Left ventricular systolic dysfunction
+F301z	24	Trigeminal neuralgia NOS
+Eu603	24	[X]Emotionally unstable personality disorder
+M2102	24	Lichen sclerosus et atrophicus
+M231.	24	Nail deformity
+M261.	24	Other acne
+J0854	24	Angular stomatitis and cheilitis
+S6460	24	Minor head injury
+SD...	24	Insect bites - non venomous
+S22..	24	Fracture of humerus
+R0560	24	[D]Lymphadenopathy
+SH...	23	Scalds
+U200.	23	[X]Overdose - paracetamol
+J1016	23	Barrett's oesophagus
+G730.	23	Raynaud's syndrome
+K253.	23	Phimosis
+J540.	23	Perianal abscess
+J5701	23	RECTAL POLYP
+K04..	23	Acute kidney injury
+N2125	23	Shoulder tendonitis
+F4504	23	Ocular hypertension
+F425.	23	Senile macular degeneration
+F4252	23	Wet senile macular degeneration
+G20z.	22	Essential hypertension NOS
+F512.	22	Glue ear
+A38z.	22	Sepsis
+N0535	22	Hip osteoarthitis NOS
+M221.	22	Seborrhoeic wart
+M170.	22	Lichen planus
+M0212	22	Paronychia of toe
+L13..	22	Hyperemesis gravidarum
+K101.	22	Acute pyelonephritis
+J5747	22	Anal pain
+K23..	22	Hydrocele
+S5z..	22	Muscle sprain NOS
+S64..	22	Head injury
+SD810	21	Corneal abrasion
+K1905	21	Urinary tract infection
+J4101	21	Ulcerative colitis
+M163.	21	Pityriasis rosea
+N050.	21	Generalised osteoarthritis - OA
+N2131	21	Medial epicondylitis of the elbow
+E140.	21	Autism
+D010.	21	Pernicious anaemia
+F563.	21	Labyrinthitis
+F4C14	21	Allergic conjunctivitis
+G2z..	21	Hypertensive disease NOS
+G580.	21	Congestive cardiac failure
+F4200	21	Background diabetic retinopathy
+F110.	21	Alzheimer's disease
+F12..	21	Parkinson's disease
+F20..	20	Multiple sclerosis
+Eu31.	20	[X]Bipolar affective disorder
+F420.	20	Diabetic retinopathy
+G57y7	20	Sinus tachycardia
+C047.	20	Subclinical hypothyroidism
+E204.	20	Postnatal depression
+N2245	20	Ganglion of wrist
+N235.	20	Hypermobility syndrome
+M2119	20	Keratosis pilaris
+K5901	20	Secondary amenorrhoea
+K1972	20	Microscopic haematuria
+H3z..	20	Chronic obstructive airways disease NOS
+S5704	20	Whiplash injury
+U20..	20	[X]Deliberate drug overdose / other poisoning
+SK154	20	Finger injury
+S2342	20	Closed fracture of the distal radius, unspecified
+R0206	20	[D]Numbness
+R0207	20	[D]Paraesthesia
+R01..	19	[D]Musculoskeletal symptoms
+R063.	19	[D]Haemoptysis
+SN530	19	Allergic reaction
+H38..	19	Severe chronic obstructive pulmonary disease
+K16V1	19	Overactive bladder
+K514.	19	Uterovaginal prolapse, unspecified
+K3110	19	Gynaecomastia
+J4z0.	19	Non-infective gastritis NOS
+M1535	19	Perioral dermatitis
+N2124	19	Impingement syndrome of shoulder
+E2152	19	Emotionally unstable personality
+E2741	19	Insomnia NOS
+Eu00.	19	[X]Dementia in Alzheimer's disease
+E113.	19	Endogenous depression - recurrent
+C11y2	19	Impaired glucose tolerance
+AB03.	19	Tinea cruris
+G5y34	19	Left ventricular hypertrophy
+G581.	19	Left ventricular failure
+G61..	19	Intracerebral haemorrhage
+F5801	19	Presbyacusis
+F520.	19	Acute suppurative otitis media
+G25..	18	Stage 1 hypertension
+F367.	18	Peripheral neuropathy
+F286.	18	Chronic fatigue syndrome
+F4511	18	Primary open-angle glaucoma
+AB05.	18	Tinea corporis
+AC74.	18	Enterobiasis - threadworm
+A3Ay2	18	Clostridium difficile infection
+B8...	18	Bowen's disease
+B22z.	18	Lung cancer
+N1420	18	Lumbago with sciatica
+N2454	18	Calf pain
+M2y45	18	Epidermal cyst
+M160.	18	Psoriatic arthropathy
+M214.	18	Keloid scar
+M16y0	18	Scalp psoriasis
+K584.	18	Premenstrual tension syndrome
+K5A3.	18	Postmenopausal atrophic vaginitis
+J511.	18	Diverticulitis
+K05..	18	Chronic renal failure
+K27z.	18	Penile disorders NOS
+R005.	18	[D]Sleep disturbances
+R0023	18	[D]Collapse
+R040z	18	[D]Jaw pain
+R01z2	17	[D]Musculoskeletal pain
+PA0..	17	Tongue tie - ankyloglossia
+R1103	17	[D]Microalbuminuria
+S5yz1	17	Muscle injury / strain
+J4...	17	Inflammatory bowel disease
+J432.	17	Cow's milk allergy
+J157.	17	Duodenitis
+H036.	17	Acute viral tonsillitis
+K5Byz	17	Subfertility
+B10..	17	Malignant neoplasm of oesophagus
+AB220	17	Candidal balanitis
+E2004	17	Chronic anxiety
+F48..	17	Visual disturbances
+F48y0	17	Blurred vision NOS
+G5412	17	Aortic regurgitation alone, cause unspecified
+F526.	17	Acute left otitis media
+F527.	17	Acute right otitis media
+F4Ez.	16	Eyelid disorder NOS
+Fy00.	16	Disorders of initiating and maintaining sleep
+Eu42.	16	[X]Obsessive - compulsive disorder
+F1310	16	Benign essential tremor
+E2276	16	Premature ejaculation
+C3742	16	Gilbert's syndrome
+L1808	16	Gestational diabetes mellitus
+M100.	16	Pityriasis capitis - dandruff
+N2113	16	Supraspinatus tendinitis
+H172.	16	Hay fever - unspecified allergen
+H27..	16	Influenza
+G854.	16	Varicocele
+K....	16	K-Soft bandage 10cm x 3.5m (Urgo Ltd)
+SK173	16	Other foot injury
+N350.	16	Hallux valgus - acquired
+N331N	15	Fragility fracture
+R003z	15	[D]Seizure NOS
+R093B	15	[D]Groin lump
+R15y0	15	[D]Raised PSA
+R062.	15	[D]Cough
+S25..	15	Fracture of metacarpal bone
+SN583	15	Nut allergy
+SE...	15	Contusion (bruise) with intact skin
+K10y0	15	Pyelonephritis unspecified
+K13G.	15	Simple renal cyst
+K28yu	15	Testicular swelling NOS
+G73z0	15	Intermittent claudication
+H11..	15	Nasal polyps
+J150.	15	Acute gastritis
+H32..	15	Emphysema
+K59y3	15	Intermenstrual bleeding
+K5940	15	Delayed period
+M03z.	15	Cellulitis and abscess NOS
+C04z.	15	Hypothyroidism NOS
+E203.	15	Obsessive-compulsive disorders
+Eu002	15	[X]Dementia in Alzheimer's dis, atypical or mixed type
+Eu340	15	[X]Cyclothymia
+Eu2z.	15	[X]Psychosis NOS
+F4K6.	15	Pseudophakia
+Eu321	14	[X]Moderate depressive episode
+C000.	14	Simple goitre
+M08..	14	Cutaneous cellulitis
+M113.	14	Flexural eczema
+M08B.	14	Cellulitis of foot
+N05z4	14	Osteoarthritis NOS, of the hand
+H040.	14	Acute laryngitis
+S6401	14	Minor head injury
+S26..	14	Finger fracture
+S54..	14	Knee sprain
+R065B	14	[D]Non-cardiac chest pain
+R0720	14	[D]Difficulty in swallowing
+Ryu70	14	[X]Other chronic pain
+R0227	14	[D]Axillary lump
+R0234	13	[D]Peripheral oedema
+R032.	13	[D]Abnormal loss of weight
+R0103	13	[D]Tremor NOS
+S570.	13	Neck sprain
+H031.	13	Acute follicular tonsillitis
+K25..	13	Tight foreskin
+K274.	13	Peyronie's disease
+K241.	13	Epididymitis
+J50zz	13	Small bowel obstruction NOS
+N05zJ	13	Osteoarthritis NOS, of hip
+N094M	13	Arthralgia of knee
+M181.	13	Pruritus vulvae
+M22C.	13	Seborrhoeic wart
+M2521	13	Pompholyx unspecified
+M01..	13	Furuncle - boil
+L10y.	13	Bleeding in early pregnancy
+D00zz	13	Iron deficiency anaemia NOS
+C3521	13	Hypomagnesaemia
+C3541	13	Hypercalcaemia NEC
+E28..	13	Acute reaction to stress
+E21..	13	Personality disorders
+E1137	13	Recurrent depression
+AB000	13	Tinea capitis
+A7816	13	Hand warts
+A341.	13	Scarlet fever
+A0745	13	Helicobacter pylori gastrointestinal tract infection
+A54..	13	Herpes simplex
+BB2A.	13	[M]Squamous cell carcinoma NOS
+Eu04z	13	[X]Delirium, unspecified
+F470.	13	Hypermetropia
+F4238	13	Central retinal vein occlusion
+F586.	13	Otorrhoea
+F528.	12	Acute bilateral otitis media
+F502.	12	Other otitis externa
+G6...	12	Cerebrovascular disease
+G64..	12	CVA - cerebral artery occlusion
+F310.	12	Bell's (facial) palsy
+F4A..	12	Keratitis
+Eu02z	12	[X] Unspecified dementia
+Eu411	12	[X]Generalized anxiety disorder
+B49..	12	Malignant neoplasm of urinary bladder
+B77..	12	Fibroadenoma of breast
+A0743	12	Campylobacter gastrointestinal tract infection
+B141.	12	Malignant neoplasm of rectum
+E250.	12	Intoxication - alcohol
+C3500	12	Haemochromatosis
+M23z.	12	Nail disease NOS
+M1616	12	Guttate psoriasis
+M28z.	12	Urticaria NOS
+N122.	12	Lumbar disc displacement
+N23y4	12	Spasm of muscle
+N2204	12	De Quervain's disease
+J574C	12	Proctitis NOS
+K4205	12	Cervicitis with ectropion
+K5502	12	Ectropion (eversion) of cervix
+G7301	12	Raynaud's phenomenon
+G80..	12	Phlebitis and thrombophlebitis
+J10y5	12	Laryngopharyngeal reflux
+SE4z.	12	Haematoma NOS
+TE640	12	Insect bite NOS
+U60C4	12	[X]Adverse reaction to lisinopril
+R012.	12	[D]Gait abnormality
+R0053	12	[D]Sleep apnoea syndrome
+R0422	12	[D]Lump in head or neck
+R059.	12	[D]Sinus bradycardia
+R082.	12	[D]Retention of urine
+Rz...	11	Hypertension monitoring invitation SMS (short message service) text message
+S120.	11	Closed fracture rib
+S36..	11	Toe fracture
+S2420	11	Fracture of scaphoid
+S20..	11	Fracture of clavicle
+R0070	11	[D]Malaise
+R007z	11	[D]Work stress
+TJ560	11	Adverse reaction to Ibuprofen
+TK...	11	Cause of overdose - deliberate
+SN58.	11	Food allergy
+SK172	11	Other ankle injury
+SK03.	11	Post-traumatic wound infection NEC
+H51z.	11	Pleural effusion NOS
+G844.	11	External thrombosed haemorrhoids
+K422.	11	Cyst of Bartholin's gland
+K2414	11	Acute epididymitis
+K286w	11	Haematospermia
+J65yC	11	Polyp of gallbladder
+N2243	11	Ganglion unspecified
+N224A	11	Baker's cyst
+N224B	11	Ganglion of hand
+M2yC.	11	Pigmented skin lesion
+K56y1	11	Bleeding - vaginal NOS
+M0201	11	Whitlow
+C2...	11	Vitamin deficiencies
+E2E0.	11	Child attention deficit disorder
+E030.	11	Acute confusional state
+B13..	11	Malignant neoplasm of colon
+AB20.	11	Thrush of mouth and oesophagus
+G71..	11	Aortic aneurysm
+G57y9	11	Supraventricular tachycardia NOS
+F542.	11	Tympanic membrane perforation
+F590.	11	Conductive hearing loss
+F4D1.	11	Hordeolum and other deep inflammation of eyelid
+F4B6.	10	Keratoconus
+G679.	10	Small vessel cerebrovascular disease
+Fy0..	10	Sleep disorders
+G1404	10	Tricuspid regurgitation, cause unspecified
+Eu455	10	[X]Globus pharyngeus
+F4430	10	Anterior uveitis
+AB21.	10	Candidal vulvovaginitis
+A531.	10	Post-herpetic neuralgia
+BBE0.	10	[M]Naevus NOS
+E2A2.	10	Post-concussion syndrome
+C367.	10	Hyperkalaemia
+C368.	10	Hypokalaemia
+L2680	10	Reduced fetal movements
+M1100	10	Candidal nappy rash
+M272.	10	Ulcer of skin
+M280.	10	Allergic urticaria
+N2116	10	Subacromial bursitis
+J650.	10	Acute cholecystitis
+J680.	10	Haematemesis
+J12..	10	Duodenal ulcer - (DU)
+SK130	10	Other elbow injuries
+SK140	10	Unspecified injury of hand
+SN582	10	Peanut allergy
+T3...	10	Other road vehicle accidents
+R0075	10	[D]Tiredness
+R00z8	10	[D]Irritability and anger
+R042.	10	[D]Swelling, mass or lump in head and neck
+N34..	10	Flat foot
+S242.	10	Fracture at wrist and hand level
+S461.	10	Acute meniscal tear, lateral
+S5...	10	Sprains and strains of joints and adjacent muscles
+R0840	10	[D]Frequency of micturition, unspecified
+R090C	10	[D]Loin pain
+R090G	10	[D] Pelvic pain
+R0656	9	[D]Chest discomfort
+S224.	9	Elbow fracture - closed
+S23..	9	Fracture of radius and ulna
+Q31y5	9	Neonatal snuffles
+R0052	9	[D]Insomnia NOS
+SN531	9	Latex allergy
+SN50.	9	Anaphylactic shock
+TJ522	9	Adverse reaction to Codeine Phosphate
+J105.	9	Oesophageal dysmotility
+J10y6	9	Barrett's oesophagus
+H52..	9	Pneumothorax
+H037.	9	Recurrent acute tonsillitis
+K04D.	9	Acute kidney injury stage 2
+K04E.	9	Acute kidney injury stage 3
+J33..	9	Incisional hernia
+K11..	9	Hydronephrosis
+K1973	9	Frank haematuria
+N2122	9	Subacromial impingement
+N2165	9	Prepatellar bursitis
+N220.	9	Synovitis and tenosynovitis
+N23y3	9	Divarication of recti
+N096.	9	Musculoskeletal pain - joints
+N06z1	9	Shoulder arthritis NOS
+M1180	9	Cradle cap
+M07z2	9	Infection finger
+M201.	9	Right Callus
+L3984	9	Delivery by emergency caesarean section
+M07yz	9	Infection toe
+K59yx	9	Dysfunctional uterine bleeding
+L100.	9	Threatened abortion
+L130.	9	Morning sickness
+C1541	9	Addison's disease
+E13z.	9	Psychotic episode NOS
+A340.	9	Streptococcal sore throat
+F42y9	9	Macular oedema
+F4655	9	Posterior capsule opacification
+F4239	9	Branch retinal vein occlusion
+F41z.	9	Retinal detachment NOS
+F351.	9	Meralgia paraesthetica
+F4005	9	Eye infection
+Eu403	9	[X]Needle phobia
+Eu845	9	[X]Asperger's syndrome
+G3111	9	Unstable angina
+G5731	9	Atrial flutter
+G55..	9	Cardiomyopathy
+F4D..	9	Inflammation of eyelids
+F4E51	9	Xanthelasma
+F5635	8	Viral labyrinthitis
+G576.	8	Ectopic beats
+G714.	8	Abdominal aortic aneurysm without mention of rupture
+G340.	8	Coronary artery disease
+Eu840	8	[X]Autistic disorder
+Eu323	8	[X]Severe depressive episode with psychotic symptoms
+F366.	8	Polyneuropathy
+A1...	8	Tuberculosis
+BB5..	8	[M]Adenocarcinomas
+B768.	8	Melanocytic naevi of skin
+B34z.	8	Malignant neoplasm of female breast NOS
+E2141	8	obsessional personality
+BC...	8	Polyp
+C3131	8	Lactose intolerance
+L3983	8	Delivery by elective caesarean section
+M23..	8	Diseases of nail
+N0951	8	Shoulder stiff
+N2420	8	Neuralgia unspecified
+N3244	8	Osgood-Schlatter's dis - osteochondrosis of tibial tubercle
+N119.	8	Cervical spondylosis with radiculopathy
+N127.	8	Lumbar disc degeneration
+K16y4	8	Irritable bladder
+K21z.	8	Prostatitis NOS
+K40z.	8	PID - pelvic inflammatory disease
+K421.	8	Vaginitis and vulvovaginitis
+J681.	8	Melaena
+J63y2	8	Liver cyst
+H03z.	8	Acute tonsillitis NOS
+H21..	8	Lobar (pneumococcal) pneumonia
+G8490	8	Anal skin tag
+G84z.	8	Haemorrhoids NOS
+G73..	8	Other peripheral vascular disease
+H2z..	8	Pneumonia or influenza NOS
+H330.	8	Childhood asthma
+H5yy.	8	Other diseases of respiratory system NEC
+TJ42.	8	Adverse reaction to anticoagulants
+TJ0yC	8	Adverse reaction to Trimethoprim
+SN51.	8	Angioedema
+S60..	8	Concussion
+R0003	8	[D]Loss of consciousness
+R050.	8	[D]Tachycardia, unspecified
+S220.	8	Closed fracture of the proximal humerus
+S30y.	8	Closed fracture of neck of femur NOS
+S460.	8	Acute meniscal tear, medial
+S54y.	8	Knee sprain NOS
+R083.	8	[D]Incontinence of urine
+R0907	8	[D]Hypochondrial pain
+R09z1	8	[D]Umbilical discharge
+R060E	7	[D]Mild wheeze
+S520.	7	Sprain wrist ligament
+S41..	7	Dislocation or subluxation of shoulder
+S41z.	7	Dislocation of shoulder NOS
+S33A.	7	Fracture of tibia
+S23x1	7	Fracture of radius NOS
+R0300	7	[D]Appetite loss
+R031.	7	[D]Abnormal weight gain
+R023z	7	[D]Dependent oedema
+R0021	7	[D]Fainting
+PC5..	7	Undescended testicle
+N373.	7	Kyphoscoliosis and scoliosis
+S53..	7	Groin sprain
+S551.	7	Foot sprain
+SA...	7	Laceration - leg
+SF23.	7	Crush injury, finger(s)
+SG1..	7	Foreign body in ear
+SP2y2	7	Postoperative pain
+TJ53.	7	Adverse reaction to Aspirin
+U60C1	7	[X]Adverse reaction to amlodipine
+U29..	7	[X]Intentional self harm by sharp object
+U601y	7	[X] Adverse reaction to nitrofuantoin
+J024.	7	Dental infection
+H3y0.	7	Chronic obstruct pulmonary dis with acute lower resp infectn
+H510C	7	Pleural plaque
+J20..	7	Acute Appendicitis
+H1711	7	Dog allergy
+J623.	7	Portal hypertension
+J651z	7	Cholecystitis NOS
+J671.	7	Chronic pancreatitis
+J690.	7	Coeliac disease
+K050.	7	End stage renal failure
+J348.	7	Sliding hiatus hernia
+J4103	7	Ulcerative proctitis
+J41..	7	Ulcerative colitis and/or proctitis
+K240.	7	Orchitis
+N2472	7	Cramp
+N23yD	7	Muscle strain
+N21y0	7	Anterior shin splints
+N220G	7	Acquired trigger thumb
+N224C	7	Ganglion of foot
+N223.	7	Bursitis NOS
+N0946	7	Knee joint pain
+N0947	7	Arthralgia of the ankle and foot
+M18..	7	Pruritus and related conditions
+M1830	7	Prurigo nodularis (Hyde's disease)
+M16..	7	Psoriasis and similar disorders
+M166.	7	Palmoplantar pustular psoriasis
+M....	7	Skin and subcutaneous tissue diseases
+L398.	7	Caesarean delivery
+M060.	7	Pilonidal cyst with abscess
+K595.	7	Intermenstrual bleeding - regular
+K5911	7	Oligomenorrhoea
+C109.	7	Non-insulin dependent diabetes mellitus
+C112.	7	Hypoglycaemia unspecified
+C025.	7	Subclinical hyperthyroidism
+E227.	7	Lack of libido
+E2B1.	7	Chronic depression
+E2C..	7	Behaviour disorder
+B4Az.	7	Malignant neoplasm of kidney or urinary organs NOS
+B713.	7	Colon polyp
+BB13.	7	[M]Carcinoma, metastatic, NOS
+BBK00	7	[M]Fibroid uterus
+A77z.	7	Viral conjunctivitis
+F423.	7	Retinal vascular occlusion
+F3420	7	Cubital tunnel syndrome
+F4607	7	Nuclear cataract
+Eu322	7	[X]Severe depressive episode without psychotic symptoms
+Eu50.	7	[X]Eating disorders
+F13X.	7	Dystonia, unspecified
+G50..	7	Acute pericarditis
+G60..	7	Subarachnoid haemorrhage
+G5762	7	Ventricular ectopic beats
+F5612	7	Acute vestibular neuronitis
+F4J0.	7	Convergent squint
+F4K21	7	Vitreous detachment
+F4D11	7	Meibomian cyst infected
+F4E1.	7	Ectropion
+F4J1.	6	Divergent squint
+F4G01	6	Orbital cellulitis
+F560.	6	Meniere's disease
+F5024	6	Acute eczematoid otitis extern
+G33z7	6	Stable angina
+Eu90.	6	[X]Hyperkinetic disorders
+Eu057	6	[X]Mild cognitive disorder
+Eu108	6	[X]Alcohol withdrawal-induced seizure
+F4730	6	Anisometropia
+F4257	6	Drusen
+F3424	6	Ulnar neuropathy
+F2C..	6	Non-epileptic attack disorder
+F2620	6	Cluster headache
+F4204	6	Diabetic maculopathy
+A3B11	6	Meticillin resistant staphylococcus aureus
+B22..	6	Malignant neoplasm of trachea, bronchus and lung
+AD5..	6	Sarcoidosis
+AB63.	6	Aspergillosis
+B7Fy1	6	Morton neuroma
+B41..	6	Malignant neoplasm of cervix uteri
+B32..	6	Malignant melanoma of skin
+E2A10	6	Mild memory disturbance
+Eu001	6	[X]Dementia in Alzheimer's disease with late onset
+E24..	6	Drug dependence
+E01y0	6	Alcohol withdrawal syndrome
+D214.	6	Chronic anaemia
+C313.	6	Cow's milk intolerance
+C3803	6	Morbid obesity
+D011.	6	Vitamin B12 deficiency anaemia
+D106.	6	Sickle-cell anaemia
+K557.	6	Polyp of cervix NOS
+M07z1	6	Infection toe
+L18A0	6	Cholestasis of pregnancy
+M0131	6	Boil of axilla
+M12D.	6	Erythema ab igne
+M23yJ	6	Nail changes
+M251.	6	Prickly heat - miliaria
+M241.	6	Hirsutism - hypertrichosis
+N094F	6	Arthralgia of wrist
+N074.	6	Chondromalacia patellae
+M26..	6	Sebaceous gland diseases
+M2951	6	Vitiligo
+N04X.	6	Seropositive rheumatoid arthritis, unspecified
+N123.	6	Intervertebral disc prolapse NOS
+K21..	6	Prostatitis and other inflammatory diseases of prostate
+K1906	6	Urosepsis
+K4211	6	Vulvitis unspecified
+K318.	6	Breast abscess
+K300.	6	Benign breast cyst
+K550.	6	Erosion and ectropion of the cervix
+J437.	6	Colitis
+J571.	6	Rectal prolapse
+J670.	6	Acute pancreatitis
+J615z	6	Cirrhosis of liver NOS
+H1y1.	6	Nasal vestibulitis
+H260.	6	Lobar pneumonia due to unspecified organism
+H10..	6	DNS - deviated nasal septum
+G73zz	6	Peripheral vascular disease NOS
+G76B.	6	Vasculitis
+G7713	6	Telangiectasia
+H0...	6	Acute respiratory infections
+J177.	6	Polyp of stomach
+J11z.	6	Gastric ulcer NOS
+J08zz	6	Mucocele of mouth
+J08zC	6	Burning mouth syndrome
+J072.	6	Parotitis
+H51..	6	Pleurisy
+J007.	6	Teething syndrome
+H5B0.	6	Obstructive sleep apnoea
+H5632	6	Pulmonary fibrosis
+H580.	6	Atelectasis
+TJC79	6	Adverse reaction to ramipril
+U3E..	6	[X]Stabbing
+T8...	6	Cause of overdose - accidental
+SN52.	6	Adverse drug reaction NOS
+SK152	6	Other thumb injuries, unspecified
+SK15.	6	Other finger injuries
+SK132	6	Other wrist injuries
+SE330	6	Subungual Haematoma
+S830.	6	Open wound of scalp
+N36A.	6	Drop foot
+N340.	6	Pes planus - acquired
+PH34.	6	Naevus NEC
+PGy2.	6	Ehlers-Danlos syndrome
+R002.	6	[D]Syncope
+R0044	6	[D]Acute vertigo
+R006.	6	[D]Pyrexia of unknown origin
+R008.	6	[D]Hyperhidrosis
+R0241	6	[D]Jaundice
+R051.	6	[D]Palpitations
+S234.	6	Wrist fracture - closed
+S31z.	6	Fracture of femur, NOS
+S2B..	6	Fracture of bone of hand
+S356.	6	Fracture of metatarsal bone
+S342.	6	Closed fracture ankle, lateral malleolus
+S34x.	6	Closed fracture ankle, unspecified
+S3527	6	Closed fracture metatarsal
+R0870	6	[D]Penile discharge
+S1021	6	Closed fracture thoracic vertebra, wedge

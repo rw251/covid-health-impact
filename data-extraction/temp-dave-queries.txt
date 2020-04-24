@@ -1,0 +1,19 @@
+
+--Top diagnoses in 6 weeks from March 2019
+select left(ReadCode,5), count(*) as num into #marchDiagnoses  from SIR_ALL_Records_Narrow
+where EntryDate >= '2019-03-01'
+and EntryDate < '2019-04-12'
+and left(ReadCode,5) like '[ABCDEFGHIJKLMNOPQRSTUVWXY]____'
+and ReadCode not like '[ABCDEFGHIJKLMNOPQRSTUVWXYZ][ABCDEFGHIJKLMNOPQRSTUVWXYZ][ABCDEFGHIJKLMNOPQRSTUVWXYZ][ABCDEFGHIJKLMNOPQRSTUVWXYZ]%'
+and (len(ReadCode)=5 OR Len(ReadCode)=7)
+group by left(ReadCode,5)
+order by count(*) desc;
+select m.ReadCode, num, rubric from #marchDiagnoses m inner join (
+select s1.readcode, max(s1.rubric) as rubric from SIR_ReadCode_Rubric s1 inner join (
+select readcode, MAX(count) as maxcount from SIR_ReadCode_Rubric
+group by readcode) s2 on s1.readcode = s2.readcode and s1.count = s2.maxcount
+group by  s1.readcode
+) s on s.readcode = m.ReadCode
+--where s.readcode not in ('OLTR.')
+where num > 5
+order by num desc
