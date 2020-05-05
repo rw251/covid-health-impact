@@ -13,7 +13,7 @@ const codesWithoutTermCode = (codes) => {
 }
 
 const createQueryFromFile = ({ reportDateString }) => (filename) => {
-  const template = readFileSync(join(__dirname, 'sql-queries', 'template-standard.sql'), 'utf8');
+  const template = readFileSync(join(__dirname, 'template.sql'), 'utf8');
 
   let query = template;
 
