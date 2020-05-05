@@ -7,7 +7,7 @@ Exploratory work to determine what (if any) effect the COVID-19 outbreak is havi
 1. Updated codesets are placed in `data-extraction/codesets`
 2. Run `node main.js` to create the SQL queries necessary for data extraction
 3. When on the server execute `data-extraction/RunToExtractData.bat` to extract the data
-4. Running `node main.js` also does any analysis / chart creation from the extracted data
+4. Data ends up in `data-extraction/data`
 
 ## Proposals
 
