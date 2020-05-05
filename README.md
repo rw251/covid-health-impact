@@ -1,6 +1,6 @@
-# COVID-19 impact on mental health
+# COVID-19 impact on mental and physical health
 
-Exploratory work to determine what (if any) effect the COVID-19 outbreak is having on the reporting, diagnosis and treatment of mental health conditions.
+Exploratory work to determine what (if any) effect the COVID-19 outbreak is having on the reporting, diagnosis and treatment of mental and physical health conditions.
 
 ## Instructions
 

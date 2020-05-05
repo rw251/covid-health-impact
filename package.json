@@ -4,5 +4,8 @@
   "description": "",
   "main": "index.js",
   "author": "Richard Williams <richard.williams@manchester.ac.uk>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node data-extraction/main.js"
+  }
 }
