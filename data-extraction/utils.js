@@ -12,7 +12,7 @@ const codesWithoutTermCode = (codes) => {
   return codes.concat(codesWithoutTermExtension);
 }
 
-const createQueryFromFile = ({ reportDateString }) = (filename) => {
+const createQueryFromFile = ({ reportDateString }) => (filename) => {
   const template = readFileSync(join(__dirname, 'sql-queries', 'template-standard.sql'), 'utf8');
 
   let query = template;
