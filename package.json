@@ -6,6 +6,8 @@
   "author": "Richard Williams <richard.williams@manchester.ac.uk>",
   "license": "MIT",
   "scripts": {
-    "start": "node data-extraction/main.js"
-  }
+    "start": "node data-extraction/main.js",
+    "analyse": "Rscript wrapper.R"
+  },
+  "dependencies": {}
 }
