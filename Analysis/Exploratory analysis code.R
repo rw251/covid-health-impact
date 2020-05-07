@@ -6,8 +6,6 @@ library(ggplot2)
 
 here() # this should return the location of this saved R file. If not close R and open the file directly from file explorer
 
-#setwd("C:/Users/davej/Dropbox (The University of Manchester)/PSTRC/Projects/Covid indirect impact/Initial")
-
 # download file from git
 gitrepo <- "https://github.com/rw251/covid-health-impact/blob/master/data-extraction/data/" # page where data is stored
 filename <- "dx-depression.txt" # name of the file to download
@@ -63,6 +61,7 @@ dat2 %>% ggplot(aes(x=month, y=prev, group=year, color=year)) + geom_line(size=1
   labs(x = "Time (month)", y = "Prevalence", color = "Year", title = "Prevalence of depression each month between 2015 and 2020") + 
   theme_light()
 
+# Take the 5 year average and plot that vs 2020
 
 
 #### Now try COPD ####
