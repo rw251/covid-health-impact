@@ -1,0 +1,4 @@
+readcode	description	count
+14Oq.	Moderate risk category for developing complication COVID-19	2259
+14Or.	High risk category for developing complication from COVID-19	3247
+9d44.	Potential infectious contact	4784
