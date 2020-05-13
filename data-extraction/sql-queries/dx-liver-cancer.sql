@@ -16,7 +16,7 @@ END;
 -- of the code where it is the first time the patient has had it
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select PatID, min(EntryDate) as FirstDiagnosis from SIR_ALL_Records_Narrow
-	where ReadCode in ('14B4.','173d.','1O2..','8H2P.','H3120','H312000','H312011','H33..','H330.','H3300','H330000','H330011','H3301','H330100','H330111','H330z','H330z00','H331.','H3310','H331000','H3311','H331111','H331z','H331z00','H332.','H333.','H334.','H335.','H33z.','H33z0','H33z000','H33z011','H33z1','H33z100','H33z111','H33z2','H33z200','H33zz','H33zz00','H33zz11','H33zz12','H33zz13','H3B..','H47y0','H3120','H3300','H3301','H330z','H3310','H331z','H33z0','H33z1','H33z2','H33zz')
+	where ReadCode in ('B15..00','B15..99','B150.00','B150.99','B150000','B150100','B150200','B150300','B150z00','B151.00','B151.99','B151000','B151200','B151300','B151400','B151z00','B152.00','B15z.00','B15z.99','BB5D100','BB5D300','BB5D500','BB5D511','BB5D512','BB5D513','BB5D700','BB5D711','BB5D800','BB5Dz00','BB5y200','BBL8.00','BBL8.11','BBT5.00','Byu1000','Byu1100','B15..','B150.','B1500','B1501','B1502','B1503','B150z','B151.','B1510','B1512','B1513','B1514','B151z','B152.','B15z.','BB5D1','BB5D3','BB5D5','BB5D7','BB5D8','BB5Dz','BB5y2','BBL8.','BBT5.','Byu10','Byu11')
 	and EntryDate <= '2020-05-13'
 	group by PatID
 ) sub 
@@ -27,14 +27,14 @@ group by FirstDiagnosis
 -- code irrespective of whether it is the first time the patient has had it
 select EntryDate, count(*) as num into #Prevalence from (
 	select PatID, EntryDate from SIR_ALL_Records_Narrow
-	where ReadCode in ('14B4.','173d.','1O2..','8H2P.','H3120','H312000','H312011','H33..','H330.','H3300','H330000','H330011','H3301','H330100','H330111','H330z','H330z00','H331.','H3310','H331000','H3311','H331111','H331z','H331z00','H332.','H333.','H334.','H335.','H33z.','H33z0','H33z000','H33z011','H33z1','H33z100','H33z111','H33z2','H33z200','H33zz','H33zz00','H33zz11','H33zz12','H33zz13','H3B..','H47y0','H3120','H3300','H3301','H330z','H3310','H331z','H33z0','H33z1','H33z2','H33zz')
+	where ReadCode in ('B15..00','B15..99','B150.00','B150.99','B150000','B150100','B150200','B150300','B150z00','B151.00','B151.99','B151000','B151200','B151300','B151400','B151z00','B152.00','B15z.00','B15z.99','BB5D100','BB5D300','BB5D500','BB5D511','BB5D512','BB5D513','BB5D700','BB5D711','BB5D800','BB5Dz00','BB5y200','BBL8.00','BBL8.11','BBT5.00','Byu1000','Byu1100','B15..','B150.','B1500','B1501','B1502','B1503','B150z','B151.','B1510','B1512','B1513','B1514','B151z','B152.','B15z.','BB5D1','BB5D3','BB5D5','BB5D7','BB5D8','BB5Dz','BB5y2','BBL8.','BBT5.','Byu10','Byu11')
 	and EntryDate >= '2015-01-01'
 	and EntryDate <= '2020-05-13'
 	group by PatID, EntryDate
 ) sub 
 group by EntryDate
 
-PRINT 'Date,IncidenceOfAsthma,PrevalenceOfAsthma'
+PRINT 'Date,IncidenceOfLiverCancer,PrevalenceOfLiverCancer'
 select [date], ISNULL(i.num, 0), ISNULL(p.num, 0) from #AllDates d 
 	left outer join #Incidence i on i.FirstDiagnosis = d.date
 	left outer join #Prevalence p on p.EntryDate = d.date
