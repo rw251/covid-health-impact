@@ -85,7 +85,7 @@ drawCombinedPlot <- function(data, conditionNameLowerCase, conditionNameDashed, 
     rel_heights = c(0.1, 1)
   )
 
-  plotFilename <- paste(conditionNameDashed, 'combined', 'png', sep=".")
+  plotFilename <- paste(conditionNameDashed, 'png', sep=".")
   save_plot(file.path(directory, plotFilename), plot, ncol = 2)
 }
 
