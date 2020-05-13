@@ -9,7 +9,27 @@ Exploratory work to determine what (if any) effect the COVID-19 outbreak is havi
 3. When on the server execute `data-extraction/RunToExtractData.bat` to extract the data
 4. Data ends up in `data-extraction/data`
 
+## Analysis
+
+### Pre-requisites
+
+1. R installed and bin directory added to the PATH variable - e.g. so that `Rscript` entered at a command prompt actually does something
+2. nodejs installed
+3. In root of project execute `npm i` to install dependencies (none at present but you never know)
+
+### Execution
+
+Navigate to the root of the project and execute:
+
+```
+npm run analyse
+```
+
+All outputs appear in the `./outputs` directory.
+
 ## Proposals
+
+***This has been superseded - I think...***
 
 1. Has there been any change in new diagnoses for these conditions of interest? Ideally, calculating incidence rates per month.
 2. For those with existing mental illness disorders, is there any change in the frequency and type of consultation for those people? In other words, are they consulting less often under the current situation or are they just consulting differently (switch from face-to-face to video/telephone consultation, etc).
