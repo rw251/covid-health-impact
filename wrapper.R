@@ -14,4 +14,4 @@ new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"
 if(length(new.packages)) install.packages(new.packages, 'lib', repos = c('https://cran.ma.imperial.ac.uk/', 'https://www.stats.bris.ac.uk/R/'))
 
 # Now we execute the main code knowing that all packages are installed
-source("./Analysis/Exploratory analysis code copy-rw-version-to-avoid-conflicts.R")
+source("./Analysis/main.R")
