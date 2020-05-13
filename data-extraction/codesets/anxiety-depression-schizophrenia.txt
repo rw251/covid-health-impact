@@ -1,0 +1,551 @@
+173f.00	Anxiety about breathlessness
+1B13.00	Anxiousness
+1B13.11	Anxiousness - symptom
+1B13.12	Anxious
+1B1V.00	C/O - panic attack
+1Bb1.00	Fear of getting cancer
+1P3..00	Compulsive behaviour
+2258.00	O/E - anxious
+2259.00	O/E - nervous
+225J.00	O/E - panic attack
+285..00	Neurotic condition, insight present
+8CAZ000	Patient given advice about management of anxiety
+8G52.00	Antiphobic therapy
+8G94.00	Anxiety management training
+8HHp.00	Referral for guided self-help for anxiety
+8IH5300	Referral for guided self-help for anxiety declined
+E20..00	Neurotic disorders
+E20..99	Neuroses
+E200.00	Anxiety states
+E200.99	Anxiety state
+E200000	Anxiety state unspecified
+E200100	Panic disorder
+E200111	Panic attack
+E200200	Generalised anxiety disorder
+E200300	Anxiety with depression
+E200400	Chronic anxiety
+E200500	Recurrent anxiety
+E200z00	Anxiety state NOS
+E202.00	Phobic disorders
+E202.11	Social phobic disorders
+E202.12	Phobic anxiety
+E202.99	Phobic state
+E202000	Phobia unspecified
+E202100	Agoraphobia with panic attacks
+E202199	Agoraphobia
+E202200	Agoraphobia without mention of panic attacks
+E202299	Agoraphobia
+E202300	Social phobia, fear of eating in public
+E202400	Social phobia, fear of public speaking
+E202500	Social phobia, fear of public washing
+E202600	Acrophobia
+E202700	Animal phobia
+E202800	Claustrophobia
+E202900	Fear of crowds
+E202A00	Fear of flying
+E202B00	Cancer phobia
+E202C00	Dental phobia
+E202E00	Fear of pregnancy
+E202z00	Phobic disorder NOS
+E202z98	Needle phobia
+E202z99	Other phobias
+E203.00	Obsessive-compulsive disorders
+E203.11	Anancastic neurosis
+E203000	Compulsive neurosis
+E203100	Obsessional neurosis
+E203z00	Obsessive-compulsive disorder NOS
+E20z.00	Neurotic disorder NOS
+E261.99	Pschogenic resp. symptoms
+E262099	Cardiac neuroses
+E262100	Cardiovascular neurosis
+E28..11	Combat fatigue
+E283100	Acute posttrauma stress state
+E28z.00	Acute stress reaction NOS
+E28z.12	Flying phobia
+E292000	Separation anxiety disorder
+E29y100	Other post-traumatic stress disorder
+E29y199	Chron post-traum stress dis
+E2D0.00	Disturbance of anxiety and fearfulness childhood/adolescent
+E2D0000	Childhood and adolescent overanxiousness disturbance
+E2D0z00	Disturbance anxiety and fearfulness childhood/adolescent NOS
+Eu05400	[X]Organic anxiety disorder
+Eu34114	[X]Persistant anxiety depression
+Eu40.00	[X]Phobic anxiety disorders
+Eu40000	[X]Agoraphobia
+Eu40011	[X]Agoraphobia without history of panic disorder
+Eu40012	[X]Panic disorder with agoraphobia
+Eu40100	[X]Social phobias
+Eu40111	[X]Anthropophobia
+Eu40112	[X]Social neurosis
+Eu40200	[X]Specific (isolated) phobias
+Eu40211	[X]Acrophobia
+Eu40212	[X]Animal phobias
+Eu40213	[X]Claustrophobia
+Eu40214	[X]Simple phobia
+Eu40299	Needle phobia
+Eu40300	[X]Needle phobia
+Eu40y00	[X]Other phobic anxiety disorders
+Eu40z00	[X]Phobic anxiety disorder, unspecified
+Eu40z11	[X]Phobia NOS
+Eu40z12	[X]Phobic state NOS
+Eu41.00	[X]Other anxiety disorders
+Eu41000	[X]Panic disorder [episodic paroxysmal anxiety]
+Eu41011	[X]Panic attack
+Eu41012	[X]Panic state
+Eu41100	[X]Generalized anxiety disorder
+Eu41111	[X]Anxiety neurosis
+Eu41112	[X]Anxiety reaction
+Eu41113	[X]Anxiety state
+Eu41200	[X]Mixed anxiety and depressive disorder
+Eu41211	[X]Mild anxiety depression
+Eu41300	[X]Other mixed anxiety disorders
+Eu41y00	[X]Other specified anxiety disorders
+Eu41y11	[X]Anxiety hysteria
+Eu41z00	[X]Anxiety disorder, unspecified
+Eu41z11	[X]Anxiety NOS
+Eu42.00	[X]Obsessive - compulsive disorder
+Eu42.12	[X]Obsessive-compulsive neurosis
+Eu42000	[X]Predominantly obsessional thoughts or ruminations
+Eu42100	[X]Predominantly compulsive acts [obsessional rituals]
+Eu42200	[X]Mixed obsessional thoughts and acts
+Eu42y00	[X]Other obsessive-compulsive disorders
+Eu42z00	[X]Obsessive-compulsive disorder, unspecified
+Eu43013	[X]Combat fatigue
+Eu43100	[X]Post - traumatic stress disorder
+Eu43111	[X]Traumatic neurosis
+Eu43300	[X]Acute post-traumatic stress disorder follow military comb
+Eu43400	[X]Chron post-traumatic stress disorder follow military comb
+Eu43500	[X]Delayed post-traumat stress disorder follow military comb
+Eu43y00	[X]Other reactions to severe stress
+Eu43z00	[X]Reaction to severe stress, unspecified
+Eu93000	[X]Separation anxiety disorder of childhood
+Eu93100	[X]Phobic anxiety disorder of childhood
+Eu93200	[X]Social anxiety disorder of childhood
+Eu93y12	[X]Childhood overanxious disorder
+Z481.00	Phobia counselling
+Z4I7.00	Acknowledging anxiety
+Z4I7100	Recognising anxiety
+Z4I7200	Alleviating anxiety
+Z4I7211	Reducing anxiety
+Z4L1.00	Anxiety counselling
+Z522600	Flooding - obsessional compulsive disorder
+1B17.00	Depressed
+1B17.11	C/O - feeling depressed
+1B17.12	C/O - feeling unhappy
+1B1U.00	Symptoms of depression
+1B1U.11	Depressive symptoms
+1BT..00	Depressed mood
+1BT..11	Low mood
+1BT..12	Sad mood
+1JJ..00	Suspected depression
+1S40.00	Dysphoric mood
+212S.00	Depression resolved
+2257.00	O/E - depressed
+62T1.00	Puerperal depression
+6659000	Antidepressant drug treatment started
+6G00.00	Postnatal depression counselling
+8BK0.00	Depression management programme
+8CAa.00	Patient given advice about management of depression
+8HHq.00	Referral for guided self-help for depression
+8HHq000	Referral for depression self-help video
+8IH5200	Referral for guided self-help for depression declined
+9H90.00	Depression annual review
+9H91.00	Depression medication review
+9H92.00	Depression interim review
+9HA0.00	On depression register
+9Ov..00	Depression monitoring administration
+9Ov0.00	Depression monitoring first letter
+9Ov1.00	Depression monitoring second letter
+9Ov2.00	Depression monitoring third letter
+9Ov3.00	Depression monitoring verbal invite
+9Ov4.00	Depression monitoring telephone invite
+9hC..00	Exception reporting: depression quality indicators
+9hC0.00	Excepted from depression quality indicators: Patient unsuita
+9hC1.00	Excepted from depression quality indicators: Informed dissen
+9k4..00	Depression - enhanced services administration
+9k40.00	Depression - enhanced service completed
+9kQ..00	On full dose long term treatment depression - enh serv admin
+9kQ..11	On full dose long term treatment for depression
+E02y300	Drug-induced depressive state
+E11..12	Depressive psychoses
+E112.00	Single major depressive episode
+E112.11	Agitated depression
+E112.12	Endogenous depression first episode
+E112.13	Endogenous depression first episode
+E112.14	Endogenous depression
+E112000	Single major depressive episode, unspecified
+E112100	Single major depressive episode, mild
+E112200	Single major depressive episode, moderate
+E112300	Single major depressive episode, severe, without psychosis
+E112400	Single major depressive episode, severe, with psychosis
+E112500	Single major depressive episode, partial or unspec remission
+E112600	Single major depressive episode, in full remission
+E112z00	Single major depressive episode NOS
+E113.00	Recurrent major depressive episode
+E113.11	Endogenous depression - recurrent
+E113000	Recurrent major depressive episodes, unspecified
+E113100	Recurrent major depressive episodes, mild
+E113200	Recurrent major depressive episodes, moderate
+E113300	Recurrent major depressive episodes, severe, no psychosis
+E113400	Recurrent major depressive episodes, severe, with psychosis
+E113500	Recurrent major depressive episodes,partial/unspec remission
+E113600	Recurrent major depressive episodes, in full remission
+E113700	Recurrent depression
+E113z00	Recurrent major depressive episode NOS
+E118.00	Seasonal affective disorder
+E11y200	Atypical depressive disorder
+E11z200	Masked depression
+E130.00	Reactive depressive psychosis
+E130.11	Psychotic reactive depression
+E135.00	Agitated depression
+E200300	Anxiety with depression
+E204.00	Neurotic depression reactive type
+E204.11	Postnatal depression
+E204.99	Reactive (neurotic) depression
+E211299	Depressive personality
+E290.00	Brief depressive reaction
+E290000	Grief reaction
+E290011	Bereavement reaction
+E290z00	Brief depressive reaction NOS
+E291.00	Prolonged depressive reaction
+E2B..00	Depressive disorder NEC
+E2B..98	Depression
+E2B..99	Depression NOS
+E2B0.00	Postviral depression
+E2B1.00	Chronic depression
+Eu05300	[X]Organic mood [affective] disorders
+Eu06y11	[X]Right hemispheric organic affective disorder
+Eu20400	[X]Post-schizophrenic depression
+Eu25100	[X]Schizoaffective disorder, depressive type
+Eu25111	[X]Schizoaffective psychosis, depressive type
+Eu25112	[X]Schizophreniform psychosis, depressive type
+Eu3..00	[X]Mood - affective disorders
+Eu32.00	[X]Depressive episode
+Eu32.11	[X]Single episode of depressive reaction
+Eu32.12	[X]Single episode of psychogenic depression
+Eu32.13	[X]Single episode of reactive depression
+Eu32000	[X]Mild depressive episode
+Eu32099	Mild depression
+Eu32100	[X]Moderate depressive episode
+Eu32199	Moderate depression
+Eu32200	[X]Severe depressive episode without psychotic symptoms
+Eu32211	[X]Single episode agitated depressn w'out psychotic symptoms
+Eu32212	[X]Single episode major depression w'out psychotic symptoms
+Eu32213	[X]Single episode vital depression w'out psychotic symptoms
+Eu32299	Severe depression
+Eu32300	[X]Severe depressive episode with psychotic symptoms
+Eu32311	[X]Single episode of major depression and psychotic symptoms
+Eu32312	[X]Single episode of psychogenic depressive psychosis
+Eu32313	[X]Single episode of psychotic depression
+Eu32314	[X]Single episode of reactive depressive psychosis
+Eu32400	[X]Mild depression
+Eu32500	[X]Major depression, mild
+Eu32600	[X]Major depression, moderately severe
+Eu32700	[X]Major depression, severe without psychotic symptoms
+Eu32800	[X]Major depression, severe with psychotic symptoms
+Eu32900	Single major depressive episode, severe, with psychosis, psychosis in remission
+Eu32A00	Recurrent major depressive episodes, severe, with psychosis, psychosis in remission
+Eu32B00	[X]Antenatal depression
+Eu32y00	[X]Other depressive episodes
+Eu32y11	[X]Atypical depression
+Eu32y12	[X]Single episode of masked depression NOS
+Eu32z00	[X]Depressive episode, unspecified
+Eu32z11	[X]Depression NOS
+Eu32z12	[X]Depressive disorder NOS
+Eu32z13	[X]Prolonged single episode of reactive depression
+Eu32z14	[X] Reactive depression NOS
+Eu33.00	[X]Recurrent depressive disorder
+Eu33.11	[X]Recurrent episodes of depressive reaction
+Eu33.12	[X]Recurrent episodes of psychogenic depression
+Eu33.13	[X]Recurrent episodes of reactive depression
+Eu33.14	[X]Seasonal depressive disorder
+Eu33.15	[X]SAD - Seasonal affective disorder
+Eu33000	[X]Recurrent depressive disorder, current episode mild
+Eu33100	[X]Recurrent depressive disorder, current episode moderate
+Eu33200	[X]Recurr depress disorder cur epi severe without psyc sympt
+Eu33211	[X]Endogenous depression without psychotic symptoms
+Eu33212	[X]Major depression, recurrent without psychotic symptoms
+Eu33214	[X]Vital depression, recurrent without psychotic symptoms
+Eu33300	[X]Recurrent depress disorder cur epi severe with psyc symp
+Eu33311	[X]Endogenous depression with psychotic symptoms
+Eu33313	[X]Recurr severe episodes/major depression+psychotic symptom
+Eu33314	[X]Recurr severe episodes/psychogenic depressive psychosis
+Eu33315	[X]Recurrent severe episodes of psychotic depression
+Eu33316	[X]Recurrent severe episodes/reactive depressive psychosis
+Eu33400	[X]Recurrent depressive disorder, currently in remission
+Eu33y00	[X]Other recurrent depressive disorders
+Eu33z00	[X]Recurrent depressive disorder, unspecified
+Eu33z11	[X]Monopolar depression NOS
+Eu34.00	[X]Persistent mood affective disorders
+Eu34100	[X]Dysthymia
+Eu34111	[X]Depressive neurosis
+Eu34113	[X]Neurotic depression
+Eu34114	[X]Persistant anxiety depression
+Eu34y00	[X]Other persistent mood affective disorders
+Eu34z00	[X]Persistent mood affective disorder, unspecified
+Eu3y.00	[X]Other mood affective disorders
+Eu3y000	[X]Other single mood affective disorders
+Eu3y011	[X]Mixed affective episode
+Eu3y100	[X]Other recurrent mood affective disorders
+Eu3y111	[X]Recurrent brief depressive episodes
+Eu3yy00	[X]Other specified mood affective disorders
+Eu3z.00	[X]Unspecified mood affective disorder
+Eu41200	[X]Mixed anxiety and depressive disorder
+Eu41211	[X]Mild anxiety depression
+Eu53011	[X]Postnatal depression NOS
+Eu53012	[X]Postpartum depression NOS
+Eu92000	[X]Depressive conduct disorder
+R007z13	[D]Postoperative depression
+ZV11100	[V]Personal history of affective disorder
+E03y.99
+E03y399
+E04..99
+E10..98
+E10..99
+E101100
+E101300
+E102300
+E105100
+E105300
+E106.11
+E107.99
+E12..99
+E141000
+E141z00
+Eu20512
+Eu20y11
+Eu23111
+Eu60012
+ZS7C611
+13Y2.00
+1464.00
+146H.00
+1B1E.00
+1BH..00
+1BH..11
+1BH0.00
+1BH1.00
+1BH2.00
+1BH3.00
+212W.00
+212X.00
+225E.00
+225F.00
+285..11
+286..11
+8G13100
+8HHs.00
+E03y300
+E040.00
+E040.11
+E1...00
+E10..00
+E100.00
+E100.11
+E100000
+E100100
+E100200
+E100300
+E100400
+E100500
+E100z00
+E101.00
+E101000
+E101200
+E101400
+E101500
+E101z00
+E102.00
+E102000
+E102100
+E102200
+E102400
+E102500
+E102z00
+E103.00
+E103000
+E103100
+E103200
+E103300
+E103400
+E103500
+E103z00
+E104.00
+E104.11
+E105.00
+E105000
+E105200
+E105400
+E105500
+E105z00
+E106.00
+E107.00
+E107.11
+E107000
+E107100
+E107200
+E107300
+E107400
+E107500
+E107z00
+E10y.00
+E10y.11
+E10y000
+E10y100
+E10yz00
+E10z.00
+E11..00
+E11z.00
+E11z000
+E11zz00
+E12..00
+E120.00
+E121.00
+E121.11
+E122.00
+E123.00
+E123.11
+E12y.00
+E12y000
+E12yz00
+E12z.00
+E13..00
+E13..11
+E131.00
+E132.00
+E133.00
+E133.11
+E134.00
+E13y.00
+E13y000
+E13y100
+E13yz00
+E13z.00
+E13z.11
+E14..00
+E141.00
+E141.11
+E141100
+E14y.00
+E14y000
+E14y100
+E14yz00
+E14z.00
+E14z.11
+E1y..00
+E1z..00
+E210.00
+E212.00
+E212000
+E212200
+E212z00
+Eu03.11
+Eu04.00
+Eu04.11
+Eu04.12
+Eu04.13
+Eu05212
+Eu05y11
+Eu0z.12
+Eu2..00
+Eu20.00
+Eu20000
+Eu20011
+Eu20100
+Eu20111
+Eu20200
+Eu20211
+Eu20212
+Eu20213
+Eu20214
+Eu20300
+Eu20311
+Eu20400
+Eu20500
+Eu20511
+Eu20600
+Eu20y00
+Eu20y12
+Eu20y13
+Eu20z00
+Eu21.00
+Eu21.11
+Eu21.12
+Eu21.13
+Eu21.14
+Eu21.15
+Eu21.16
+Eu21.17
+Eu21.18
+Eu22.00
+Eu22000
+Eu22011
+Eu22012
+Eu22013
+Eu22014
+Eu22015
+Eu22100
+Eu22111
+Eu22200
+Eu22300
+Eu22y00
+Eu22y12
+Eu22y13
+Eu22z00
+Eu23000
+Eu23011
+Eu23012
+Eu23100
+Eu23112
+Eu23200
+Eu23211
+Eu23212
+Eu23214
+Eu23300
+Eu23312
+Eu23z11
+Eu23z12
+Eu24.11
+Eu25.00
+Eu25000
+Eu25011
+Eu25012
+Eu25100
+Eu25111
+Eu25112
+Eu25200
+Eu25211
+Eu25212
+Eu25y00
+Eu25z00
+Eu25z11
+Eu26.00
+Eu2y.00
+Eu2y.11
+Eu2z.00
+Eu2z.11
+Eu3z.11
+Eu44.11
+Eu44.13
+Eu44.14
+Eu53111
+Eu60000
+Eu60011
+Eu60014
+Eu60100
+Eu84013
+Eu84111
+Eu84312
+Eu84313
+Eu84314
+Eu84512
+F481K00
+R001.00
+R001000
+R001100
+R001200
+R001300
+R001400
+R001z00
+Ryu5300
+ZV11000
