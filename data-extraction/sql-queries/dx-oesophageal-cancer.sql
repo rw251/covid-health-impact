@@ -5,7 +5,7 @@ SET NOCOUNT ON;
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
 declare @dt datetime = '2015-01-01'
-declare @dtEnd datetime = '2020-05-13';
+declare @dtEnd datetime = '2020-05-14';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
         values(@dt)
@@ -17,7 +17,7 @@ END;
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select PatID, min(EntryDate) as FirstDiagnosis from SIR_ALL_Records_Narrow
 	where ReadCode in ('B10..00','B100.00','B101.00','B102.00','B103.00','B103.99','B104.00','B104.99','B105.00','B105.99','B106.00','B107.00','B10y.00','B10z.00','B10z.11','B10..','B100.','B101.','B102.','B103.','B104.','B105.','B106.','B107.','B10y.','B10z.')
-	and EntryDate <= '2020-05-13'
+	and EntryDate <= '2020-05-14'
 	group by PatID
 ) sub 
 where FirstDiagnosis >= '2015-01-01'
@@ -29,7 +29,7 @@ select EntryDate, count(*) as num into #Prevalence from (
 	select PatID, EntryDate from SIR_ALL_Records_Narrow
 	where ReadCode in ('B10..00','B100.00','B101.00','B102.00','B103.00','B103.99','B104.00','B104.99','B105.00','B105.99','B106.00','B107.00','B10y.00','B10z.00','B10z.11','B10..','B100.','B101.','B102.','B103.','B104.','B105.','B106.','B107.','B10y.','B10z.')
 	and EntryDate >= '2015-01-01'
-	and EntryDate <= '2020-05-13'
+	and EntryDate <= '2020-05-14'
 	group by PatID, EntryDate
 ) sub 
 group by EntryDate
