@@ -35,6 +35,21 @@ processData <- function(dat) {
   return(dat2)
 }
 
+getAverageOfPreviousYears = function(dat) {
+  return(
+    rbind(
+      as.data.frame(
+        dat %>% filter(year != "2020") %>% group_by(month) %>% summarise(inc = mean(inc),
+        prev=mean(prev),
+        year=1)
+      ), 
+      as.data.frame(
+        dat %>% filter(year=="2020") %>% group_by(month) %>% select(month, inc, prev) %>% mutate(year=2)
+      )
+    )
+  )
+}
+
 getIncidencePlot <- function(data, lowerCaseCondition, title = paste("Incidence of", lowerCaseCondition, "each month between 2015 and 2020")) {
   return(data %>% ggplot(aes(x=month, y=inc, group=year, color=year)) + geom_line() + 
     labs(x = "Time (month)", y = "Incidence", color = "Year", title = title) + 
@@ -107,9 +122,10 @@ for(file in list.files(DATA_DIRECTORY, pattern = "^dx")) {
 
   # Process the data into the correct format
   processedData <- processData(rawData)
+  averagedData <- getAverageOfPreviousYears(processedData)
 
   drawIncidencePlot(processedData, conditionNameLowerCase, conditionNameDashed)
   drawPrevalencePlot(processedData, conditionNameLowerCase, conditionNameDashed)
 
-  drawCombinedPlot(processedData, conditionNameLowerCase, conditionNameDashed)
+  drawCombinedPlot(averagedData, conditionNameLowerCase, conditionNameDashed)
 }
