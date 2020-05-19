@@ -1,14 +1,7 @@
-FROM ROGER
+Codesets for:
+  Bi-polar
+  Hypertension
+  MI
+  Heart Failure
 
-DX categories to include:
-
-1.  Anxiety disorders, depression, schizophrenia & related disorders
-2.  Self-harm (NB: this is a behaviour rather than a diagnosable disease)
-
-Perhaps it would also be worthwhile examination of trends in GP/practice nurse prescribing of the following psychotropic medication types:
- 
-·       Antidepressants, antipsychotics, benzodiazepines
-
-FROM DARREN
-
-Cancers
+Use algorithm to exclude reviews from JUST prevalence
