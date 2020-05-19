@@ -1,1 +1,15 @@
-B49..00
+B49..00	Malignant neoplasm of urinary bladder
+B49z.00	Malignant neoplasm of urinary bladder NOS
+B49y.00	Malignant neoplasm of other site of urinary bladder
+B49y000	Malignant neoplasm, overlapping lesion of bladder
+B495.00	Malignant neoplasm of bladder neck
+B494.00	Malignant neoplasm of posterior wall of urinary bladder
+B493.00	Malignant neoplasm of anterior wall of urinary bladder
+B492.00	Malignant neoplasm of lateral wall of urinary bladder
+B491.00	Malignant neoplasm of dome of urinary bladder
+B490.00	Malignant neoplasm of trigone of urinary bladder
+B498.00	Local recurrence of malignant tumour of urinary bladder
+B497.00	Malignant neoplasm of urachus
+B496.00	Malignant neoplasm of ureteric orifice
+B581100	Secondary malignant neoplasm of bladder
+ByuC500	[X]Secondary malignant neoplasm of bladder and other and unspecified urinary organs

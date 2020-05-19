@@ -1,0 +1,20 @@
+{
+  "includeTerms": [
+    "malignant neoplasm bladder",
+    "malignant neoplasm of urachus",
+    "malignant tumour bladder",
+    "malignant neoplasm ureteric orifice"
+  ],
+  "excludeTerms": [
+    "screening",
+    "history of",
+    "fh"
+  ],
+  "terminology": "Readv2",
+  "createdBy": {
+    "name": "Richard Williams",
+    "email": "1234richardwilliams@gmail.com"
+  },
+  "createdOn": "2020-05-19T14:23:26.817Z",
+  "lastUpdated": "2020-05-19T14:23:52.432Z"
+}
