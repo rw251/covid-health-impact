@@ -1,3 +1,6 @@
+-- Template for the groups of conditions
+-- E.g. all malignant cancers, or all cvd
+
 --Just want the output, not the messages
 SET NOCOUNT ON; 
 
@@ -15,10 +18,7 @@ END;
 -- Populate incidence table - only count those occurrences
 -- of the code where it is the first time the patient has had it
 select FirstDiagnosis, count(*) as num into #Incidence from (
-	select PatID, min(EntryDate) as FirstDiagnosis from SIR_ALL_Records_Narrow
-	where ReadCode in ('{{CLINICAL_CODES}}')
-	and EntryDate <= '{{REPORT_DATE}}'
-	group by PatID
+	{{TEMPLATE_PARTS}}
 ) sub 
 where FirstDiagnosis >= '2015-01-01'
 group by FirstDiagnosis
@@ -27,7 +27,7 @@ group by FirstDiagnosis
 -- code irrespective of whether it is the first time the patient has had it
 select EntryDate, count(*) as num into #Prevalence from (
 	select PatID, EntryDate from SIR_ALL_Records_Narrow
-	where ReadCode in ('{{CLINICAL_CODES}}')
+	where ReadCode in ('{{ALL_CLINICAL_CODES}}')
 	and EntryDate >= '2015-01-01'
 	and EntryDate <= '{{REPORT_DATE}}'
 	group by PatID, EntryDate
