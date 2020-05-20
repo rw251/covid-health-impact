@@ -36,8 +36,8 @@ const getCodeStringAndNames = (directory, filename) => {
   }
 }
 
-const createQueryFromFile = ({reportDateString, filename}) => {
-  const { codeString, nameDashed, nameCapitalCase, nameLowerSpaced } = getCodeStringAndNames(CODESET_DIR, filename);
+const createQueryFromFile = ({reportDateString, filename, directory = CODESET_DIR, group = ''}) => {
+  const { codeString, nameDashed, nameCapitalCase, nameLowerSpaced } = getCodeStringAndNames(directory, filename);
   
   const template = loadTemplate();
   let query = template;  
@@ -47,7 +47,7 @@ const createQueryFromFile = ({reportDateString, filename}) => {
   query = query.replace(/\{\{CLINICAL_CODES\}\}/g, codeString);
   query = query.replace(/\{\{REPORT_DATE\}\}/g, reportDateString);
 
-  writeFileSync(join(__dirname, 'sql-queries', `dx-${nameDashed}.sql`), query);
+  writeFileSync(join(__dirname, 'sql-queries', `dx-${group}-${nameDashed}.sql`), query);
 }
 
 const getNonJSONInDir = (directory) => readdirSync(directory)
@@ -59,8 +59,9 @@ const getNonJSONInDir = (directory) => readdirSync(directory)
 const createQueriesFromDirectory = ({reportDateString, dirname}) => {
   const subDirectory = join(CODESET_DIR, dirname);
   const { nameCapitalCase, nameDashed } = getNames(dirname);
-  const codeFiles = getNonJSONInDir(join(CODESET_DIR, dirname))
-    .map(filename => getCodeStringAndNames(subDirectory, filename));
+  const files = getNonJSONInDir(join(CODESET_DIR, dirname));
+  const codeFiles = files.map(filename => getCodeStringAndNames(subDirectory, filename));
+  files.forEach(filename => createQueryFromFile({reportDateString, filename, directory: subDirectory, group: nameDashed }));
   const mainQuery = codeFiles
     .map(x => {
       let query = loadGroupTemplatePart();
