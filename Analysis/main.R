@@ -89,6 +89,22 @@ getAverageOfPreviousYears = function(dat) {
   return(rbind(previousYearsAveraged, thisYear))
 }
 
+getNakedIncidencePlot <- function(data, timeUnit = getTimeUnit(data)) {
+  return(data %>% ggplot(aes_string(x=timeUnit, y='inc', group='year', color='year'))
+    + geom_ribbon(aes(ymax = inc_CI_upper, ymin = pmax(0, inc_CI_lower)), fill='black',alpha=0.1,colour=NA)
+    + geom_line()
+    + theme(
+        legend.position = "none",
+        panel.grid = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.background = element_blank(),
+        plot.margin = unit(c(0, 0, 0, 0), "cm")
+    )
+  )
+}
+
 getIncidencePlot <- function(data, lowerCaseCondition, timeUnit = getTimeUnit(data), title = paste("Incidence of", lowerCaseCondition, "each", timeUnit, "between 2015 and 2020")) {
 
   # line from 2020 line upwards by 10
@@ -119,6 +135,22 @@ drawIncidencePlot <- function(data, lowerCaseCondition, conditionNameDashed, dir
   ggsave(file.path(directory, plotFilename),plot + expand_limits(y = 0))
 }
 
+getNakedPrevalencePlot <- function(data, timeUnit = getTimeUnit(data)) {
+  return(data %>% ggplot(aes_string(x=timeUnit, y='prev', group='year', color='year'))
+    + geom_ribbon(aes(ymax = prev_CI_upper, ymin = pmax(0, prev_CI_lower), fill="95% CI of 2015-2019"), fill='black',alpha=0.1,colour=NA)
+    + geom_line()
+    + theme(
+        legend.position = "none",
+        panel.grid = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.background = element_blank(),
+        plot.margin = unit(c(0, 0, 0, 0), "cm")
+    )
+  )
+}
+
 getPrevalencePlot <- function(data, lowerCaseCondition, timeUnit = getTimeUnit(data), title = paste("Prevalence of", lowerCaseCondition, "each", timeUnit, "between 2015 and 2020")) {
   # line from 2020 line upwards by 10
   maxPrev <- max(data$prev)
@@ -132,7 +164,7 @@ getPrevalencePlot <- function(data, lowerCaseCondition, timeUnit = getTimeUnit(d
   return(data %>% ggplot(aes_string(x=timeUnit, y='prev', group='year', color='year'))
     + geom_ribbon(aes(ymax = prev_CI_upper, ymin = pmax(0, prev_CI_lower), fill="95% CI of 2015-2019"), fill='black',alpha=0.1,colour=NA)
     + geom_line(size=1.25)
-    + labs(x = paste("Time (", timeUnit, ")"), y = "Prevalence", color = "Year", title = title)
+    # + labs(x = paste("Time (", timeUnit, ")"), y = "Prevalence", color = "Year", title = title)
     + theme_light()
 
     # Events
@@ -274,11 +306,14 @@ proccessFile <- function(file) {
   drawCombinedPlotWithWeekAndMonth(averagedDataByWeek, averagedDataByMonth, conditionNameLowerCase, conditionNameDashed)
 }
 
-processCancerFiles <- function() {
+processCancerFiles <- function(directory = OUTPUT_DIRECTORY) {
+  i<-1;
+  myplots <- vector('list', 5)
   # Cancer individual files
-  for(file in list.files(DATA_DIRECTORY, pattern = "^dx-cancer")) {
+  for(file in list.files(DATA_DIRECTORY, pattern = "^dx-cancer-")) {
+
     conditionNameDashed <- substr(file, 4, nchar(file) - 4)
-    conditionNameParts <- strsplit(conditionNameDashed, '-')[[1]]
+    conditionNameParts <- strsplit(gsub('cancer-', '', conditionNameDashed), '-')[[1]]
     conditionNameLowerCase <- paste(conditionNameParts, collapse=" ")
     conditionNameUpperCase <- paste(toupper(substr(conditionNameParts,0,1)), substr(conditionNameParts,2,nchar(conditionNameParts)), sep="", collapse=" ")
 
@@ -293,20 +328,47 @@ processCancerFiles <- function() {
     averagedDataByMonth <- getAverageOfPreviousYears(processedDataGroupedByMonth)
     averagedDataByWeek <- getAverageOfPreviousYears(processedDataGroupedByWeek)
 
-    incPlotByWeek <- getIncidencePlot(dataByWeek, conditionNameLowerCase, title = 'Incidence')
-    incPlotByMonth <- getIncidencePlot(dataByMonth, conditionNameLowerCase, title = 'Incidence')
-    prevPlotByWeek <- getPrevalencePlot(dataByWeek, conditionNameLowerCase, title = 'Prevalence')
-    prevPlotByMonth <- getPrevalencePlot(dataByMonth, conditionNameLowerCase, title = 'Prevalence')
+    incPlotByWeek <- getNakedIncidencePlot(averagedDataByWeek)
+    incPlotByMonth <- getNakedIncidencePlot(averagedDataByMonth)
+    prevPlotByWeek <- getNakedPrevalencePlot(averagedDataByWeek)
+    prevPlotByMonth <- getNakedPrevalencePlot(averagedDataByMonth)
+    
+    sub_plot_row_1 <- plot_grid(incPlotByWeek + expand_limits(y = 0), prevPlotByWeek + expand_limits(y = 0))
+    # sub_plot_row_2 <- plot_grid(incPlotByMonth + labs(x="", y="") + expand_limits(y = 0) + theme(legend.position="none"), prevPlotByMonth + labs(x="", y="") + expand_limits(y = 0) + theme(legend.position="none"))
+    title <- ggdraw() + 
+      draw_label(
+        conditionNameUpperCase,
+        fontface = 'bold',
+        x = 0,
+        size=8,
+        hjust = 0
+      ) +
+      theme(
+        # add margin on the left of the drawing canvas,
+        # so title is aligned with left edge of first plot
+        plot.margin = margin(0, 0, 0, 20)
+      )
+    sub_plot <- plot_grid(title, sub_plot_row_1, ncol=1,
+    # rel_heights values control vertical title margins
+    rel_heights = c(0.1, 1))
 
-    plot_row_1 <- plot_grid(incPlotByWeek + expand_limits(y = 0), prevPlotByWeek + expand_limits(y = 0), labels = "AUTO")
-    plot_row_2 <- plot_grid(incPlotByMonth + expand_limits(y = 0), prevPlotByMonth + expand_limits(y = 0), labels = "AUTO")
+    if(i %% 4==1) {      
+      myplots[[1 + i %/% 4]] = vector('list', 4)
+    }
+    index<-i%%4
+    if(index == 0) index = 4
+    myplots[[1 + ((i-1) %/% 4)]][[index]] = sub_plot
+    # if(i < 4) myplots[[i]] <-sub_plot_row_1
+    i<-i+1
+    
   }
   # now add the title
   title <- ggdraw() + 
     draw_label(
-      "Presenting incidence and prevalence of all malignant cancers 2015 to 2020",
+      "Weekly presenting incidence and prevalence of all malignant cancers 2015 to 2020",
       fontface = 'bold',
       x = 0,
+      size=12,
       hjust = 0
     ) +
     theme(
@@ -314,11 +376,101 @@ processCancerFiles <- function() {
       # so title is aligned with left edge of first plot
       plot.margin = margin(0, 0, 0, 7)
     )
+  plot_row_1 <- plot_grid(myplots[[1]][[1]],myplots[[1]][[2]],myplots[[1]][[3]],myplots[[1]][[4]],ncol=4)
+  plot_row_2 <- plot_grid(myplots[[2]][[1]],myplots[[2]][[2]],myplots[[2]][[3]],myplots[[2]][[4]],ncol=4)
+  plot_row_3 <- plot_grid(myplots[[3]][[1]],myplots[[3]][[2]],myplots[[3]][[3]],myplots[[3]][[4]],ncol=4)
+  plot_row_4 <- plot_grid(myplots[[4]][[1]],myplots[[4]][[2]],myplots[[4]][[3]],myplots[[4]][[4]],ncol=4)
+  plot_row_5 <- plot_grid(myplots[[5]][[1]],myplots[[5]][[2]],myplots[[5]][[3]],myplots[[5]][[4]],ncol=4)
   plot <- plot_grid(
-    title, plot_row_1, plot_row_2,
+    title, plot_row_1,plot_row_2,plot_row_3,plot_row_4,plot_row_5,
     ncol = 1,
     # rel_heights values control vertical title margins
-    rel_heights = c(0.1, 1, 1)
+    rel_heights = c(0.4, 1, 1, 1, 1, 1)
+  )
+
+  plotFilename <- paste(conditionNameDashed, 'png', sep=".")
+  save_plot(file.path(directory, plotFilename), plot, ncol = 2, base_height = 5)
+}
+
+processCardiovascularFiles <- function(directory = OUTPUT_DIRECTORY) {
+  i<-1;
+  myplots <- vector('list', 4)
+  # Cancer individual files
+  for(file in list.files(DATA_DIRECTORY, pattern = "^dx-cardiovascular-")) {
+
+    conditionNameDashed <- substr(file, 4, nchar(file) - 4)
+    conditionNameParts <- strsplit(gsub('cardiovascular-', '', conditionNameDashed), '-')[[1]]
+    conditionNameLowerCase <- paste(conditionNameParts, collapse=" ")
+    conditionNameUpperCase <- paste(toupper(substr(conditionNameParts,0,1)), substr(conditionNameParts,2,nchar(conditionNameParts)), sep="", collapse=" ")
+
+    cat('Doing ', conditionNameLowerCase, '\n')
+    # load the file into R
+    rawData <- loadDataFromFile(file)
+
+    # Process the data into the correct format
+    processedData <- processData(rawData)
+    processedDataGroupedByWeek = processedData[[1]]
+    processedDataGroupedByMonth = processedData[[2]]
+    averagedDataByMonth <- getAverageOfPreviousYears(processedDataGroupedByMonth)
+    averagedDataByWeek <- getAverageOfPreviousYears(processedDataGroupedByWeek)
+
+    incPlotByWeek <- getNakedIncidencePlot(averagedDataByWeek)
+    incPlotByMonth <- getNakedIncidencePlot(averagedDataByMonth)
+    prevPlotByWeek <- getNakedPrevalencePlot(averagedDataByWeek)
+    prevPlotByMonth <- getNakedPrevalencePlot(averagedDataByMonth)
+    
+    sub_plot_row_1 <- plot_grid(incPlotByWeek + expand_limits(y = 0), prevPlotByWeek + expand_limits(y = 0))
+    # sub_plot_row_2 <- plot_grid(incPlotByMonth + labs(x="", y="") + expand_limits(y = 0) + theme(legend.position="none"), prevPlotByMonth + labs(x="", y="") + expand_limits(y = 0) + theme(legend.position="none"))
+    title <- ggdraw() + 
+      draw_label(
+        conditionNameUpperCase,
+        fontface = 'bold',
+        x = 0,
+        size=8,
+        hjust = 0
+      ) +
+      theme(
+        # add margin on the left of the drawing canvas,
+        # so title is aligned with left edge of first plot
+        plot.margin = margin(0, 0, 0, 20)
+      )
+    sub_plot <- plot_grid(title, sub_plot_row_1, ncol=1,
+    # rel_heights values control vertical title margins
+    rel_heights = c(0.1, 1))
+
+    if(i %% 2==1) {      
+      myplots[[1 + i %/% 2]] = vector('list', 2)
+    }
+    index<-i%%2
+    if(index == 0) index = 2
+    myplots[[1 + ((i-1) %/% 2)]][[index]] = sub_plot
+    # if(i < 2) myplots[[i]] <-sub_plot_row_1
+    i<-i+1
+    
+  }
+  # now add the title
+  title <- ggdraw() + 
+    draw_label(
+      "Weekly presenting incidence and prevalence of all cardiovascular diagnoses 2015 to 2020",
+      fontface = 'bold',
+      x = 0,
+      size=12,
+      hjust = 0
+    ) +
+    theme(
+      # add margin on the left of the drawing canvas,
+      # so title is aligned with left edge of first plot
+      plot.margin = margin(0, 0, 0, 7)
+    )
+  plot_row_1 <- plot_grid(myplots[[1]][[1]],myplots[[1]][[2]])
+  plot_row_2 <- plot_grid(myplots[[2]][[1]],myplots[[2]][[2]])
+  plot_row_3 <- plot_grid(myplots[[3]][[1]],myplots[[3]][[2]])
+  plot_row_4 <- plot_grid(myplots[[4]][[1]],myplots[[4]][[2]])
+  plot <- plot_grid(
+    title, plot_row_1,plot_row_2,plot_row_3,plot_row_4,
+    ncol = 1,
+    # rel_heights values control vertical title margins
+    rel_heights = c(0.4, 1, 1, 1, 1)
   )
 
   plotFilename <- paste(conditionNameDashed, 'png', sep=".")
@@ -331,3 +483,4 @@ for(file in list.files(DATA_DIRECTORY, pattern = "^dx-GROUP")) {
 }
 
 processCancerFiles();
+processCardiovascularFiles();
