@@ -26,11 +26,11 @@ group by FirstDiagnosis
 -- Populate prevalence table - count all occurrences of the 
 -- code irrespective of whether it is the first time the patient has had it
 select EntryDate, count(*) as num into #Prevalence from (
-	select PatID, EntryDate from SIR_ALL_Records_Narrow
+	select NHSNo, EntryDate from journal
 	where ReadCode in ('{{ALL_CLINICAL_CODES}}')
 	and EntryDate >= '2015-01-01'
 	and EntryDate <= '{{REPORT_DATE}}'
-	group by PatID, EntryDate
+	group by NHSNo, EntryDate
 ) sub 
 group by EntryDate
 
