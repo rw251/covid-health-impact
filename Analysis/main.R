@@ -74,11 +74,17 @@ getAverageOfPreviousYears = function(dat) {
     %>% group_by_(.dots = list(timeUnit)) 
     %>% summarise(incSD=sd(inc, na.rm=TRUE), prevSD=sd(prev, na.rm=TRUE), inc = mean(inc), prev=mean(prev),n=n(), year='2015-2019 average')
   )
+  prevSem <- previousYearsAveraged$prevSD/sqrt(previousYearsAveraged$n-1)
+  incSem <- previousYearsAveraged$incSD/sqrt(previousYearsAveraged$n-1)
+  previousYearsAveraged$prev_CI_lower <- previousYearsAveraged$prev + qt((1-0.95)/2, df=previousYearsAveraged$n-1)*prevSem
+  previousYearsAveraged$prev_CI_upper <- previousYearsAveraged$prev - qt((1-0.95)/2, df=previousYearsAveraged$n-1)*prevSem
+  previousYearsAveraged$inc_CI_lower <- previousYearsAveraged$inc + qt((1-0.95)/2, df=previousYearsAveraged$n-1)*incSem
+  previousYearsAveraged$inc_CI_upper <- previousYearsAveraged$inc - qt((1-0.95)/2, df=previousYearsAveraged$n-1)*incSem
   thisYear<-as.data.frame(dat
     %>% filter(year=="2020") 
     %>% group_by_(.dots = list(timeUnit)) 
     %>% select_(.dots = list(timeUnit, 'inc', 'prev')) 
-    %>% mutate(year='2020', incSD=0, prevSD=0, n =1)
+    %>% mutate(year='2020', incSD=0, prevSD=0, n =1, prev_CI_lower=0,prev_CI_upper=0,inc_CI_lower=0,inc_CI_upper=0)
   )
   return(rbind(previousYearsAveraged, thisYear))
 }
@@ -95,7 +101,7 @@ getIncidencePlot <- function(data, lowerCaseCondition, timeUnit = getTimeUnit(da
   eventXPosition = paste(timeUnit, 'X', sep='');
 
   return(data %>% ggplot(aes_string(x=timeUnit, y='inc', group='year', color='year'))
-    + geom_ribbon(aes(ymax = inc + incSD, ymin = pmax(0, inc - incSD)), fill='black',alpha=0.1,colour=NA)
+    + geom_ribbon(aes(ymax = inc_CI_upper, ymin = pmax(0, inc_CI_lower)), fill='black',alpha=0.1,colour=NA)
     + geom_line()
     + labs(x = paste("Time (", timeUnit, ")"), y = "Incidence", color = "Year", title = title)
     + theme_light()
@@ -124,7 +130,7 @@ getPrevalencePlot <- function(data, lowerCaseCondition, timeUnit = getTimeUnit(d
   eventXPosition = paste(timeUnit, 'X', sep='');
 
   return(data %>% ggplot(aes_string(x=timeUnit, y='prev', group='year', color='year'))
-    + geom_ribbon(aes(ymax = prev + prevSD, ymin = pmax(0, prev - prevSD), fill="95% CI of 2015-2019"), fill='black',alpha=0.1,colour=NA)
+    + geom_ribbon(aes(ymax = prev_CI_upper, ymin = pmax(0, prev_CI_lower), fill="95% CI of 2015-2019"), fill='black',alpha=0.1,colour=NA)
     + geom_line(size=1.25)
     + labs(x = paste("Time (", timeUnit, ")"), y = "Prevalence", color = "Year", title = title)
     + theme_light()
@@ -224,9 +230,26 @@ drawCombinedPlot <- function(data, conditionNameLowerCase, conditionNameDashed, 
 # see https://stackoverflow.com/a/38605858/596639
 pdf(NULL)
 
-# For each file in data directory that starts with "dx"
-for(file in list.files(DATA_DIRECTORY, pattern = "^dx")) {
+proccessGroupFile <- function(file) {
+  conditionNameDashed <- substr(file, 4, nchar(file) - 4)
+  conditionNameParts <- strsplit(conditionNameDashed, '-')[[1]]
+  conditionNameLowerCase <- paste(conditionNameParts, collapse=" ")
 
+  cat('Doing ', conditionNameLowerCase, '\n')
+  # load the file into R
+  rawData <- loadDataFromFile(file)
+
+  # Process the data into the correct format
+  processedData <- processData(rawData)
+  processedDataGroupedByWeek = processedData[[1]]
+  processedDataGroupedByMonth = processedData[[2]]
+  averagedDataByMonth <- getAverageOfPreviousYears(processedDataGroupedByMonth)
+  averagedDataByWeek <- getAverageOfPreviousYears(processedDataGroupedByWeek)
+
+  drawCombinedPlotWithWeekAndMonth(averagedDataByWeek, averagedDataByMonth, conditionNameLowerCase, conditionNameDashed)
+}
+
+proccessFile <- function(file) {
   conditionNameDashed <- substr(file, 4, nchar(file) - 4)
   conditionNameParts <- strsplit(conditionNameDashed, '-')[[1]]
   conditionNameLowerCase <- paste(conditionNameParts, collapse=" ")
@@ -250,3 +273,61 @@ for(file in list.files(DATA_DIRECTORY, pattern = "^dx")) {
   # drawCombinedPlot(averagedDataByWeek, conditionNameLowerCase, conditionNameDashed)
   drawCombinedPlotWithWeekAndMonth(averagedDataByWeek, averagedDataByMonth, conditionNameLowerCase, conditionNameDashed)
 }
+
+processCancerFiles <- function() {
+  # Cancer individual files
+  for(file in list.files(DATA_DIRECTORY, pattern = "^dx-cancer")) {
+    conditionNameDashed <- substr(file, 4, nchar(file) - 4)
+    conditionNameParts <- strsplit(conditionNameDashed, '-')[[1]]
+    conditionNameLowerCase <- paste(conditionNameParts, collapse=" ")
+    conditionNameUpperCase <- paste(toupper(substr(conditionNameParts,0,1)), substr(conditionNameParts,2,nchar(conditionNameParts)), sep="", collapse=" ")
+
+    cat('Doing ', conditionNameLowerCase, '\n')
+    # load the file into R
+    rawData <- loadDataFromFile(file)
+
+    # Process the data into the correct format
+    processedData <- processData(rawData)
+    processedDataGroupedByWeek = processedData[[1]]
+    processedDataGroupedByMonth = processedData[[2]]
+    averagedDataByMonth <- getAverageOfPreviousYears(processedDataGroupedByMonth)
+    averagedDataByWeek <- getAverageOfPreviousYears(processedDataGroupedByWeek)
+
+    incPlotByWeek <- getIncidencePlot(dataByWeek, conditionNameLowerCase, title = 'Incidence')
+    incPlotByMonth <- getIncidencePlot(dataByMonth, conditionNameLowerCase, title = 'Incidence')
+    prevPlotByWeek <- getPrevalencePlot(dataByWeek, conditionNameLowerCase, title = 'Prevalence')
+    prevPlotByMonth <- getPrevalencePlot(dataByMonth, conditionNameLowerCase, title = 'Prevalence')
+
+    plot_row_1 <- plot_grid(incPlotByWeek + expand_limits(y = 0), prevPlotByWeek + expand_limits(y = 0), labels = "AUTO")
+    plot_row_2 <- plot_grid(incPlotByMonth + expand_limits(y = 0), prevPlotByMonth + expand_limits(y = 0), labels = "AUTO")
+  }
+  # now add the title
+  title <- ggdraw() + 
+    draw_label(
+      "Presenting incidence and prevalence of all malignant cancers 2015 to 2020",
+      fontface = 'bold',
+      x = 0,
+      hjust = 0
+    ) +
+    theme(
+      # add margin on the left of the drawing canvas,
+      # so title is aligned with left edge of first plot
+      plot.margin = margin(0, 0, 0, 7)
+    )
+  plot <- plot_grid(
+    title, plot_row_1, plot_row_2,
+    ncol = 1,
+    # rel_heights values control vertical title margins
+    rel_heights = c(0.1, 1, 1)
+  )
+
+  plotFilename <- paste(conditionNameDashed, 'png', sep=".")
+  save_plot(file.path(directory, plotFilename), plot, ncol = 2, base_height = 5)
+}
+
+# Do grouped ones first (purely because they're the first ones i look at)
+for(file in list.files(DATA_DIRECTORY, pattern = "^dx-GROUP")) {
+  proccessGroupFile(file);  
+}
+
+processCancerFiles();
