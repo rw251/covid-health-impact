@@ -5,7 +5,7 @@ SET NOCOUNT ON;
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
 declare @dt datetime = '2015-01-01'
-declare @dtEnd datetime = '2020-05-20';
+declare @dtEnd datetime = '2020-05-21';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
         values(@dt)
@@ -17,7 +17,7 @@ END;
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select PatID, min(EntryDate) as FirstDiagnosis from SIR_ALL_Records_Narrow
 	where ReadCode in ('G573.00','G573z00','G573700','G573500','G573400','G573300','G573200','G573000','G573900','G573800','G573600','G573100','G573.','G573z','G5737','G5735','G5734','G5733','G5732','G5730','G5739','G5738','G5736','G5731')
-	and EntryDate <= '2020-05-20'
+	and EntryDate <= '2020-05-21'
 	group by PatID
 ) sub 
 where FirstDiagnosis >= '2015-01-01'
@@ -29,7 +29,7 @@ select EntryDate, count(*) as num into #Prevalence from (
 	select PatID, EntryDate from SIR_ALL_Records_Narrow
 	where ReadCode in ('G573.00','G573z00','G573700','G573500','G573400','G573300','G573200','G573000','G573900','G573800','G573600','G573100','G573.','G573z','G5737','G5735','G5734','G5733','G5732','G5730','G5739','G5738','G5736','G5731')
 	and EntryDate >= '2015-01-01'
-	and EntryDate <= '2020-05-20'
+	and EntryDate <= '2020-05-21'
 	group by PatID, EntryDate
 ) sub 
 group by EntryDate

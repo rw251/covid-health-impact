@@ -5,7 +5,7 @@ SET NOCOUNT ON;
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
 declare @dt datetime = '2015-01-01'
-declare @dtEnd datetime = '2020-05-20';
+declare @dtEnd datetime = '2020-05-21';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
         values(@dt)
@@ -17,7 +17,7 @@ END;
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select PatID, min(EntryDate) as FirstDiagnosis from SIR_ALL_Records_Narrow
 	where ReadCode in ('G2...00','G2...11','G2z..00','G2y..00','G28..00','G26..00','G26..11','G25..00','G25..11','G251.00','G250.00','G24..00','G24z.00','G24zz00','G24z000','G244.00','G241.00','G241z00','G241000','G240.00','G240z00','G240000','G20..11','G20..00','G20..12','G20z.00','G20z.11','G203.00','G202.00','G201.00','G200.00','Gyu2.00','Gyu2100','Gyu2000','G2...','G2z..','G2y..','G28..','G26..','G25..','G251.','G250.','G24..','G24z.','G24zz','G24z0','G244.','G241.','G241z','G2410','G240.','G240z','G2400','G20..','G20z.','G203.','G202.','G201.','G200.','Gyu2.','Gyu21','Gyu20')
-	and EntryDate <= '2020-05-20'
+	and EntryDate <= '2020-05-21'
 	group by PatID
 ) sub 
 where FirstDiagnosis >= '2015-01-01'
@@ -29,7 +29,7 @@ select EntryDate, count(*) as num into #Prevalence from (
 	select PatID, EntryDate from SIR_ALL_Records_Narrow
 	where ReadCode in ('G2...00','G2...11','G2z..00','G2y..00','G28..00','G26..00','G26..11','G25..00','G25..11','G251.00','G250.00','G24..00','G24z.00','G24zz00','G24z000','G244.00','G241.00','G241z00','G241000','G240.00','G240z00','G240000','G20..11','G20..00','G20..12','G20z.00','G20z.11','G203.00','G202.00','G201.00','G200.00','Gyu2.00','Gyu2100','Gyu2000','G2...','G2z..','G2y..','G28..','G26..','G25..','G251.','G250.','G24..','G24z.','G24zz','G24z0','G244.','G241.','G241z','G2410','G240.','G240z','G2400','G20..','G20z.','G203.','G202.','G201.','G200.','Gyu2.','Gyu21','Gyu20')
 	and EntryDate >= '2015-01-01'
-	and EntryDate <= '2020-05-20'
+	and EntryDate <= '2020-05-21'
 	group by PatID, EntryDate
 ) sub 
 group by EntryDate

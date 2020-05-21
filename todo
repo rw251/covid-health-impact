@@ -1,7 +1,6 @@
-Codesets for:
-  Bi-polar
-  Hypertension
-  MI
-  Heart Failure
-
 Use algorithm to exclude reviews from JUST prevalence
+
+For cardiovascular I went with all the QOF categories. They are: AF, CHD, HF, HTN, PAD, Stroke (split into stroke and non-haemorrhagic stroke) and TIA. Is that a sensible list - any others? The only other I could think of was angina - should that be included?
+
+
+

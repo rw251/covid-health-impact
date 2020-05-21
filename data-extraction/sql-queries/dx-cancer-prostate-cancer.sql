@@ -5,7 +5,7 @@ SET NOCOUNT ON;
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
 declare @dt datetime = '2015-01-01'
-declare @dtEnd datetime = '2020-05-20';
+declare @dtEnd datetime = '2020-05-21';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
         values(@dt)
@@ -17,7 +17,7 @@ END;
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select PatID, min(EntryDate) as FirstDiagnosis from SIR_ALL_Records_Narrow
 	where ReadCode in ('4M00.00','4M01.00','4M02.00','8AD0.00','B46..00','B834000','B834100','4M00.','4M01.','4M02.','8AD0.','B46..','B8340','B8341')
-	and EntryDate <= '2020-05-20'
+	and EntryDate <= '2020-05-21'
 	group by PatID
 ) sub 
 where FirstDiagnosis >= '2015-01-01'
@@ -29,7 +29,7 @@ select EntryDate, count(*) as num into #Prevalence from (
 	select PatID, EntryDate from SIR_ALL_Records_Narrow
 	where ReadCode in ('4M00.00','4M01.00','4M02.00','8AD0.00','B46..00','B834000','B834100','4M00.','4M01.','4M02.','8AD0.','B46..','B8340','B8341')
 	and EntryDate >= '2015-01-01'
-	and EntryDate <= '2020-05-20'
+	and EntryDate <= '2020-05-21'
 	group by PatID, EntryDate
 ) sub 
 group by EntryDate
