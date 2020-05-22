@@ -18,7 +18,7 @@ END;
 -- Populate incidence table - only count those occurrences
 -- of the code where it is the first time the patient has had it
 select FirstDiagnosis, count(*) as num into #Incidence from (
-	{{TEMPLATE_PARTS}}
+	{{INCIDENCE_TEMPLATE_PARTS}}
 ) sub 
 where FirstDiagnosis >= '2015-01-01'
 group by FirstDiagnosis
@@ -26,11 +26,7 @@ group by FirstDiagnosis
 -- Populate prevalence table - count all occurrences of the 
 -- code irrespective of whether it is the first time the patient has had it
 select EntryDate, count(*) as num into #Prevalence from (
-	select NHSNo, EntryDate from journal
-	where ReadCode in ('{{ALL_CLINICAL_CODES}}')
-	and EntryDate >= '2015-01-01'
-	and EntryDate <= '{{REPORT_DATE}}'
-	group by NHSNo, EntryDate
+	{{PREVALENCE_TEMPLATE_PARTS}}
 ) sub 
 group by EntryDate
 
