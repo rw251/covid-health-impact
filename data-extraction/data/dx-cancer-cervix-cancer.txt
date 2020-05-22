@@ -1013,7 +1013,7 @@ Date,IncidenceOfCervixCancer,PrevalenceOfCervixCancer
 2017-10-08,0,0
 2017-10-09,0,0
 2017-10-10,0,0
-2017-10-11,0,1
+2017-10-11,0,0
 2017-10-12,0,0
 2017-10-13,0,0
 2017-10-14,0,0
@@ -1967,3 +1967,4 @@ Date,IncidenceOfCervixCancer,PrevalenceOfCervixCancer
 2020-05-19,0,0
 2020-05-20,0,0
 2020-05-21,0,0
+2020-05-22,0,0
