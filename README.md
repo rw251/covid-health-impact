@@ -1,6 +1,6 @@
 # COVID-19 impact on mental and physical health
 
-[![DOI](https://zenodo.org/badge/141592542.svg)](https://zenodo.org/badge/latestdoi/141592542)
+[![DOI](https://zenodo.org/badge/253420880.svg)](https://zenodo.org/badge/latestdoi/253420880)
 
 Exploratory work to determine what (if any) effect the COVID-19 outbreak is having on the reporting, diagnosis and treatment of mental and physical health conditions.
 
