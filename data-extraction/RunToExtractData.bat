@@ -7,6 +7,10 @@ ECHO THIS WILL EXECUTE AGAINST DataFromSIR.
 ECHO Are you sure you want to continue?
 pause
 
+ECHO You should have added an extra index. Have you?
+ECHO you'll find it in the 'one-off-tasks' folder
+pause
+
 SET SMASH.DB=DataFromSIR
 
 REM for each sql file execute against db
