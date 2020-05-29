@@ -15,27 +15,27 @@ END;
 -- Populate incidence table - only count those occurrences
 -- of the code where it is the first time the patient has had it
 select FirstDiagnosis, count(*) as num into #Incidence from (
-	select NHSNo, min(entrydate) as FirstDiagnosis from journal
+	select PatID, min(EntryDate) as FirstDiagnosis from SIR_ALL_Records_Narrow
 	where ReadCode in ('G2...00','G2...11','G2z..00','G2y..00','G28..00','G26..00','G26..11','G25..00','G25..11','G251.00','G250.00','G24..00','G24z.00','G24zz00','G24z000','G244.00','G241.00','G241z00','G241000','G240.00','G240z00','G240000','G20..11','G20..00','G20..12','G20z.00','G20z.11','G203.00','G202.00','G201.00','G200.00','Gyu2.00','Gyu2100','Gyu2000','G2...','G2z..','G2y..','G28..','G26..','G25..','G251.','G250.','G24..','G24z.','G24zz','G24z0','G244.','G241.','G241z','G2410','G240.','G240z','G2400','G20..','G20z.','G203.','G202.','G201.','G200.','Gyu2.','Gyu21','Gyu20')
-	and entrydate <= '2020-05-29'
-	group by NHSNo
+	and EntryDate <= '2020-05-29'
+	group by PatID
 ) sub 
 where FirstDiagnosis >= '2015-01-01'
 group by FirstDiagnosis
 
 -- Populate prevalence table - count all occurrences of the 
 -- code irrespective of whether it is the first time the patient has had it
-select entrydate, count(*) as num into #Prevalence from (
-	select NHSNo, entrydate from journal
+select EntryDate, count(*) as num into #Prevalence from (
+	select PatID, EntryDate from SIR_ALL_Records_Narrow
 	where ReadCode in ('G2...00','G2...11','G2z..00','G2y..00','G28..00','G26..00','G26..11','G25..00','G25..11','G251.00','G250.00','G24..00','G24z.00','G24zz00','G24z000','G244.00','G241.00','G241z00','G241000','G240.00','G240z00','G240000','G20..11','G20..00','G20..12','G20z.00','G20z.11','G203.00','G202.00','G201.00','G200.00','Gyu2.00','Gyu2100','Gyu2000','G2...','G2z..','G2y..','G28..','G26..','G25..','G251.','G250.','G24..','G24z.','G24zz','G24z0','G244.','G241.','G241z','G2410','G240.','G240z','G2400','G20..','G20z.','G203.','G202.','G201.','G200.','Gyu2.','Gyu21','Gyu20')
-	and entrydate >= '2015-01-01'
-	and entrydate <= '2020-05-29'
-	group by NHSNo, entrydate
+	and EntryDate >= '2015-01-01'
+	and EntryDate <= '2020-05-29'
+	group by PatID, EntryDate
 ) sub 
-group by entrydate
+group by EntryDate
 
 PRINT 'Date,IncidenceOfHypertension,PrevalenceOfHypertension'
 select [date], ISNULL(i.num, 0), ISNULL(p.num, 0) from #AllDates d 
 	left outer join #Incidence i on i.FirstDiagnosis = d.date
-	left outer join #Prevalence p on p.entrydate = d.date
+	left outer join #Prevalence p on p.EntryDate = d.date
 order by date;
