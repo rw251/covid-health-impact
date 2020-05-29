@@ -16,7 +16,7 @@ END;
 -- of the code where it is the first time the patient has had it
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select NHSNo, min(entrydate) as FirstDiagnosis from journal
-	where ReadCode in ('B161100','B17..00','B170.00','B171.00','B172.00','B173.00','B174.00','B175.00','B17y.00','B17y000','B17yz00','B17z.00','BB5B.00','BB5B100','BB5B300','BB5B311','BB5B500','BB5B511','BB5B600','BB5C.00','BB5C000','BB5C011','BB5C100','BB5C111','BB5Cz00','BBLK.00','B1611','B17..','B170.','B171.','B172.','B173.','B174.','B175.','B17y.','B17y0','B17yz','B17z.','BB5B.','BB5B1','BB5B3','BB5B5','BB5B6','BB5C.','BB5C0','BB5C1','BB5Cz','BBLK.')
+	where ReadCode in ('bu5..','bu51.','bu54.','CLTA30106NEMIS','CLTA34068EMIS','bu...')
 	and entrydate <= '2020-05-29'
 	group by NHSNo
 ) sub 
@@ -27,14 +27,14 @@ group by FirstDiagnosis
 -- code irrespective of whether it is the first time the patient has had it
 select entrydate, count(*) as num into #Prevalence from (
 	select NHSNo, entrydate from journal
-	where ReadCode in ('B161100','B17..00','B170.00','B171.00','B172.00','B173.00','B174.00','B175.00','B17y.00','B17y000','B17yz00','B17z.00','BB5B.00','BB5B100','BB5B300','BB5B311','BB5B500','BB5B511','BB5B600','BB5C.00','BB5C000','BB5C011','BB5C100','BB5C111','BB5Cz00','BBLK.00','B1611','B17..','B170.','B171.','B172.','B173.','B174.','B175.','B17y.','B17y0','B17yz','B17z.','BB5B.','BB5B1','BB5B3','BB5B5','BB5B6','BB5C.','BB5C0','BB5C1','BB5Cz','BBLK.')
+	where ReadCode in ('bu5..','bu51.','bu54.','CLTA30106NEMIS','CLTA34068EMIS','bu...')
 	and entrydate >= '2015-01-01'
 	and entrydate <= '2020-05-29'
 	group by NHSNo, entrydate
 ) sub 
 group by entrydate
 
-PRINT 'Date,IncidenceOfPancreaticCancer,PrevalenceOfPancreaticCancer'
+PRINT 'Date,IncidenceOfClopidogrel,PrevalenceOfClopidogrel'
 select [date], ISNULL(i.num, 0), ISNULL(p.num, 0) from #AllDates d 
 	left outer join #Incidence i on i.FirstDiagnosis = d.date
 	left outer join #Prevalence p on p.entrydate = d.date
