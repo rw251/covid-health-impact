@@ -1,0 +1,41 @@
+{
+  "includeTerms": [
+    "cipramil",
+    "citalopram",
+    "dapoxetine",
+    "escitalopram",
+    "fluoxetine",
+    "fluvoxamine",
+    "paroxetine",
+    "sertraline",
+    "vortioxetine",
+    "brintellix",
+    "lustral",
+    "seroxat",
+    "faverin",
+    "cipralex",
+    "priligy",
+    "oxactin",
+    "prozac",
+    "olena",
+    "prozep",
+    "ranflutin",
+    "felicium",
+    "prozit",
+    "paxoran",
+    "vilazodone",
+    "viibryd"
+  ],
+  "excludeTerms": [
+    "adverse reaction",
+    "level",
+    "concentration"
+  ],
+  "terminology": "Readv2",
+  "createdBy": {
+    "name": "Richard Williams",
+    "email": "1234richardwilliams@gmail.com"
+  },
+  "createdOn": "2020-05-29T12:22:07.672Z",
+  "lastUpdated": "2020-05-29T12:22:14.366Z"
+}

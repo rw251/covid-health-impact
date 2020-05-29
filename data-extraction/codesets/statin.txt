@@ -1,0 +1,218 @@
+bxd..00	SIMVASTATIN
+bxd..	SIMVASTATIN
+bxd1.00	SIMVASTATIN 10mg tablets
+bxd1.	SIMVASTATIN 10mg tablets
+bxd2.00	SIMVASTATIN 20mg tablets
+bxd2.	SIMVASTATIN 20mg tablets
+bxd3.00	ZOCOR 10mg tablets 28CP
+bxd3.	ZOCOR 10mg tablets 28CP
+bxd4.00	ZOCOR 20mg tablets 28CP
+bxd4.	ZOCOR 20mg tablets 28CP
+bxd5.00	SIMVASTATIN 40mg tablets
+bxd5.	SIMVASTATIN 40mg tablets
+bxd6.00	ZOCOR 40mg tablets
+bxd6.	ZOCOR 40mg tablets
+bxd7.00	ZOCOR 10mg tablets
+bxd7.	ZOCOR 10mg tablets
+bxd8.00	ZOCOR 20mg tablets
+bxd8.	ZOCOR 20mg tablets
+bxd9.00	ZOCOR 80mg tablets
+bxd9.	ZOCOR 80mg tablets
+bxdA.00	SIMVADOR 10mg tablets
+bxdA.	SIMVADOR 10mg tablets
+bxdB.00	SIMVADOR 20mg tablets
+bxdB.	SIMVADOR 20mg tablets
+bxdC.00	SIMVADOR 40mg tablets
+bxdC.	SIMVADOR 40mg tablets
+bxdD.00	*RANZOLONT 10mg tablets
+bxdD.	*RANZOLONT 10mg tablets
+bxdE.00	*RANZOLONT 20mg tablets
+bxdE.	*RANZOLONT 20mg tablets
+bxdF.00	*RANZOLONT 40mg tablets
+bxdF.	*RANZOLONT 40mg tablets
+bxdG.00	*ZOCOR HEART-PRO 10mg tablets
+bxdG.	*ZOCOR HEART-PRO 10mg tablets
+bxdH.00	INEGY 10mg/20mg tablets
+bxdH.	INEGY 10mg/20mg tablets
+bxdI.00	INEGY 10mg/40mg tablets
+bxdI.	INEGY 10mg/40mg tablets
+bxdJ.00	INEGY 10mg/80mg tablets
+bxdJ.	INEGY 10mg/80mg tablets
+bxdK.00	SIMVADOR 80mg tablets
+bxdK.	SIMVADOR 80mg tablets
+bxdu.00	SIMVASTATIN 20mg/5mL oral suspension
+bxdu.	SIMVASTATIN 20mg/5mL oral suspension
+bxdv.00	SIMVASTATIN 40mg/5mL oral suspension
+bxdv.	SIMVASTATIN 40mg/5mL oral suspension
+bxdw.00	SIMVASTATIN 80mg/EZETIMIBE 10mg tablets
+bxdw.	SIMVASTATIN 80mg/EZETIMIBE 10mg tablets
+bxdx.00	SIMVASTATIN 40mg/EZETIMIBE 10mg tablets
+bxdx.	SIMVASTATIN 40mg/EZETIMIBE 10mg tablets
+bxdy.00	SIMVASTATIN 20mg/EZETIMIBE 10mg tablets
+bxdy.	SIMVASTATIN 20mg/EZETIMIBE 10mg tablets
+bxdz.00	SIMVASTATIN 80mg tablets
+bxdz.	SIMVASTATIN 80mg tablets
+bxe..00	PRAVASTATIN SODIUM
+bxe..	PRAVASTATIN SODIUM
+bxe1.00	*PRAVASTATIN 10mg tablets
+bxe1.	*PRAVASTATIN 10mg tablets
+bxe2.00	*PRAVASTATIN 20mg tablets
+bxe2.	*PRAVASTATIN 20mg tablets
+bxe3.00	LIPOSTAT 10mg tablets
+bxe3.	LIPOSTAT 10mg tablets
+bxe4.00	LIPOSTAT 20mg tablets
+bxe4.	LIPOSTAT 20mg tablets
+bxe5.00	PRAVASTATIN SODIUM 10mg tablets
+bxe5.	PRAVASTATIN SODIUM 10mg tablets
+bxe6.00	PRAVASTATIN SODIUM 20mg tablets
+bxe6.	PRAVASTATIN SODIUM 20mg tablets
+bxe7.00	PRAVASTATIN SODIUM 40mg tablets
+bxe7.	PRAVASTATIN SODIUM 40mg tablets
+bxe8.00	LIPOSTAT 40mg tablets
+bxe8.	LIPOSTAT 40mg tablets
+bxg..00	FLUVASTATIN SODIUM
+bxg..	FLUVASTATIN SODIUM
+bxg1.00	LESCOL 20mg capsules
+bxg1.	LESCOL 20mg capsules
+bxg2.00	LESCOL 40mg capsules
+bxg2.	LESCOL 40mg capsules
+bxg3.00	FLUVASTATIN 20mg capsules
+bxg3.	FLUVASTATIN 20mg capsules
+bxg4.00	FLUVASTATIN 40mg capsules
+bxg4.	FLUVASTATIN 40mg capsules
+bxg5.00	LESCOL XL 80mg m/r tablets
+bxg5.	LESCOL XL 80mg m/r tablets
+bxg6.00	LUVINSTA XL 80mg m/r tablets
+bxg6.	LUVINSTA XL 80mg m/r tablets
+bxg7.00	STEFLUVIN XL 80mg m/r tablets
+bxg7.	STEFLUVIN XL 80mg m/r tablets
+bxg8.00	DORISIN XL 80mg m/r tablets
+bxg8.	DORISIN XL 80mg m/r tablets
+bxg9.00	NANDOVAR XL 80mg m/r tablets
+bxg9.	NANDOVAR XL 80mg m/r tablets
+bxgz.00	FLUVASTATIN 80mg m/r tablets
+bxgz.	FLUVASTATIN 80mg m/r tablets
+bxi..00	ATORVASTATIN
+bxi..	ATORVASTATIN
+bxi1.00	ATORVASTATIN 10mg tablets
+bxi1.	ATORVASTATIN 10mg tablets
+bxi2.00	ATORVASTATIN 20mg tablets
+bxi2.	ATORVASTATIN 20mg tablets
+bxi3.00	ATORVASTATIN 40mg tablets
+bxi3.	ATORVASTATIN 40mg tablets
+bxi4.00	LIPITOR 10mg tablets
+bxi4.	LIPITOR 10mg tablets
+bxi5.00	LIPITOR 20mg tablets
+bxi5.	LIPITOR 20mg tablets
+bxi6.00	LIPITOR 40mg tablets
+bxi6.	LIPITOR 40mg tablets
+bxi7.00	LIPITOR 80mg tablets
+bxi7.	LIPITOR 80mg tablets
+bxi8.00	LIPITOR 10mg chewable tablets
+bxi8.	LIPITOR 10mg chewable tablets
+bxi9.00	ATORVASTATIN 10mg chewable tablets
+bxi9.	ATORVASTATIN 10mg chewable tablets
+bxiA.00	LIPITOR 20mg chewable tablets
+bxiA.	LIPITOR 20mg chewable tablets
+bxiB.00	ATORVASTATIN 20mg chewable tablets
+bxiB.	ATORVASTATIN 20mg chewable tablets
+bxiy.00	ATORVASTATIN 60mg tablets
+bxiy.	ATORVASTATIN 60mg tablets
+bxiz.00	ATORVASTATIN 80mg tablets
+bxiz.	ATORVASTATIN 80mg tablets
+bxj..00	CERIVASTATIN
+bxj..	CERIVASTATIN
+bxj1.00	CERIVASTATIN SODIUM 100micrograms tablets
+bxj1.	CERIVASTATIN SODIUM 100micrograms tablets
+bxj2.00	CERIVASTATIN SODIUM 200micrograms tablets
+bxj2.	CERIVASTATIN SODIUM 200micrograms tablets
+bxj3.00	CERIVASTATIN SODIUM 300micrograms tablets
+bxj3.	CERIVASTATIN SODIUM 300micrograms tablets
+bxj4.00	*LIPOBAY 100micrograms tablets
+bxj4.	*LIPOBAY 100micrograms tablets
+bxj5.00	*LIPOBAY 200micrograms tablets
+bxj5.	*LIPOBAY 200micrograms tablets
+bxj6.00	*LIPOBAY 300micrograms tablets
+bxj6.	*LIPOBAY 300micrograms tablets
+bxj7.00	CERIVASTATIN SODIUM 400micrograms tablets
+bxj7.	CERIVASTATIN SODIUM 400micrograms tablets
+bxj8.00	*LIPOBAY 400micrograms tablets
+bxj8.	*LIPOBAY 400micrograms tablets
+bxj9.00	*LIPOBAY 800micrograms tablets
+bxj9.	*LIPOBAY 800micrograms tablets
+bxjz.00	CERIVASTATIN SODIUM 800micrograms tablets
+bxjz.	CERIVASTATIN SODIUM 800micrograms tablets
+bxk..00	ROSUVASTATIN
+bxk..	ROSUVASTATIN
+bxk1.00	CRESTOR 10mg tablets
+bxk1.	CRESTOR 10mg tablets
+bxk2.00	CRESTOR 20mg tablets
+bxk2.	CRESTOR 20mg tablets
+bxk3.00	CRESTOR 40mg tablets
+bxk3.	CRESTOR 40mg tablets
+bxk4.00	CRESTOR 5mg tablets
+bxk4.	CRESTOR 5mg tablets
+bxkw.00	ROSUVASTATIN 5mg tablets
+bxkw.	ROSUVASTATIN 5mg tablets
+bxkx.00	ROSUVASTATIN 10mg tablets
+bxkx.	ROSUVASTATIN 10mg tablets
+bxky.00	ROSUVASTATIN 20mg tablets
+bxky.	ROSUVASTATIN 20mg tablets
+bxkz.00	ROSUVASTATIN 40mg tablets
+bxkz.	ROSUVASTATIN 40mg tablets
+ATCH52120NEMIS	Atorvastatin 10mg chewable tablets sugar free
+ATOR21782NEMIS	Atorvastatin 20mg/5ml oral suspension
+ATTA30130EMIS	Atorvastatin 10mg tablets
+ATTA30131EMIS	Atorvastatin 20mg tablets
+ATTA30132EMIS	Atorvastatin 40mg tablets
+ATTA6253NEMIS	Atorvastatin 80mg tablets
+CETA1911NEMIS	Cerivastatin 400microgram tablets
+CETA30765EMIS	Cerivastatin 100microgram tablets
+CETA30766EMIS	Cerivastatin 200microgram tablets
+CETA30767EMIS	Cerivastatin 300microgram tablets
+CRTA15074NEMIS	Crestor 10mg tablets (AstraZeneca UK Ltd)
+CRTA15075NEMIS	Crestor 20mg tablets (AstraZeneca UK Ltd)
+CRTA21336NEMIS	Crestor 5mg tablets (AstraZeneca UK Ltd)
+EZTA20280NEMIS	Simvastatin 20mg / Ezetimibe 10mg tablets
+EZTA20281NEMIS	Simvastatin 40mg / Ezetimibe 10mg tablets
+EZTA20282NEMIS	Simvastatin 80mg / Ezetimibe 10mg tablets
+FLCA24125EMIS	Fluvastatin 20mg capsules
+FLCA24126EMIS	Fluvastatin 40mg capsules
+FLTA5289NEMIS	Fluvastatin 80mg modified-release tablets
+INTA20284NEMIS	Inegy 10mg/20mg tablets (Merck Sharp & Dohme Ltd)
+INTA20285NEMIS	Inegy 10mg/40mg tablets (Merck Sharp & Dohme Ltd)
+INTA20286NEMIS	Inegy 10mg/80mg tablets (Merck Sharp & Dohme Ltd)
+LECA24121EMIS	Lescol  Capsules  20 mg
+LETA5290NEMIS	Lescol XL 80mg tablets (Novartis Pharmaceuticals UK Ltd)
+LICH52126NEMIS	Lipitor 20mg chewable tablets (Pfizer Ltd)
+LITA10719BRIDL	Lipostat 10mg tablets (Bristol-Myers Squibb Pharmaceuticals Ltd)
+LITA10721BRIDL	Lipostat 20mg tablets (Bristol-Myers Squibb Pharmaceuticals Ltd)
+LITA1910NEMIS	Lipobay 400microgram tablets (Bayer Plc)
+LITA30124EMIS	Lipitor 10mg tablets (Pfizer Ltd)
+LITA30125EMIS	Lipitor 20mg tablets (Pfizer Ltd)
+LITA30126EMIS	Lipitor 40mg tablets (Pfizer Ltd)
+LITA30703EMIS	Lipostat 40mg tablets (Bristol-Myers Squibb Pharmaceuticals Ltd)
+LITA30759EMIS	Lipobay  Tablets  100 micrograms
+LITA30760EMIS	Lipobay 200microgram tablets (Bayer Plc)
+LITA30761EMIS	Lipobay 300microgram tablets (Bayer Plc)
+LITA6254NEMIS	Lipitor 80mg tablets (Pfizer Ltd)
+PRTA10455HILLI	Pravastatin 10mg tablets
+PRTA10456HILLI	Pravastatin 20mg tablets
+PRTA30705EMIS	Pravastatin 40mg tablets
+ROTA15069NEMIS	Rosuvastatin 10mg tablets
+ROTA15071NEMIS	Rosuvastatin 20mg tablets
+ROTA15072NEMIS	Rosuvastatin 40mg tablets
+ROTA21335NEMIS	Rosuvastatin 5mg tablets
+SIOR25476NEMIS	Simvastatin  Oral Suspension  40 mg/5 ml
+SIOR44786NEMIS	Simvastatin 40mg/5ml oral suspension sugar free
+SITA10076BRIDL	Simvastatin 10mg tablets
+SITA10078BRIDL	Simvastatin  Tablets  20 mg
+SITA16195NEMIS	Simvador 10mg tablets (Discovery Pharmaceuticals)
+SITA16196NEMIS	Simvador 20mg tablets (Discovery Pharmaceuticals)
+SITA16197NEMIS	Simvador 40mg tablets (Discovery Pharmaceuticals)
+SITA29406EMIS	Simvastatin 40mg tablets
+SITA34996NEMIS	Simvador 80mg tablets (Discovery Pharmaceuticals)
+SITA3663NEMIS	Simvastatin 80mg tablets
+ZOTA29404EMIS	Zocor 40mg tablets (Merck Sharp & Dohme Ltd)
+ZOTA8622EGTON	Zocor 10mg tablets (Merck Sharp & Dohme Ltd)
+ZOTA8623EGTON	Zocor 20mg tablets (Merck Sharp & Dohme Ltd)

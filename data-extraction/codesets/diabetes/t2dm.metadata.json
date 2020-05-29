@@ -1,0 +1,26 @@
+{
+  "includeTerms": [
+    "type ii diabetes",
+    "type 2 diabetes",
+    "non insulin dependent diabetes",
+    "diabetes mellitus adult onset"
+  ],
+  "excludeTerms": [
+    "family history",
+    "in remission",
+    "in pregnancy",
+    "review",
+    "reaven's syndrome",
+    "metabolic syndrome x",
+    "pre-existing diabetes mellitus",
+    "maternally inherited diabetes mellitus",
+    "maturity onset diabetes"
+  ],
+  "terminology": "Readv2",
+  "createdBy": {
+    "name": "Richard Williams",
+    "email": "1234richardwilliams@gmail.com"
+  },
+  "createdOn": "2020-05-29T10:58:14.539Z",
+  "lastUpdated": "2020-05-29T10:58:46.061Z"
+}
