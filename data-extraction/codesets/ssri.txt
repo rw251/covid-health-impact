@@ -1,0 +1,69 @@
+daE..00	VORTIOXETINE
+daE6.00	VORTIOXETINE 20mg tablets
+daE4.00	VORTIOXETINE 10mg tablets
+daE2.00	VORTIOXETINE 5mg tablets
+daE5.00	BRINTELLIX 20mg tablets
+daE3.00	BRINTELLIX 10mg tablets
+daE1.00	BRINTELLIX 5mg tablets
+da5..00	SERTRALINE HYDROCHLORIDE
+da52.00	SERTRALINE 100mg tablets
+da51.00	SERTRALINE 50mg tablets
+da54.00	LUSTRAL 100mg tablets
+da53.00	LUSTRAL 50mg tablets
+da6..00	PAROXETINE HYDROCHLORIDE
+da67.00	PAROXETINE 10mg tablets
+da65.00	PAROXETINE 10mg/5mL sugar free liquid
+da63.00	PAROXETINE 30mg tablets
+da61.00	PAROXETINE 20mg tablets
+da68.00	SEROXAT 10mg tablets
+da66.00	SEROXAT 10mg/5mL sugar free liquid
+da64.00	SEROXAT 30mg tablets x30
+da62.00	SEROXAT 20mg tablets x30
+da3..00	FLUVOXAMINE MALEATE
+da34.00	FLUVOXAMINE MALEATE 100mg tablets
+da32.00	FLUVOXAMINE MALEATE 50mg tablets
+da33.00	FAVERIN 100mg tablets
+da31.00	FAVERIN 50mg tablets
+da4..00	FLUOXETINE HYDROCHLORIDE
+da4E.00	FLUOXETINE 20mg dispersible tablets
+da46.00	FLUOXETINE 60mg capsules
+da43.00	FLUOXETINE 20mg/5mL oral liquid
+da41.00	FLUOXETINE 20mg capsules
+da4D.00	OLENA 20mg dispersible tablets
+da4C.00	PROZEP 20mg/5mL oral solution
+da4B.00	PROZIT 20mg/5mL oral solution
+da4A.00	RANFLUTIN 20mg capsules
+da49.00	OXACTIN 20mg capsules
+da48.00	*FELICIUM 20mg capsules
+da47.00	*PROZAC 60mg capsules
+da45.00	PROZAC 20mg capsules
+da44.00	PROZAC 20mg/5mL oral liquid
+da42.00	*PROZAC 20mg capsules x30
+daC..00	ESCITALOPRAM
+daCA.00	ESCITALOPRAM 20mg/mL oral drops
+daC7.00	ESCITALOPRAM 10mg/mL oral drops
+daC5.00	ESCITALOPRAM 5mg tablets
+daC3.00	ESCITALOPRAM 20mg tablets
+daC1.00	ESCITALOPRAM 10mg tablets
+daC9.00	CIPRALEX 20mg/mL oral drops
+daC8.00	*CIPRALEX 10mg/mL oral drops
+daC6.00	CIPRALEX 5mg tablets
+daC4.00	CIPRALEX 20mg tablets
+daC2.00	CIPRALEX 10mg tablets
+da9..00	CITALOPRAM
+da9z.00	CITALOPRAM 40mg/mL oral drops
+da95.00	CITALOPRAM 40mg tablets
+da93.00	CITALOPRAM 10mg tablets
+da91.00	CITALOPRAM 20mg tablets
+da9A.00	*PAXORAN 40mg tablets
+da99.00	*PAXORAN 20mg tablets
+da98.00	*PAXORAN 10mg tablets
+da97.00	CIPRAMIL 40mg/mL oral drops 15mL
+da96.00	*CIPRAMIL 40mg tablets
+da94.00	*CIPRAMIL 10mg tablets
+da92.00	CIPRAMIL 20mg tablets
+gm1..00	DAPOXETINE
+gm14.00	DAPOXETINE 60mg tablets
+gm12.00	DAPOXETINE 30mg tablets
+gm13.00	PRILIGY 60mg tablets
+gm11.00	PRILIGY 30mg tablets

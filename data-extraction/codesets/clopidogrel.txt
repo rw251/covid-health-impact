@@ -1,0 +1,6 @@
+bu5..	CLOPIDOGREL
+bu51.	CLOPIDOGREL 75mg tablets
+bu54.	CLOPIDOGREL 300mg tablets
+CLTA30106NEMIS	Clopidogrel  Tablets  300 mg
+CLTA34068EMIS	Clopidogrel  Tablets  75 mg
+bu...	Clopidogrel 75mg tablets
