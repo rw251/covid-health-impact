@@ -5,7 +5,7 @@ SET NOCOUNT ON;
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
 declare @dt datetime = '2015-01-01'
-declare @dtEnd datetime = '2020-05-22';
+declare @dtEnd datetime = '2020-05-29';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
         values(@dt)
@@ -17,7 +17,7 @@ END;
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select NHSNo, min(entrydate) as FirstDiagnosis from journal
 	where ReadCode in ('B40..00','B43..00','B43..98','B43..99','B430.00','B430000','B430100','B430200','B430211','B430300','B430z00','B431.00','B431000','B431z00','B432.00','B43y.00','B43z.00','B43z.99','BB5j.00','BBL0.00','BBL5.00','B40..','B43..','B430.','B4300','B4301','B4302','B4303','B430z','B431.','B4310','B431z','B432.','B43y.','B43z.','BB5j.','BBL0.','BBL5.')
-	and entrydate <= '2020-05-22'
+	and entrydate <= '2020-05-29'
 	group by NHSNo
 ) sub 
 where FirstDiagnosis >= '2015-01-01'
@@ -29,7 +29,7 @@ select entrydate, count(*) as num into #Prevalence from (
 	select NHSNo, entrydate from journal
 	where ReadCode in ('B40..00','B43..00','B43..98','B43..99','B430.00','B430000','B430100','B430200','B430211','B430300','B430z00','B431.00','B431000','B431z00','B432.00','B43y.00','B43z.00','B43z.99','BB5j.00','BBL0.00','BBL5.00','B40..','B43..','B430.','B4300','B4301','B4302','B4303','B430z','B431.','B4310','B431z','B432.','B43y.','B43z.','BB5j.','BBL0.','BBL5.')
 	and entrydate >= '2015-01-01'
-	and entrydate <= '2020-05-22'
+	and entrydate <= '2020-05-29'
 	group by NHSNo, entrydate
 ) sub 
 group by entrydate
