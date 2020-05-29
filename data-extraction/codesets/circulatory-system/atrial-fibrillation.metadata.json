@@ -1,0 +1,30 @@
+{
+  "includeTerms": [
+    "atrial fibrillation",
+    "atrial flutter"
+  ],
+  "excludeTerms": [
+    "monitoring",
+    "exception reporting",
+    "excepted from",
+    "risk of",
+    "h/o",
+    "ecg",
+    "implantation",
+    "care pathway",
+    "annual review",
+    "referral to",
+    "provision of written information",
+    "atrial fibrillation excluded",
+    "atrial fibrillation resolved",
+    "history of",
+    "percutaneous transluminal ablation"
+  ],
+  "terminology": "Readv2",
+  "createdBy": {
+    "name": "Richard Williams",
+    "email": "1234richardwilliams@gmail.com"
+  },
+  "createdOn": "2020-05-19T12:02:48.245Z",
+  "lastUpdated": "2020-05-19T12:02:57.172Z"
+}
