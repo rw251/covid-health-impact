@@ -52,7 +52,7 @@ processData <- function(dat) {
   # NB need to be careful around the last week as sometimes the data is 0
 
   # for development we scale May
-  scale <- 31/19 # we have data up to 19th May so proportionally might expect 31/19ths in the whole of May
+  scale <- 31/23 # we have data up to 23rd May so proportionally might expect 31/23ths in the whole of May
   # for the real thing we'll include the whole of May
 
   groupedByMonth[(groupedByMonth$month==monthToday & groupedByMonth$year== "2020"),]$inc<-floor(groupedByMonth[(groupedByMonth$month==monthToday & groupedByMonth$year== "2020"),]$inc*scale)
@@ -419,6 +419,10 @@ processCardiovascularFiles <- function(directory = OUTPUT_DIRECTORY) {
   processNbyMFiles(directory, n=2, m=4, name = "cardiovascular", titleText = "Weekly presenting incidence and prevalence of all cardiovascular diagnoses 2015 to 2020")
 }
 
+processCerebrovascularFiles <- function(directory = OUTPUT_DIRECTORY) {
+  processNbyMFiles(directory, n=1, m=2, name = "cerebrovascular", titleText = "Weekly presenting incidence and prevalence of all cerebrovascular diagnoses 2015 to 2020")
+}
+
 processModerateMentalHealth <- function(directory = OUTPUT_DIRECTORY) {
   processNbyMFiles(directory, n=1, m=2, name="mental-health-mild-moderate", titleText = "Weekly presenting incidence and prevalence of moderate mental health conditions 2015 to 2020")
 }
@@ -427,6 +431,9 @@ processSevereMentalHealth <- function(directory = OUTPUT_DIRECTORY) {
 }
 processRespiratory <- function(directory = OUTPUT_DIRECTORY) {
   processNbyMFiles(directory, n=1, m=2, name="respiratory", titleText = "Weekly presenting incidence and prevalence of respiratory conditions 2015 to 2020")
+}
+processDiabetes <- function(directory = OUTPUT_DIRECTORY) {
+  processNbyMFiles(directory, n=1, m=3, name="diabetes", titleText = "Weekly presenting incidence and prevalence of diabetes 2015 to 2020")
 }
 # Do grouped ones first (purely because they're the first ones i look at)
 for(file in list.files(DATA_DIRECTORY, pattern = "^dx-GROUP")) {
@@ -438,6 +445,13 @@ processCardiovascularFiles();
 processModerateMentalHealth();
 processSevereMentalHealth();
 processRespiratory();
+processCerebrovascularFiles();
+processDiabetes();
 
-# separate for self-harm
+# separate for self-harm and other drugs
 processFile('dx--self-harm.txt');
+processFile('dx--acei.txt');
+processFile('dx--clopidogrel.txt');
+processFile('dx--metformin.txt');
+processFile('dx--ssri.txt');
+processFile('dx--statin.txt');
