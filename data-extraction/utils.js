@@ -3,10 +3,12 @@ const { join } = require('path');
 
 const CODESET_DIR = join(__dirname, 'codesets');
 
-const loadTemplate = () => readFileSync(join(__dirname, 'template.sql'), 'utf8');
-const loadGroupTemplate = () => readFileSync(join(__dirname, 'template-group.sql'), 'utf8');
-const loadGroupIncidenceTemplatePart = () => readFileSync(join(__dirname, 'template-group-incidence-part.sql'), 'utf8');
-const loadGroupPrevalenceTemplatePart = () => readFileSync(join(__dirname, 'template-group-prevalence-part.sql'), 'utf8');
+const useDataFromSIRDB = true;
+
+const loadTemplate = () => readFileSync(join(__dirname, `template${useDataFromSIRDB ? '-backup' : ''}.sql`), 'utf8');
+const loadGroupTemplate = () => readFileSync(join(__dirname, `template-group${useDataFromSIRDB ? '-backup' : ''}.sql`), 'utf8');
+const loadGroupIncidenceTemplatePart = () => readFileSync(join(__dirname, `template-group-incidence-part${useDataFromSIRDB ? '-backup' : ''}.sql`), 'utf8');
+const loadGroupPrevalenceTemplatePart = () => readFileSync(join(__dirname, `template-group-prevalence-part${useDataFromSIRDB ? '-backup' : ''}.sql`), 'utf8');
 
 const codesFromFile = (pathToFile) => readFileSync(pathToFile, 'utf8')
   .split('\n')
