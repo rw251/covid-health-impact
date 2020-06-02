@@ -1,2 +1,0 @@
-Msg 208, Level 16, State 1, Server SRHTNWEHPSTRC2, Line 17
-Invalid object name 'journal'.
