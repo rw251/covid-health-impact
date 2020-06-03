@@ -1,4 +1,13 @@
 
+-- All codes
+SELECT entrydate, count(*) from (
+select NHSNo, readcode, entrydate from DataFromSIR.dbo.journal
+WHERE EntryDate >= '2010-01-01'
+  group by NHSNo, readcode, entrydate
+) sub
+GROUP BY entrydate
+ORDER BY entrydate
+
 -- Diagnoses
 SELECT EntryDate, count(*) FROM DataFromSIR.dbo.journal
 WHERE ReadCode like '[ABCDEFGHIJKLMNOPQRSTUVWXY]%'
