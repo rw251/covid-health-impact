@@ -147,14 +147,14 @@ ORDER BY entrydate
 
 -- Diag procedures / radiology
 SELECT EntryDate, count(*) FROM DataFromSIR.dbo.journal
-WHERE ReadCode like '[35]%'
+WHERE (ReadCode like '[35]%' and readcode!='332081000000103')	
   and EntryDate >= '2010-01-01'
 GROUP BY EntryDate
 ORDER BY EntryDate
 
 SELECT entrydate, count(*) from (
 select NHSNo, readcode, entrydate from DataFromSIR.dbo.journal
-WHERE ReadCode like '[35]%'
+WHERE (ReadCode like '[35]%' and readcode!='332081000000103')	
   and EntryDate >= '2010-01-01'
   group by NHSNo, readcode, entrydate
 ) sub
