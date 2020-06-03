@@ -45,18 +45,19 @@ processData <- function(dat) {
 
   # Revove data from the current month and current week as it is not complete
   today <- Sys.time()
-  monthToday<-strftime(today, "%m")
   weekToday<-ceiling(as.numeric(strftime(today, "%j")) / 7)
   lastWeek<-weekToday-1
 
   # NB need to be careful around the last week as sometimes the data is 0
 
-  # for development we scale May
-  scale <- 31/23 # we have data up to 23rd May so proportionally might expect 31/23ths in the whole of May
-  # for the real thing we'll include the whole of May
+  # Revove June data as incomplete
+  groupedByMonth<-groupedByMonth[!(groupedByMonth$month=="06" & groupedByMonth$year== "2020"),]
 
-  groupedByMonth[(groupedByMonth$month==monthToday & groupedByMonth$year== "2020"),]$inc<-floor(groupedByMonth[(groupedByMonth$month==monthToday & groupedByMonth$year== "2020"),]$inc*scale)
-  groupedByMonth[(groupedByMonth$month==monthToday & groupedByMonth$year== "2020"),]$prev<-floor(groupedByMonth[(groupedByMonth$month==monthToday & groupedByMonth$year== "2020"),]$prev*scale)
+  # Scale May until we have complete May data
+  scale <- 31/26 # we have data up to 26th May so proportionally might expect 31/26ths in the whole of May
+  # for the real thing we'll include the whole of May
+  groupedByMonth[(groupedByMonth$month=="05" & groupedByMonth$year== "2020"),]$inc<-floor(groupedByMonth[(groupedByMonth$month=="05" & groupedByMonth$year== "2020"),]$inc*scale)
+  groupedByMonth[(groupedByMonth$month=="05" & groupedByMonth$year== "2020"),]$prev<-floor(groupedByMonth[(groupedByMonth$month=="05" & groupedByMonth$year== "2020"),]$prev*scale)
   groupedByWeek<-groupedByWeek[!(groupedByWeek$week==weekToday & groupedByWeek$year== "2020"),]
   #groupedByWeek<-groupedByWeek[!(groupedByWeek$week==lastWeek & groupedByWeek$year== "2020"),]
 

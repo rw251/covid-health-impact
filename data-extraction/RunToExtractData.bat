@@ -3,7 +3,7 @@
 REM move to batch dir 
 cd /d %~dp0
 
-ECHO THIS WILL EXECUTE AGAINST DataFromSIR.
+ECHO THIS WILL EXECUTE AGAINST DataFromSIR - use RunToExtractData2.bat for PatientSafety_Records db.
 ECHO Are you sure you want to continue?
 pause
 
