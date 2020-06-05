@@ -1,10 +1,10 @@
 --Just want the output, not the messages
 SET NOCOUNT ON; 
 
---populate table with all dates from 2009-12-29
+--populate table with all dates from 2009-12-28
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
-declare @dt datetime = '2009-12-29'
+declare @dt datetime = '2009-12-28'
 declare @dtEnd datetime = '2020-06-05';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
@@ -20,7 +20,7 @@ select FirstDiagnosis, count(*) as num into #Incidence from (
 	and entrydate <= '2020-06-05'
 	group by NHSNo
 ) sub 
-where FirstDiagnosis >= '2009-12-29'
+where FirstDiagnosis >= '2009-12-28'
 group by FirstDiagnosis
 
 -- Populate prevalence table - count all occurrences of the 
@@ -28,7 +28,7 @@ group by FirstDiagnosis
 select entrydate, count(*) as num into #Prevalence from (
 	select NHSNo, entrydate from journal
 	where ReadCode in ('B40..00','B43..00','B43..98','B43..99','B430.00','B430000','B430100','B430200','B430211','B430300','B430z00','B431.00','B431000','B431z00','B432.00','B43y.00','B43z.00','B43z.99','BB5j.00','BBL0.00','BBL5.00','B40..','B43..','B430.','B4300','B4301','B4302','B4303','B430z','B431.','B4310','B431z','B432.','B43y.','B43z.','BB5j.','BBL0.','BBL5.')
-	and entrydate >= '2009-12-29'
+	and entrydate >= '2009-12-28'
 	and entrydate <= '2020-06-05'
 	group by NHSNo, entrydate
 ) sub 

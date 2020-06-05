@@ -1,10 +1,10 @@
 --Just want the output, not the messages
 SET NOCOUNT ON; 
 
---populate table with all dates from 2009-12-29
+--populate table with all dates from 2009-12-28
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
-declare @dt datetime = '2009-12-29'
+declare @dt datetime = '2009-12-28'
 declare @dtEnd datetime = '2020-06-05';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
@@ -20,7 +20,7 @@ select FirstDiagnosis, count(*) as num into #Incidence from (
 	and entrydate <= '2020-06-05'
 	group by NHSNo
 ) sub 
-where FirstDiagnosis >= '2009-12-29'
+where FirstDiagnosis >= '2009-12-28'
 group by FirstDiagnosis
 
 -- Populate prevalence table - count all occurrences of the 
@@ -28,7 +28,7 @@ group by FirstDiagnosis
 select entrydate, count(*) as num into #Prevalence from (
 	select NHSNo, entrydate from journal
 	where ReadCode in ('G73..12','G73..13','G73..00','G73..11','G73z.00','G73zz00','G73z000','G73z011','G73z012','G73y.00','G73yz00','G734.00','Gyu7400','G73..','G73z.','G73zz','G73z0','G73y.','G73yz','G734.','Gyu74')
-	and entrydate >= '2009-12-29'
+	and entrydate >= '2009-12-28'
 	and entrydate <= '2020-06-05'
 	group by NHSNo, entrydate
 ) sub 

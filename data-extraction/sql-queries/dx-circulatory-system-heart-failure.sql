@@ -1,10 +1,10 @@
 --Just want the output, not the messages
 SET NOCOUNT ON; 
 
---populate table with all dates from 2009-12-29
+--populate table with all dates from 2009-12-28
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
-declare @dt datetime = '2009-12-29'
+declare @dt datetime = '2009-12-28'
 declare @dtEnd datetime = '2020-06-05';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
@@ -20,7 +20,7 @@ select FirstDiagnosis, count(*) as num into #Incidence from (
 	and entrydate <= '2020-06-05'
 	group by NHSNo
 ) sub 
-where FirstDiagnosis >= '2009-12-29'
+where FirstDiagnosis >= '2009-12-28'
 group by FirstDiagnosis
 
 -- Populate prevalence table - count all occurrences of the 
@@ -28,7 +28,7 @@ group by FirstDiagnosis
 select entrydate, count(*) as num into #Prevalence from (
 	select NHSNo, entrydate from journal
 	where ReadCode in ('G58..11','G58..00','G583.00','G583.11','G583.12','G582.00','G58z.11','G58z.12','G58z.00','G584.00','G580.00','G580.11','G580.12','G580.14','G580.13','G580400','G580300','G580200','G580100','G580000','G581.13','G581.00','G581000','662i.00','662h.00','662g.00','662f.00','G1yz100','1O1..00','33BA.00','G58..','G583.','G582.','G58z.','G584.','G580.','G5804','G5803','G5802','G5801','G5800','G581.','G5810','662i.','662h.','662g.','662f.','G1yz1','1O1..','33BA.')
-	and entrydate >= '2009-12-29'
+	and entrydate >= '2009-12-28'
 	and entrydate <= '2020-06-05'
 	group by NHSNo, entrydate
 ) sub 
