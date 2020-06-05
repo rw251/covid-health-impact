@@ -1,10 +1,10 @@
 --Just want the output, not the messages
 SET NOCOUNT ON; 
 
---populate table with all dates from 2015-01-01
+--populate table with all dates from 2009-12-29
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
-declare @dt datetime = '2015-01-01'
+declare @dt datetime = '2009-12-29'
 declare @dtEnd datetime = '{{REPORT_DATE}}';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
@@ -20,7 +20,7 @@ select FirstDiagnosis, count(*) as num into #Incidence from (
 	and EntryDate <= '{{REPORT_DATE}}'
 	group by PatID
 ) sub 
-where FirstDiagnosis >= '2015-01-01'
+where FirstDiagnosis >= '2009-12-29'
 group by FirstDiagnosis
 
 -- Populate prevalence table - count all occurrences of the 
@@ -28,7 +28,7 @@ group by FirstDiagnosis
 select EntryDate, count(*) as num into #Prevalence from (
 	select PatID, EntryDate from SIR_ALL_Records_Narrow
 	where ReadCode in ('{{CLINICAL_CODES}}')
-	and EntryDate >= '2015-01-01'
+	and EntryDate >= '2009-12-29'
 	and EntryDate <= '{{REPORT_DATE}}'
 	group by PatID, EntryDate
 ) sub 
