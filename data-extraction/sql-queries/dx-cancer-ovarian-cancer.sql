@@ -1,11 +1,11 @@
 --Just want the output, not the messages
 SET NOCOUNT ON; 
 
---populate table with all dates from 2015-01-01
+--populate table with all dates from 2009-12-29
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
-declare @dt datetime = '2015-01-01'
-declare @dtEnd datetime = '2020-06-02';
+declare @dt datetime = '2009-12-29'
+declare @dtEnd datetime = '2020-06-05';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
         values(@dt)
@@ -17,10 +17,10 @@ END;
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select NHSNo, min(entrydate) as FirstDiagnosis from journal
 	where ReadCode in ('B440.00','B440.11','BB5j200','BB80.00','BB80100','BB81100','BB81200','BB81400','BB81500','BB81800','BB81B00','BB81D00','BB81E00','BB81E11','BB81H00','BB81J00','BB81K00','BB81M00','BB82.00','BBC1100','BBC4.00','BBC6.00','BBC6100','BBC6111','BBCE.11','BBM0100','BBQ0.00','BBQ4.00','BBQA100','BBQA200','B440.','BB5j2','BB80.','BB801','BB811','BB812','BB814','BB815','BB818','BB81B','BB81D','BB81E','BB81H','BB81J','BB81K','BB81M','BB82.','BBC11','BBC4.','BBC6.','BBC61','BBM01','BBQ0.','BBQ4.','BBQA1','BBQA2')
-	and entrydate <= '2020-06-02'
+	and entrydate <= '2020-06-05'
 	group by NHSNo
 ) sub 
-where FirstDiagnosis >= '2015-01-01'
+where FirstDiagnosis >= '2009-12-29'
 group by FirstDiagnosis
 
 -- Populate prevalence table - count all occurrences of the 
@@ -28,8 +28,8 @@ group by FirstDiagnosis
 select entrydate, count(*) as num into #Prevalence from (
 	select NHSNo, entrydate from journal
 	where ReadCode in ('B440.00','B440.11','BB5j200','BB80.00','BB80100','BB81100','BB81200','BB81400','BB81500','BB81800','BB81B00','BB81D00','BB81E00','BB81E11','BB81H00','BB81J00','BB81K00','BB81M00','BB82.00','BBC1100','BBC4.00','BBC6.00','BBC6100','BBC6111','BBCE.11','BBM0100','BBQ0.00','BBQ4.00','BBQA100','BBQA200','B440.','BB5j2','BB80.','BB801','BB811','BB812','BB814','BB815','BB818','BB81B','BB81D','BB81E','BB81H','BB81J','BB81K','BB81M','BB82.','BBC11','BBC4.','BBC6.','BBC61','BBM01','BBQ0.','BBQ4.','BBQA1','BBQA2')
-	and entrydate >= '2015-01-01'
-	and entrydate <= '2020-06-02'
+	and entrydate >= '2009-12-29'
+	and entrydate <= '2020-06-05'
 	group by NHSNo, entrydate
 ) sub 
 group by entrydate
