@@ -1,4 +1,4 @@
-
+USE PatientSafety_Records
 -- Get all the latest covid related codes and counts
 select s.readcode, MAX(s.rubric) as description, MAX(s.count) as [count] from SIR_ReadCode_Rubric s inner join (
 select readcode, max([count]) as num from SIR_ReadCode_Rubric
@@ -44,6 +44,35 @@ order by practiceId, a.date
 
 --save to disk
 
+-- for each date and lsoa, number of incident cases
+select a.date, pl.lsoa, lsoaSize, sum(case when firstdx is null then 0 else 1 end) as newCases from #AllDates a
+left outer join (select lsoa, count(*) lsoaSize from patients group by lsoa) pl on 1=1
+left outer join (
+select lsoa, firstdx from patients p inner join (
+select PatID, min(EntryDate) as firstdx from SIR_ALL_Records_Narrow
+where ReadCode in ('^ESCT1301230','H20y000','4J3R100','^ESCT1300228','^ESCT1300229','EMISNQCO303','A795.','A795100','A795200','^ESCT1301243','^ESCT1299074','^ESCT1301227','^ESCT1299113')
+group by PatID ) minsub on minsub.PatID = p.patid
+) sub on sub.firstdx = a.date and sub.lsoa = pl.lsoa COLLATE Latin1_General_100_CI_AI
+where lsoaSize > 50
+and pl.lsoa is not null
+group by pl.lsoa,a.date, lsoaSize
+order by pl.lsoa, a.date
+--save to disk
+
+-- same but include @suspected@ diagnoses
+select a.date, pl.lsoa, lsoaSize, sum(case when firstdx is null then 0 else 1 end) as newCases from #AllDates a
+left outer join (select lsoa, count(*) lsoaSize from patients group by lsoa) pl on 1=1
+left outer join (
+select lsoa, firstdx from patients p inner join (
+select PatID, min(EntryDate) as firstdx from SIR_ALL_Records_Narrow
+where ReadCode in ('^ESCT1301230','H20y000','4J3R100','^ESCT1300228','^ESCT1300229','EMISNQCO303','A795.','A795100','A795200','^ESCT1301243','^ESCT1299074','^ESCT1301227','^ESCT1299113','1JX..','^ESCT1299116','^ESCT1301245','1JX1.','EMISNQSU106','^ESCT1299041','9N31200')
+group by PatID ) minsub on minsub.PatID = p.patid
+) sub on sub.firstdx = a.date and sub.lsoa = pl.lsoa COLLATE Latin1_General_100_CI_AI
+where lsoaSize > 50
+and pl.lsoa is not null
+group by pl.lsoa,a.date, lsoaSize
+order by pl.lsoa, a.date
+--save to disk
 /*
 -- not detected / excluded
 4J3R200	2019-nCoV (novel coronavirus) not detected	9
