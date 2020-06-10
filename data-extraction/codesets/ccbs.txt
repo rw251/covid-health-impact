@@ -1,0 +1,152 @@
+bll..00	NIFEDIPINE [2]
+blll.00	ADANIF XL 60mg m/r tablets
+bllk.00	ADANIF XL 30mg m/r tablets
+bllj.00	NIDEF 60mg m/r tablets
+blli.00	NIDEF 30mg m/r tablets
+bllh.00	VALNI XL 60mg m/r tablets
+bllg.00	VALNI XL 30mg m/r tablets
+bllf.00	NIMODREL XL 30mg tablets
+blle.00	NIMODREL XL 60mg tablets
+blld.00	ADIPINE XL 60mg m/r tablets
+bllc.00	ADIPINE XL 30mg m/r tablets
+bllb.00	VALNI 20 RETARD 20mg m/r tablets
+blla.00	HYPOLAR RETARD 10mg m/r tablets
+bll9.00	KENTIPINE MR 20mg m/r tablets
+bll8.00	KENTIPINE MR 10mg m/r tablets
+bll7.00	CALCHAN MR 10mg m/r tablets
+bll6.00	CALCHAN MR 20mg m/r tablets
+bll5.00	HYPOLAR XL 30 m/r tablets
+bll4.00	*ADIPINE LA 60 m/r tablets
+bll3.00	*ADIPINE LA 30 m/r tablets
+bll2.00	SLOFEDIPINE XL 60mg m/r tablets
+bll1.00	SLOFEDIPINE XL 30mg m/r tablets
+bl8..00	NIFEDIPINE
+bl8z.00	NIFEDIPINE 20mg m/r tablets
+bl8y.00	NIFEDIPINE 60mg m/r tablets
+bl8x.00	NIFEDIPINE 30mg m/r tablets
+bl8w.00	NIFEDIPINE 10mg m/r tablets
+bl8v.00	NIFEDIPINE 20mg m/r capsules
+bl8u.00	NIFEDIPINE 10mg m/r capsules
+bl8W.00	NIFEDIPINE 60mg m/r capsules
+bl8V.00	NIFEDIPINE 30mg m/r capsules
+bl8F.00	NIFEDIPINE 40mg m/r tablets
+bl88.00	NIFEDIPINE-IC 200micrograms/2mL injection
+bl86.00	NIFEDIPINE 10mg capsules
+bl85.00	NIFEDIPINE 5mg capsules
+bl8t.00	NIFOPRESS RETARD 20mg m/r tablets
+bl8s.00	*CORODAY MR 20mg m/r tablets
+bl8r.00	*NIFEDOTARD 20MR m/r tablets
+bl8q.00	*HYPOLAR RETARD 20 m/r tablets
+bl8p.00	*CALANIF 5mg capsules
+bl8o.00	*CALANIF 10mg capsules
+bl8n.00	*NIFELEASE 20mg m/r tablets
+bl8m.00	*ANGIOPINE MR 20mg tablets
+bl8l.00	*CARDILATE MR 20mg m/r tablets
+bl8k.00	CORACTEN SR 10mg m/r capsules
+bl8j.00	ADALAT LA 60mg m/r tablets
+bl8i.00	ADALAT LA 30mg m/r tablets
+bl8h.00	*NIFENSAR XL 20mg m/r tablets
+bl8g.00	*ANGIOPINE 10mg capsules
+bl8f.00	*ANGIOPINE 5mg capsules
+bl8e.00	CORACTEN SR 20mg m/r capsules
+bl8d.00	*CALCIPINE 10mg capsules
+bl8c.00	*CALCIPINE 5mg capsules
+bl8b.00	*CALCILAT 10mg capsules
+bl8a.00	*VASAD 10mg capsules
+bl8Z.00	NIVATEN RETARD 20mg m/r tablets
+bl8Y.00	CORACTEN XL 60mg m/r capsules
+bl8X.00	CORACTEN XL 30mg m/r capsules
+bl8U.00	NIFEDIPRESS MR 20 m/r tablets
+bl8T.00	NIVATEN RETARD 10mg m/r tablets
+bl8S.00	NIFEDIPRESS MR 10 m/r tablets
+bl8R.00	GENALAT RETARD 20mg m/r tablets
+bl8Q.00	GENALAT RETARD 10mg m/r tablets
+bl8P.00	*ANGIOPINE MR 10mg m/r tablets
+bl8O.00	*SLOFEDIPINE 20mg m/r tablets
+bl8M.00	ADALAT LA 20mg m/r tablets
+bl8L.00	FORTIPINE LA40 m/r tablets
+bl8K.00	TENSIPINE MR 20 m/r tablets
+bl8J.00	TENSIPINE MR 10 m/r tablets
+bl8H.00	*CARDILATE MR 10mg m/r tablets
+bl8G.00	*ANGIOPINE 40 LA m/r tablets
+bl8E.00	*NIMODREL MR 20 m/r tablets
+bl8D.00	*NIMODREL MR 10 m/r tablets
+bl8C.00	*UNIPINE XL 30mg m/r tablets
+bl8B.00	ADIPINE MR 10 m/r tablets
+bl8A.00	ADIPINE MR 20 m/r tablets
+bl89.00	*VASAD 5mg capsules
+bl87.00	ADALAT-IC 200micrograms/2mL injection
+bl84.00	ADALAT RETARD 10mg m/r tablets
+bl83.00	ADALAT RETARD 20mg m/r tablets
+bl82.00	ADALAT 10mg capsules
+bl81.00	ADALAT 5mg capsules
+bl7..00	NICARDIPINE HYDROCHLORIDE
+bl7z.00	NICARDIPINE 30mg capsules
+bl7y.00	NICARDIPINE 20mg capsules
+bl7x.00	NICARDIPINE 30mg m/r capsules
+bl7w.00	NICARDIPINE 45mg m/r capsules
+bl75.00	NICARDIPINE 10mg/10mL solution for injection
+bl74.00	CARDENE SR 45mg m/r capsules
+bl73.00	CARDENE SR 30mg m/r capsules
+bl72.00	CARDENE 30mg capsules
+bl71.00	CARDENE 20mg capsules
+ble..00	LACIDIPINE
+ble2.00	LACIDIPINE 4mg tablets
+ble1.00	LACIDIPINE 2mg tablets
+ble5.00	MOLAP 4mg tablets
+ble4.00	MOTENS 4mg tablets
+ble3.00	MOTENS 2mg tablets
+blc..00	FELODIPINE
+blc5.00	FELODIPINE 2.5mg m/r tablets
+blc2.00	FELODIPINE 10mg m/r tablets
+blc1.00	FELODIPINE 5mg m/r tablets
+blct.00	FELOTENS XL 2.5mg m/r tablets
+blcs.00	NEOFEL XL 2.5mg m/r tablets
+blcr.00	CARDIOPLEN XL 2.5mg m/r tablets
+blcq.00	PINEFELD XL 10mg m/r tablets
+blcp.00	PARMID XL 10mg m/r tablets
+blco.00	PARMID XL 5mg m/r tablets
+blcn.00	NEOFEL XL 10mg m/r tablets
+blcm.00	NEOFEL XL 5mg m/r tablets
+blcl.00	CARDIOPLEN XL 10mg m/r tablets
+blck.00	CARDIOPLEN XL 5mg m/r tablets
+blcj.00	VASCALPHA 10mg m/r tablets
+blci.00	VASCALPHA 5mg m/r tablets
+blch.00	FELOGEN XL 10mg m/r tablets
+blcg.00	KELOC SR 10mg m/r tablets
+blcf.00	KELOC SR 5mg m/r tablets
+blce.00	FELENDIL XL 10mg m/r tablets
+blcd.00	FELENDIL XL 5mg m/r tablets
+blcc.00	FELOGEN XL 5mg m/r tablets
+blcb.00	FELOTENS XL 10mg m/r tablets
+blca.00	FELOTENS XL 5mg m/r tablets
+blc9.00	CABREN 10mg m/r tablets
+blc8.00	CABREN 5mg m/r tablets
+blc7.00	CABREN 2.5mg m/r tablets
+blc6.00	PLENDIL 2.5mg m/r tablets
+blc4.00	PLENDIL 10mg m/r tablets
+blc3.00	PLENDIL 5mg m/r tablets
+blb..00	AMLODIPINE
+blb8.00	AMLODIPINE 2mg/mL oral solution
+blb7.00	AMLODIPINE 1mg/mL oral solution
+blb2.00	AMLODIPINE 10mg tablets
+blb1.00	AMLODIPINE 5mg tablets
+blb6.00	*AMLOSTIN 10mg tablets
+blb5.00	*AMLOSTIN 5mg tablets
+blb4.00	ISTIN 10mg tablets
+blb3.00	ISTIN 5mg tablets
+blh..00	LERCANIDIPINE HYDROCHLORIDE
+blh3.00	LERCANIDIPINE HYDROCHLORIDE 20mg tablets
+blh1.00	LERCANIDIPINE HYDROCHLORIDE 10mg tablets
+blh4.00	ZANIDIP 20mg tablets
+blh2.00	ZANIDIP 10mg tablets
+dt1..00	NIMODIPINE
+dt15.00	NIMODIPINE 50mg/250mL intravenous infusion
+dt13.00	NIMODIPINE 30mg tablets
+dt11.00	NIMODIPINE 200microgram/mL intravenous infusion 50mL
+dt16.00	NIMOTOP IV 50mg/250mL infusion
+dt14.00	NIMOTOP 30mg tablets
+dt12.00	NIMOTOP 200micrograms/mL intravenous infusion 50mL
+dhbe.00	*PARMID 10mg/2mL injection
+dhbd.00	*PARMID 5mg/5mL elixir
+dhbc.00	*PARMID 10mg tablets

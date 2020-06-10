@@ -16,7 +16,7 @@ END;
 -- of the code where it is the first time the patient has had it
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select NHSNo, min(entrydate) as FirstDiagnosis from journal
-	where ReadCode in ('B4A..11','B4A..99','B4A0.00','B4A0.99','B4A0000','BB5a.00','BB5a000','BB5a011','BB5a012','BBL7.11','BBL7100','BBL7112','BBL7200','BBL7300','BBLJ.00','K01w112','B4A0.','B4A00','BB5a.','BB5a0','BBL71','BBL72','BBL73','BBLJ.')
+	where ReadCode in ('bu2c.00','bu2B.00','bu2A.00','bu25.00','bu23.00','blmz.00','di13.00','bu2c.','bu2B.','bu2A.','bu25.','bu23.','blmz.','di13.')
 	and entrydate <= '2020-06-10'
 	group by NHSNo
 ) sub 
@@ -27,14 +27,14 @@ group by FirstDiagnosis
 -- code irrespective of whether it is the first time the patient has had it
 select entrydate, count(*) as num into #Prevalence from (
 	select NHSNo, entrydate from journal
-	where ReadCode in ('B4A..11','B4A..99','B4A0.00','B4A0.99','B4A0000','BB5a.00','BB5a000','BB5a011','BB5a012','BBL7.11','BBL7100','BBL7112','BBL7200','BBL7300','BBLJ.00','K01w112','B4A0.','B4A00','BB5a.','BB5a0','BBL71','BBL72','BBL73','BBLJ.')
+	where ReadCode in ('bu2c.00','bu2B.00','bu2A.00','bu25.00','bu23.00','blmz.00','di13.00','bu2c.','bu2B.','bu2A.','bu25.','bu23.','blmz.','di13.')
 	and entrydate >= '2009-12-28'
 	and entrydate <= '2020-06-10'
 	group by NHSNo, entrydate
 ) sub 
 group by entrydate
 
-PRINT 'Date,IncidenceOfKidneyCancer,PrevalenceOfKidneyCancer'
+PRINT 'Date,IncidenceOfAspirin75,PrevalenceOfAspirin75'
 select [date], ISNULL(i.num, 0), ISNULL(p.num, 0) from #AllDates d 
 	left outer join #Incidence i on i.FirstDiagnosis = d.date
 	left outer join #Prevalence p on p.entrydate = d.date
