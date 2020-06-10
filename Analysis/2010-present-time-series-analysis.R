@@ -215,6 +215,30 @@ title("First prescription of clopidogrel each week 2018-present")
 abline(v = 2020.23, col = "red", lty = 3)
 text(2020.23, 5, "lockdown", pos = 1, srt = 0)
 
+####### ccbs
+ccbsTX <- getWeeklyTimeSeriesFormat1("C:/Users/mdehsrw9/Development/covid-health-impact/data-extraction/data/dx--ccbs.txt")
+par(mfrow=c(2,1))
+plot.ts(ccbsTX, ylim=c(0,40))
+title("First prescription of ccbs each week 2010-present")
+abline(v = 2020.23, col = "red", lty = 3)
+text(2020.23, 5, "lockdown", pos = 1, srt = 0)
+plot.ts(ccbsTX, ylim=c(0,40), xlim=c(2018,2021), xaxp=c(2018,2021,3))
+title("First prescription of ccbs each week 2018-present")
+abline(v = 2020.23, col = "red", lty = 3)
+text(2020.23, 5, "lockdown", pos = 1, srt = 0)
+
+####### aspirin 75mg
+asp75TX <- getWeeklyTimeSeriesFormat1("C:/Users/mdehsrw9/Development/covid-health-impact/data-extraction/data/dx--aspirin-75.txt")
+par(mfrow=c(2,1))
+plot.ts(asp75TX, ylim=c(0,30))
+title("First prescription of aspirin 75mg each week 2010-present")
+abline(v = 2020.23, col = "red", lty = 3)
+text(2020.23, 5, "lockdown", pos = 1, srt = 0)
+plot.ts(asp75TX, ylim=c(0,30), xlim=c(2018,2021), xaxp=c(2018,2021,3))
+title("First prescription of aspirin 75mg each week 2018-present")
+abline(v = 2020.23, col = "red", lty = 3)
+text(2020.23, 5, "lockdown", pos = 1, srt = 0)
+
 ####### diabetes
 diabTX <- getWeeklyTimeSeriesFormat1("C:/Users/mdehsrw9/Development/covid-health-impact/data-extraction/data/dx-GROUP-diabetes.txt")
 par(mfrow=c(2,1))
