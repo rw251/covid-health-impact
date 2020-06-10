@@ -150,3 +150,82 @@ dt12.00	NIMOTOP 200micrograms/mL intravenous infusion 50mL
 dhbe.00	*PARMID 10mg/2mL injection
 dhbd.00	*PARMID 5mg/5mL elixir
 dhbc.00	*PARMID 10mg tablets
+AMTA17004NEMIS	Amlodipine 5mg tablets
+AMTA17006NEMIS	Amlodipine 10mg tablets
+AMTA10145BRIDL	Amlodipine Besilate Tablets 5 mg
+AMTA9080EMIS	Amlodipine Besilate Tablets 10 mg
+LETA32002EMIS	Lercanidipine 10mg tablets
+LETA22327NEMIS	Lercanidipine 20mg tablets
+FES/9145EMIS	Felodipine 5mg modified-release tablets
+FES/9144EMIS	Felodipine 10mg modified-release tablets
+FEM/29632EMIS	Felodipine 2.5mg modified-release tablets
+LATA23422EMIS	Lacidipine 4mg tablets
+ADM/19822EMIS	Adalat LA 30mg tablets (Bayer Plc)
+AMTA18892NEMIS	Amlostin 10mg tablets (Discovery Pharmaceuticals)
+AMTA18891NEMIS	Amlostin 5mg tablets (Discovery Pharmaceuticals)
+ADM/19823EMIS	Adalat LA 60mg tablets (Bayer Plc)
+LATA23421EMIS	Lacidipine 2mg tablets
+NISR9016EMIS	Nifedipine 20mg modified-release capsules
+ADTA48	Adalat retard 20mg tablets (Bayer Plc)
+NICA1987	Nifedipine 5mg capsules
+NIM/19537EMIS	Nifedipine 20mg modified-release tablets
+ADM/19822EMIS	Adalat LA 30 tablets (Bayer Plc)
+ADM/19382NEMIS	Adipine XL 30mg tablets (Chiesi Ltd)
+ADM/19383NEMIS	Adipine XL 60mg tablets (Chiesi Ltd)
+ADM/27060EMIS	Adipine MR 20 tablets (Chiesi Ltd)
+NIM/19777EMIS	Nifedipine 10mg modified-release capsules
+ADM/19823EMIS	Adalat LA 60 tablets (Bayer Plc)
+ADM/4NEMIS	Adalat LA 20mg tablets (Bayer Plc)
+NICA1986	Nifedipine 10mg capsules
+NIM/28058EMIS	Nifedipine 10mg modified-release tablets
+COM/35190EMIS	Coracten XL 60mg capsules (UCB Pharma Ltd)
+NIM/19826EMIS	Nifedipine 30mg modified-release tablets
+ADM/28056EMIS	Adipine MR 10 tablets (Chiesi Ltd)
+NIM/172NEMIS	Nifedipine 30mg modified-release capsules
+COM/35189EMIS	Coracten XL 30mg capsules (UCB Pharma Ltd)
+NIM/19827EMIS	Nifedipine 60mg modified-release tablets
+COSR10743BRIDL	Coracten SR 20mg capsules (UCB Pharma Ltd)
+ADTA8424EGTON	Adalat retard 10mg tablets (Bayer Plc)
+NIM/173NEMIS	Nifedipine 60mg modified-release capsules
+TEM/29665EMIS	Tensipine MR 20 tablets (Genus Pharmaceuticals Ltd)
+LATA23422EMIS	Lacidipine 4mg tablets
+ADM/19822EMIS	Adalat LA 30mg tablets (Bayer Plc)
+AMTA18892NEMIS	Amlostin 10mg tablets (Discovery Pharmaceuticals)
+AMTA18891NEMIS	Amlostin 5mg tablets (Discovery Pharmaceuticals)
+ADM/19823EMIS	Adalat LA 60mg tablets (Bayer Plc)
+LATA23421EMIS	Lacidipine 2mg tablets
+NISR9016EMIS	Nifedipine 20mg modified-release capsules
+ADTA48	Adalat retard 20mg tablets (Bayer Plc)
+NICA1987	Nifedipine 5mg capsules
+NIM/19537EMIS	Nifedipine 20mg modified-release tablets
+ADM/19822EMIS	Adalat LA 30 tablets (Bayer Plc)
+ADM/19382NEMIS	Adipine XL 30mg tablets (Chiesi Ltd)
+ADM/19383NEMIS	Adipine XL 60mg tablets (Chiesi Ltd)
+ADM/27060EMIS	Adipine MR 20 tablets (Chiesi Ltd)
+NIM/19777EMIS	Nifedipine 10mg modified-release capsules
+ADM/19823EMIS	Adalat LA 60 tablets (Bayer Plc)
+ADM/4NEMIS	Adalat LA 20mg tablets (Bayer Plc)
+NICA1986	Nifedipine 10mg capsules
+NIM/28058EMIS	Nifedipine 10mg modified-release tablets
+COM/35190EMIS	Coracten XL 60mg capsules (UCB Pharma Ltd)
+NIM/19826EMIS	Nifedipine 30mg modified-release tablets
+ADM/28056EMIS	Adipine MR 10 tablets (Chiesi Ltd)
+NIM/172NEMIS	Nifedipine 30mg modified-release capsules
+COM/35189EMIS	Coracten XL 30mg capsules (UCB Pharma Ltd)
+NIM/19827EMIS	Nifedipine 60mg modified-release tablets
+COSR10743BRIDL	Coracten SR 20mg capsules (UCB Pharma Ltd)
+ADTA8424EGTON	Adalat retard 10mg tablets (Bayer Plc)
+NIM/173NEMIS	Nifedipine 60mg modified-release capsules
+TEM/29665EMIS	Tensipine MR 20 tablets (Genus Pharmaceuticals Ltd)
+FEM/16278NEMIS	Felotens XL 5mg tablets (Thornton & Ross Ltd)
+COM/19775EMIS	Coracten SR 10mg capsules (UCB Pharma Ltd)
+LATA23422EMIS	Lacidipine  Tablets  4 mg
+MOTA23418EMIS	Motens 4mg tablets (GlaxoSmithKline UK Ltd)
+ISTA9945BRIDL	Istin 10mg tablets (Pfizer Ltd)
+ADM/19822EMIS	Adalat La  M/R Tablets  30 mg
+ISTA9943BRIDL	Istin 5mg tablets (Pfizer Ltd)
+TEM/29664EMIS	Tensipine MR 10 tablets (Genus Pharmaceuticals Ltd)
+ADM/19823EMIS	Adalat La  M/R Tablets  60 mg
+NIM/19537EMIS	Nifedipine  M/R Tablets  20 mg
+FEM/16279NEMIS	Felotens XL 10mg tablets (Thornton & Ross Ltd)
+NIM/19826EMIS	Nifedipine  M/R Tablets  30 mg
