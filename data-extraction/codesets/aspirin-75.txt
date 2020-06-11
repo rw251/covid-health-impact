@@ -1,0 +1,10 @@
+bu2c.00	ASPIRIN 75mg soluble tablets
+bu2B.00	ASPIRIN 75mg e/c tablets
+bu2A.00	NU-SEALS ASPIRIN 75mg e/c tablets
+bu25.00	*ASPIRIN 75mg tablets
+bu23.00	ASPIRIN 75mg dispersible tablets
+blmz.00	ISOSORBIDE MONONITRATE+ASPIRIN 60mg/75mg m/r tablets
+di13.00	ASPIRIN 75mg dispersible tablets
+ASDI224	Aspirin 75mg dispersible tablets
+ASE/24520EMIS	Aspirin 75mg gastro-resistant tablets
+ASTA4609	Aspirin 75mg tablets
