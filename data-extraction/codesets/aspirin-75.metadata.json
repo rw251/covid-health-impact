@@ -1,0 +1,13 @@
+{
+  "includeTerms": [
+    "aspirin 75mg"
+  ],
+  "excludeTerms": [],
+  "terminology": "Readv2",
+  "createdBy": {
+    "name": "Richard Williams",
+    "email": "1234richardwilliams@gmail.com"
+  },
+  "createdOn": "2020-06-10T14:37:13.633Z",
+  "lastUpdated": "2020-06-10T14:37:19.483Z"
+}
