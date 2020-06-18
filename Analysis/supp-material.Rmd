@@ -1,0 +1,155 @@
+---
+title: "Supplementary material"
+output:
+  word_document:
+    reference_docx: default-styles.docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+read_chunk('Negative binomial model.R')
+```
+
+```{r allFunctions}
+```
+
+## Timeseries charts
+
+Timeseries charts for each type of clinical code.
+
+## Negative binomial regression charts
+
+Charts showing the observed number of first diagnoses or first prescriptions for each condition and medication analysed.
+
+```{r fig1, fig.width = 6.268, fig.cap='Figure S1 - First diagnosis of type 2 diabetes each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+initialiseTable()
+allData <- processData('dx-diabetes-t2dm.txt', isOneOffData = FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Type II Diabetes');
+plotChart(allData, 'Type 2 Diabetes', yLabel='Frequency of first diagnosis')
+```
+
+```{r fig2, fig.width = 6.268, fig.cap='Figure S2 - First diagnosis of type 2 diabetes each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData, 'Type 2 Diabetes', yLabel='Frequency of first diagnosis', justLastTwoYears = TRUE)
+```
+
+```{r fig3, fig.width = 6.268, fig.cap='Figure S3 - First prescription of metformin each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx--metformin.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Metformin');
+plotChart(allData,'Metformin', yLabel='Frequency of first prescription')
+```
+
+```{r fig4, fig.width = 6.268, fig.cap='Figure S4 - First prescription of metformin each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'Metformin', yLabel='Frequency of first prescription', justLastTwoYears = TRUE)
+```
+
+```{r fig5, fig.width = 6.268, fig.cap='Figure S5 - First diagnosis of circulatory system disease each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx-GROUP-circulatory-system.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Circulatory system disease');
+plotChart(allData,'Circulatory System Diseases', yLabel='Frequency of first diagnosis')
+```
+
+```{r fig6, fig.width = 6.268, fig.cap='Figure S6 - First diagnosis of circulatory system disease each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'Circulatory System Diseases', yLabel='Frequency of first diagnosis', justLastTwoYears = TRUE)
+```
+
+```{r fig7, fig.width = 6.268, fig.cap='Figure S7 - First prescription of aspirin 75mg each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx--aspirin-75.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Aspirin 75mg');
+plotChart(allData,'Aspirin 75mg', yLabel='Frequency of first prescription')
+```
+
+```{r fig8, fig.width = 6.268, fig.cap='Figure S8 - First prescription of aspirin 75mg each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'Aspirin 75mg', yLabel='Frequency of first prescription', justLastTwoYears = TRUE)
+```
+
+```{r fig9, fig.width = 6.268, fig.cap='Figure S9 - First prescription of ccb each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx--ccbs.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> CCBs');
+plotChart(allData,'CCB', yLabel='Frequency of first prescription')
+```
+
+```{r fig10, fig.width = 6.268, fig.cap='Figure S10 - First prescription of ccb each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'CCB', yLabel='Frequency of first prescription', justLastTwoYears = TRUE)
+```
+
+```{r fig11, fig.width = 6.268, fig.cap='Figure S11 - First prescription of acei each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx--acei.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> ACEIs');
+plotChart(allData,'ACE Inhibitors', yLabel='Frequency of first prescription')
+```
+
+```{r fig12, fig.width = 6.268, fig.cap='Figure S12 - First prescription of acei each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'ACE Inhibitors', yLabel='Frequency of first prescription', justLastTwoYears = TRUE)
+```
+
+```{r fig13, fig.width = 6.268, fig.cap='Figure S13 - First prescription of clopidogrel each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx--clopidogrel.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Clopidogrel');
+plotChart(allData,'Clopidogrel', yLabel='Frequency of first prescription')
+```
+
+```{r fig14, fig.width = 6.268, fig.cap='Figure S14 - First prescription of clopidogrel each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'Clopidogrel', yLabel='Frequency of first prescription', justLastTwoYears = TRUE)
+```
+
+```{r fig15, fig.width = 6.268, fig.cap='Figure S15 - First diagnosis of mild-moderate mental health illness disease each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx-GROUP-mental-health-mild-moderate.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Mild-moderate mental illness');
+plotChart(allData,'Moderate mental illnesses', yLabel='Frequency of first diagnosis')
+```
+
+```{r fig16, fig.width = 6.268, fig.cap='Figure S16 - First diagnosis of mild-moderate mental health illness each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'Moderate mental illnesses', yLabel='Frequency of first diagnosis', justLastTwoYears = TRUE)
+```
+
+```{r fig17, fig.width = 6.268, fig.cap='Figure S17 - First prescription of ssri each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx--ssri.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> SSRIs');
+plotChart(allData,'SSRI', yLabel='Frequency of first prescription')
+```
+
+```{r fig18, fig.width = 6.268, fig.cap='Figure S18 - First prescription of ssri each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'SSRI', yLabel='Frequency of first prescription', justLastTwoYears = TRUE)
+```
+
+```{r fig19, fig.width = 6.268, fig.cap='Figure S19 - First diagnosis of malignant cancer each week 2010-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+allData <- processData('dx-GROUP-cancer.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Malignant cancer');
+plotChart(allData,'Malignant cancer', yLabel='Frequency of first diagnosis')
+```
+
+```{r fig20, fig.width = 6.268, fig.cap='Figure S20 - First diagnosis of malignant cancer each week 2019-present. Predicted line based on negative binomial regression model using data up to and including Feb 2020', echo=FALSE}
+plotChart(allData,'Malignant cancer', yLabel='Frequency of first diagnosis', justLastTwoYears = TRUE)
+```
+
+## Negative binomial regression tables
+
+```{r}
+library('knitr')
+outputTableMarch <- finaliseTableMarch()
+kable(outputTableMarch, row.names = FALSE, caption="Table S1: The expected number of first diagnoses or first prescriptions as generated from the negative binomial regression models, and the number of first diagnoses and first prescriptions observed in the data, for March 2020. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors.")
+```
+<br>
+```{r}
+outputTableApril <- finaliseTableApril()
+kable(outputTableApril, row.names = FALSE, caption="Table S1: The expected number of first diagnoses or first prescriptions as generated from the negative binomial regression models, and the number of first diagnoses and first prescriptions observed in the data, for April 2020. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors.")
+```
+<br>
+```{r}
+outputTableMay <- finaliseTableMay()
+kable(outputTableMay, row.names = FALSE, caption="Table S1: The expected number of first diagnoses or first prescriptions as generated from the negative binomial regression models, and the number of first diagnoses and first prescriptions observed in the data, for May 2020. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors.")
+```
+
