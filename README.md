@@ -2,14 +2,15 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3839448.svg)](https://doi.org/10.5281/zenodo.3839448)
 
-Exploratory work to determine what (if any) effect the COVID-19 outbreak is having on the reporting, diagnosis and treatment of mental and physical health conditions.
+Exploring the indirect effects the COVID-19 public health emergency on the reporting, diagnosis and treatment of mental and physical health conditions. There is particular focus on the potential missed diagnoses as a result of patient's avoiding healthcare settings and the widespread move to remote consultations.
 
 ## Instructions
 
 1. Updated codesets are placed in `data-extraction/codesets`
 2. Run `node main.js` to create the SQL queries necessary for data extraction
 3. When on the server execute `data-extraction/RunToExtractData.bat` to extract the data
-4. Data ends up in `data-extraction/data`
+4. Data with daily counts ends up in a directory outside of this repo due to small numbers
+5. 
 
 ## Analysis
 
