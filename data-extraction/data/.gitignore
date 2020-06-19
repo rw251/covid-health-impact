@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# But not these file...
+!.gitignore
+dx*txt
