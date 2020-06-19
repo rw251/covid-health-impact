@@ -19,6 +19,7 @@ displayAsDifference <- FALSE;
 DATA_DIRECTORY <- file.path(here(), '..','covid-health-data')
 ALT_DATA_DIRECTORY <- file.path(here(), 'data-extraction', 'one-off-tasks')
 OUTPUT_DIRECTORY <- file.path(here(), 'outputs') # this file needs creating on the local directory
+OUTPUT_DATA_DIRECTORY <- file.path(here(), 'data-extraction', 'data')
 
 getRawOutputForMonth <- function(data, month) {
   if(displayAsDifference) {
@@ -205,8 +206,19 @@ updateTable <- function(allData,descriptionForPlotTitles) {
   outputTableMatrixMay <<- rbind(outputTableMatrixMay, c(descriptionForPlotTitles,round(outputMay[2]), paste(round(outputMay[3]), 'to', round(outputMay[4])), outputMay[1], paste0(format(outputMay[5], nsmall = 1), '%'), paste0(format(outputMay[6], nsmall = 1),'% to ',format(outputMay[7], nsmall = 1),'%'))) 
 }
 
+writeRedactedData <- function(data, filename) {
+  redacted <- data %>% select(date, inc)
+  redacted$inc[redacted$inc < 10] <- 0
+  write.table(redacted, file.path(OUTPUT_DATA_DIRECTORY, filename), append = FALSE, sep = "\t", dec = ".", row.names = FALSE, col.names = TRUE)
+}
+
 processFile <- function (filename, descriptionForPlotTitles, yLabel, isOneOffData = FALSE) {
+  
+  # filename<-'dx-diabetes-t2dm.txt'
+  # isOneOffData = FALSE
+  
   allData <- processData(filename, isOneOffData = isOneOffData)
+  writeRedactedData(allData, filename)
   allData <- fitModel(allData)
   
   ## Plot and save 
