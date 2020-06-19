@@ -3,4 +3,4 @@
 
 # But not these file...
 !.gitignore
-dx*txt
+!dx*txt
