@@ -18,5 +18,5 @@ Sys.setenv(RSTUDIO_PANDOC="C:\\Program Files\\RStudio\\bin\\pandoc")
 
 # Now we execute the main code knowing that all packages are installed
 #source("./Analysis/main.R")
-source("./Analysis/2010-present-time-series-analysis.R")
-source("./Analysis/Negative binomial model.R")
+source("./Analysis/simple-time-series-modelling.R")
+source("./Analysis/negative-binomial-modelling.R")
