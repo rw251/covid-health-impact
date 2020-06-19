@@ -1,3 +1,4 @@
+## @knitr timeSeriesFunctions
 library("xts")
 library(here)
 
@@ -29,8 +30,7 @@ getWeeklyTimeSeriesFormat2 <- function(filename, directory = ALT_DATA_DIRECTORY)
   return(weeklyTs)
 }
 
-drawPlot <- function(data, file, leftMargin, minYear = 2010, showTitle = FALSE, titleText, isBigChart = FALSE, ymax) {
-  png(file, width = 2400, pointsize = 10, height = 600, res = 300);
+getPlot <- function(data, leftMargin, minYear = 2010, showTitle = FALSE, titleText, isBigChart = FALSE, ymax) {
   options(scipen=5)
   par(mfrow=c(1,1))
   if(showTitle) {
@@ -39,7 +39,7 @@ drawPlot <- function(data, file, leftMargin, minYear = 2010, showTitle = FALSE, 
     par(mar=c(4.5,leftMargin,1,2)+0.1)
   }
   if(isBigChart){
-    plot.ts(
+    p <- plot.ts(
       data, ylim=c(0,ymax), ylab="",
       xaxt = "n", 
       xlim=c(minYear,2020 + 5/12), lwd=0.8,
@@ -47,7 +47,7 @@ drawPlot <- function(data, file, leftMargin, minYear = 2010, showTitle = FALSE, 
     )
   } else {
     par(las=1)
-    plot.ts(
+    p <- plot.ts(
       data, ylim=c(0,ymax), ylab="",
       xaxt = "n", 
       xlim=c(minYear,2020 + 5/12), lwd=0.8
@@ -65,12 +65,17 @@ drawPlot <- function(data, file, leftMargin, minYear = 2010, showTitle = FALSE, 
   lockdownLabelHeight <- ymax/6.25
   if(showTitle) lockdownLabelHeight <- ymax/4.1
   text(2020.23, lockdownLabelHeight, "Lockdown", pos = 1, srt = 0)
-  
+  return(p)
+}
+savePlot <- function(plot, file) {
+  png(file, width = 2400, pointsize = 10, height = 600, res = 300)
+  plot
   dev.off()
 }
 
 generatePlot <- function(data, file, titleText = '', showTitle = FALSE, ymax, leftMargin) {
-  drawPlot(data, file, leftMargin, minYear = 2015, showTitle, titleText, ymax = ymax)
+  p <- getPlot(data, leftMargin, minYear = 2015, showTitle, titleText, ymax = ymax)
+  savePlot(p, file)
 }
   
 generatePlots <- function(data, filename, directory = OUTPUT_DIRECTORY, titleText, ymax, leftMargin = 5.5) {
@@ -88,7 +93,8 @@ generatePlots <- function(data, filename, directory = OUTPUT_DIRECTORY, titleTex
 }
 
 generatePlotFrom2010 <- function(data, file, titleText = '', showTitle = FALSE, ymax) {
-  drawPlot(data, file, leftMargin = 3.5, minYear = 2010, showTitle, titleText, isBigChart = TRUE, ymax = ymax)
+  p <- getPlot(data, leftMargin = 3.5, minYear = 2010, showTitle, titleText, isBigChart = TRUE, ymax = ymax)
+  savePlot(p, file)
 }
 
 generatePlotsFrom2010 <- function(data, filename, directory = OUTPUT_DIRECTORY, titleText, showTitle = FALSE, ymax) {
@@ -98,6 +104,8 @@ generatePlotsFrom2010 <- function(data, filename, directory = OUTPUT_DIRECTORY, 
   ## Do plot with title
   generatePlotFrom2010(data, file = file.path(directory, paste0(filename, '-with-title.png')), ymax = ymax, showTitle = TRUE, titleText = titleText)
 }
+
+## @knitr ignoreThese
 
 ####### All
 codesAll <- getWeeklyTimeSeriesFormat2("all_since_2010.txt")
