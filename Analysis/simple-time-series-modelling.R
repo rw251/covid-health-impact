@@ -169,7 +169,7 @@ generatePlots(metfTX, filename = "spec-t2dm-met",ymax=40, titleText = 'First pre
 
 ####### mod mental health
 modmhTX <- getWeeklyTimeSeriesFormat1("dx-GROUP-mental-health-mild-moderate.txt")
-generatePlots(modmhTX, filename = "spec-mental",ymax=250, titleText = 'First diagnoses of a mild/moderate mental health illness each week 2015-present', leftMargin = 4)
+generatePlots(modmhTX, filename = "spec-mental",ymax=250, titleText = 'First diagnoses of a common mental health problem each week 2015-present', leftMargin = 4)
 
 ####### SSRI
 ssriTx <- getWeeklyTimeSeriesFormat1("dx--ssri.txt")

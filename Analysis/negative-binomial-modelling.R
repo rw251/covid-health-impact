@@ -309,7 +309,7 @@ processFile('dx--aspirin-75.txt', 'Aspirin 75mg', yLabel='Frequency of first pre
 processFile('dx--ccbs.txt', 'CCB', yLabel='Frequency of first prescription')
 processFile('dx--acei.txt', 'ACE Inhibitors', yLabel='Frequency of first prescription')
 processFile('dx--clopidogrel.txt', 'Clopidogrel', yLabel='Frequency of first prescription')
-processFile('dx-GROUP-mental-health-mild-moderate.txt', 'Moderate mental illnesses', yLabel='Frequency of first diagnosis')
+processFile('dx-GROUP-mental-health-mild-moderate.txt', 'Common mental health problems', yLabel='Frequency of first diagnosis')
 processFile('dx--ssri.txt', 'SSRI', yLabel='Frequency of first prescription')
 processFile('dx-GROUP-cancer.txt', 'Malignant cancer', yLabel='Frequency of first diagnosis')
 print(finaliseTableAll())
