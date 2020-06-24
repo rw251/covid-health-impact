@@ -10,6 +10,7 @@ library(zoo)
 library(readr)
 library('rmarkdown')
 library('knitr')
+library('svglite')
 
 ## @knitr allFunctions
 
@@ -79,23 +80,6 @@ getFinalOutput <- function(data, descriptionForPlotTitles) {
 getRoundedOutputForMonth <- function(data, month, digits = 0) {
   return(round(getRawOutputForMonth(data, month), digits = digits))
 }
-displayOutputForMonth <- function(data, month) {
-  print(getRoundedOutputForMonth(data, month))
-}
-displayTotal <- function(data, descriptionForPlotTitles) {
-  print(
-    round(getRawOutputForMonth(data, "03") + getRawOutputForMonth(data, "04") + getRawOutputForMonth(data, "05"),0)
-  )
-  print(
-      (data[which(data$month=="03" & data$year=="2020"),1] +
-       data[which(data$month=="04" & data$year=="2020"),1] +
-       data[which(data$month=="05" & data$year=="2020"),1]) / 
-      (data[which(data$month=="03" & data$year=="2020"),11] +
-       data[which(data$month=="04" & data$year=="2020"),11] +
-       data[which(data$month=="05" & data$year=="2020"),11])
-  )
-  print(getFinalOutput(data, descriptionForPlotTitles))
-}
 
 getData <- function(filename) {
   dat <- read.delim(file.path(DATA_DIRECTORY,filename), sep = ',')
@@ -155,55 +139,87 @@ fitModel <- function(allData) {
     LL <- exp(fit - 1.96 * se.fit)
     UL <- exp(fit + 1.96 * se.fit)
   })
+  
+  ## Data wrangling for ggplot
+  altData<-allData
+  altData$val<-altData$pred
+  allData$val<-allData$inc
+  altData$line <- ''
+  allData$line <- 'expected'
+  allData<-rbind(allData,altData)
+  allData$CI<-'95% confidence interval on expected value'
+  
   return(allData)
 }
 
-saveChart <- function(plot, descriptionForPlotTitles, fileSuffix = "inc_10_20.png") {
+saveChart <- function(plot, descriptionForPlotTitles, fileSuffix = "inc_10_20.svg") {
   ggsave(plot=plot+ expand_limits(y = 0), path=OUTPUT_DIRECTORY, filename = paste(descriptionForPlotTitles,fileSuffix))
 }
 
 saveWithTitle <- function(plot, yLabel, descriptionForPlotTitles) {
   plot <- plot +
-    labs(x = "Time (month/year)", y = yLabel, color = "Year", title = paste("Predicted and observed incidence of", descriptionForPlotTitles,"condition in 2019 and 2020"))
+    labs(x = "Time (month/year)", y = yLabel, color = "Year", title = paste("Expected and observed incidence of", descriptionForPlotTitles,"condition in 2019 and 2020"))
   
-  ggsave(plot+ expand_limits(y = 0), path=OUTPUT_DIRECTORY, filename = paste(descriptionForPlotTitles,"inc_19_20_with_title.png"), width=8, dpi=300)
+  ggsave(plot+ expand_limits(y = 0), path=OUTPUT_DIRECTORY, filename = paste(descriptionForPlotTitles,"inc_19_20_with_title.svg"), width=8, dpi=300)
 }
 
+## Testing in RStudio
+# myData <- processData('dx-diabetes-t2dm.txt', isOneOffData = FALSE)
+# myData <- fitModel(myData)
+# plotChart(myData, 'Type 2 Diabetes', yLabel='Frequency of first diagnosis')
+# plotChart(myData, 'Type 2 Diabetes', yLabel='Frequency of first diagnosis', justLastTwoYears = TRUE)
+
+## The padding with spaces of "Observed" e.g. with \u00A0 is a hack to get the spacing between the
+## legends correct. Briefly the "fill" legend for the CI and the "line" legend for the observed and expected
+## are separated by a gap that we can't control (to my knowledge), so instead we want to increase the gap between
+## Observed and Expected in the legend to match. Hence the space padding. However as we're savig to svg simply using
+## a ' ' doesn't work as svg ignores it. Hence the unicode \u00A0 to force the space.
 plotChart <- function(allData, descriptionForPlotTitles, yLabel, justLastTwoYears = FALSE) {
   if(justLastTwoYears) {
-    g2 <- allData %>% filter(year=="2020" | year=="2019") %>% ggplot(aes(x=date, y=inc))  + geom_line(aes(x=date, y=inc, color = "Observed")) +
-      geom_ribbon(aes(ymax = UL, ymin = LL), alpha= 0.1) +
-      geom_line(aes(x=date, y=pred, color= "Predicted")) +
+    g2 <- allData %>% filter(year=="2020" | year=="2019") %>% ggplot(aes(x=date, y=val))  + 
+      geom_line(aes(x=date, y=pred, color= "Expected")) +
+      geom_line(aes(x=date, y=inc, color = "Observed\u00A0\u00A0\u00A0\u00A0")) +
+      scale_colour_manual(name=NULL, breaks=c('Observed\u00A0\u00A0\u00A0\u00A0','Expected'), values = c('Observed\u00A0\u00A0\u00A0\u00A0' = "blue", 'Expected' = "black")) +
+      
+      geom_ribbon(aes(ymax = UL, ymin = LL, fill=CI), alpha= 0.1) +
+      scale_fill_manual(name=NULL, values = c(rgb(0, 0, 0, alpha = 0, maxColorValue = 255), "black")) +
+      guides(colour = guide_legend(order = 1), CI = guide_legend(order = 2)) +
+      
       labs(x = "Time (month/year)", y = yLabel, color = "Year", title = "") +
       theme_light() +
-      scale_colour_manual(name=NULL, values = c("blue", "black")) +
       scale_x_date(labels = date_format("%m/%Y"), date_breaks = "2 months") +
-      theme(legend.position = "bottom")
+      theme(legend.position = "bottom", legend.spacing.x = unit(0.1, 'cm'), legend.key.width = unit(1, "cm"))
     g2
     return(g2)
   } else {
-    g1 <- allData  %>% ggplot(aes(x=date, y=inc))  + geom_line(aes(x=date, y=inc, color = "Observed")) + 
-      geom_ribbon(aes(ymax = UL, ymin = LL), alpha= 0.1) +  
-      geom_line(aes(x=date, y=pred, color= "Predicted")) +
+    g1 <- allData  %>% ggplot(aes(x=date, y=val))   + 
+      geom_line(aes(x=date, y=pred, color= "Expected")) +
+      geom_line(aes(x=date, y=inc, color = "Observed\u00A0\u00A0\u00A0\u00A0")) +
+      scale_colour_manual(name=NULL, breaks=c('Observed\u00A0\u00A0\u00A0\u00A0','Expected'), values = c('Observed\u00A0\u00A0\u00A0\u00A0' = "blue", 'Expected' = "black")) +
+      
+      geom_ribbon(aes(ymax = UL, ymin = LL, fill=CI), alpha= 0.1) +
+      scale_fill_manual(name=NULL, values = c(rgb(0, 0, 0, alpha = 0, maxColorValue = 255), "black")) +
+      guides(colour = guide_legend(order = 1), CI = guide_legend(order = 2)) +
+      
       labs(x = "Time (month/year)", y = yLabel, color = "Year", title = "") + 
       theme_light() +
-      scale_colour_manual(name=NULL, values = c("blue", "black")) +
       scale_x_date(labels = date_format("%m/%Y"), breaks = "12 months") +
-      theme(legend.position = "bottom")
+      theme(legend.position = "bottom", legend.spacing.x = unit(0.1, 'cm'), legend.key.width = unit(1, "cm"))
     g1
     return(g1)
   }
 }
 
 updateTable <- function(allData,descriptionForPlotTitles) {
-  output <- getOutputVector(allData)
-  outputMarch <- getOutputVectorForMonth(allData, "03")
-  outputApril <- getOutputVectorForMonth(allData, "04")
-  outputMay <- getOutputVectorForMonth(allData, "05")
-  outputTableMatrixAll <<- rbind(outputTableMatrixAll, c(descriptionForPlotTitles,round(output[2]), paste(round(output[3]), 'to', round(output[4])), output[1], paste0(format(output[5], nsmall = 1), '%'), paste0(format(output[6], nsmall = 1),'% to ',format(output[7], nsmall = 1),'%'))) 
-  outputTableMatrixMarch <<- rbind(outputTableMatrixMarch, c(descriptionForPlotTitles,round(outputMarch[2]), paste(round(outputMarch[3]), 'to', round(outputMarch[4])), outputMarch[1], paste0(format(outputMarch[5], nsmall = 1), '%'), paste0(format(outputMarch[6], nsmall = 1),'% to ',format(outputMarch[7], nsmall = 1),'%'))) 
-  outputTableMatrixApril <<- rbind(outputTableMatrixApril, c(descriptionForPlotTitles,round(outputApril[2]), paste(round(outputApril[3]), 'to', round(outputApril[4])), outputApril[1], paste0(format(outputApril[5], nsmall = 1), '%'), paste0(format(outputApril[6], nsmall = 1),'% to ',format(outputApril[7], nsmall = 1),'%'))) 
-  outputTableMatrixMay <<- rbind(outputTableMatrixMay, c(descriptionForPlotTitles,round(outputMay[2]), paste(round(outputMay[3]), 'to', round(outputMay[4])), outputMay[1], paste0(format(outputMay[5], nsmall = 1), '%'), paste0(format(outputMay[6], nsmall = 1),'% to ',format(outputMay[7], nsmall = 1),'%'))) 
+  localData <- allData %>% filter(line=="expected")
+  output <- getOutputVector(localData)
+  outputMarch <- getOutputVectorForMonth(localData, "03")
+  outputApril <- getOutputVectorForMonth(localData, "04")
+  outputMay <- getOutputVectorForMonth(localData, "05")
+  outputTableMatrixAll <<- rbind(outputTableMatrixAll, c(descriptionForPlotTitles,output[1],  paste0(round(output[2]), ' (',round(output[3]), ' to ', round(output[4]),')'), paste0(format(output[5], nsmall = 1), '% (',format(output[6], nsmall = 1),'% to ',format(output[7], nsmall = 1),'%)')))
+  outputTableMatrixMarch <<- rbind(outputTableMatrixMarch, c(descriptionForPlotTitles,outputMarch[1], paste0(round(outputMarch[2]), ' (',round(outputMarch[3]), ' to ', round(outputMarch[4]),')'), paste0(format(outputMarch[5], nsmall = 1), '% (',format(outputMarch[6], nsmall = 1),'% to ',format(outputMarch[7], nsmall = 1),'%)'))) 
+  outputTableMatrixApril <<- rbind(outputTableMatrixApril, c(descriptionForPlotTitles,outputApril[1], paste0(round(outputApril[2]), ' (',round(outputApril[3]), ' to ', round(outputApril[4]),')'), paste0(format(outputApril[5], nsmall = 1), '% (',format(outputApril[6], nsmall = 1),'% to ',format(outputApril[7], nsmall = 1),'%)'))) 
+  outputTableMatrixMay <<- rbind(outputTableMatrixMay, c(descriptionForPlotTitles,outputMay[1], paste0(round(outputMay[2]), ' (',round(outputMay[3]), ' to ', round(outputMay[4]),')'), paste0(format(outputMay[5], nsmall = 1), '% (',format(outputMay[6], nsmall = 1),'% to ',format(outputMay[7], nsmall = 1),'%)'))) 
 }
 
 writeRedactedData <- function(data, filename) {
@@ -216,6 +232,7 @@ processFile <- function (filename, descriptionForPlotTitles, yLabel, isOneOffDat
   
   # filename<-'dx-diabetes-t2dm.txt'
   # isOneOffData = FALSE
+  # yLabel <- 'a y label'
   
   allData <- processData(filename, isOneOffData = isOneOffData)
   writeRedactedData(allData, filename)
@@ -225,7 +242,7 @@ processFile <- function (filename, descriptionForPlotTitles, yLabel, isOneOffDat
   plot1 <- plotChart(allData, descriptionForPlotTitles, yLabel)
   plot2 <- plotChart(allData, descriptionForPlotTitles, yLabel, justLastTwoYears = TRUE)
   saveChart(plot1, descriptionForPlotTitles)
-  saveChart(plot2, descriptionForPlotTitles, fileSuffix = "inc_19_20.png")
+  saveChart(plot2, descriptionForPlotTitles, fileSuffix = "inc_19_20.svg")
   saveWithTitle(plot1, yLabel, descriptionForPlotTitles)
 
   allData$test <- paste( eval(round(allData$pred,3)), "(CI:",eval(round(allData$LL,3)), "-",eval(round(allData$UL,3)),")")
@@ -236,28 +253,22 @@ processFile <- function (filename, descriptionForPlotTitles, yLabel, isOneOffDat
   } else {
     print(c("Month", "Observed", "Expected", "LowerCI", "UpperCI"))    
   }
-  displayOutputForMonth(allData, "03")
-  displayOutputForMonth(allData, "04")
-  displayOutputForMonth(allData, "05")
-  displayTotal(allData,descriptionForPlotTitles);
   updateTable(allData,descriptionForPlotTitles);
 }
 
 initialiseTable <- function() {
-  outputTableMatrixAll <<- matrix(nrow = 0, ncol = 6)
-  outputTableMatrixMarch <<- matrix(nrow = 0, ncol = 6)
-  outputTableMatrixApril <<- matrix(nrow = 0, ncol = 6)
-  outputTableMatrixMay <<- matrix(nrow = 0, ncol = 6)
+  outputTableMatrixAll <<- matrix(nrow = 0, ncol = 4)
+  outputTableMatrixMarch <<- matrix(nrow = 0, ncol = 4)
+  outputTableMatrixApril <<- matrix(nrow = 0, ncol = 4)
+  outputTableMatrixMay <<- matrix(nrow = 0, ncol = 4)
 }
 
 finaliseTableAll <- function() {
   colnames(outputTableMatrixAll) <- c(
     "First Diagnosis / Prescription",
-    "Expected cases (March – May 2020)",
-    "95% confidence interval for expected cases",
-    "Observed cases (March – May 2020)",
-    "Reduction in observed cases compared with expected",
-    "95% confidence interval for reduction in observed cases"
+    "Observed cases between March – May 2020",
+    "Expected cases between March – May 2020 (95% CI)",
+    "Percentage reduction between the expected and observed cases between March - May 2020 (95% CI)"
   )
   outputTable <- as.table(outputTableMatrixAll)
   return(outputTable)
@@ -265,11 +276,9 @@ finaliseTableAll <- function() {
 finaliseTableMarch <- function() {
   colnames(outputTableMatrixMarch) <- c(
     "First Diagnosis / Prescription",
-    "Expected cases (March 2020)",
-    "95% confidence interval for expected cases",
-    "Observed cases (March 2020)",
-    "Reduction in observed cases compared with expected",
-    "95% confidence interval for reduction in observed cases"
+    "Observed cases during March 2020",
+    "Expected cases between during March 2020 (95% CI)",
+    "Percentage reduction between the expected and observed cases during March 2020 (95% CI)"
   )
   outputTable <- as.table(outputTableMatrixMarch)
   return(outputTable)
@@ -277,11 +286,9 @@ finaliseTableMarch <- function() {
 finaliseTableApril <- function() {
   colnames(outputTableMatrixApril) <- c(
     "First Diagnosis / Prescription",
-    "Expected cases (April 2020)",
-    "95% confidence interval for expected cases",
-    "Observed cases (April 2020)",
-    "Reduction in observed cases compared with expected",
-    "95% confidence interval for reduction in observed cases"
+    "Observed cases during April 2020",
+    "Expected cases between during April 2020 (95% CI)",
+    "Percentage reduction between the expected and observed cases during April 2020 (95% CI)"
   )
   outputTable <- as.table(outputTableMatrixApril)
   return(outputTable)
@@ -289,11 +296,9 @@ finaliseTableApril <- function() {
 finaliseTableMay <- function() {
   colnames(outputTableMatrixMay) <- c(
     "First Diagnosis / Prescription",
-    "Expected cases (May 2020)",
-    "95% confidence interval for expected cases",
-    "Observed cases (May 2020)",
-    "Reduction in observed cases compared with expected",
-    "95% confidence interval for reduction in observed cases"
+    "Observed cases during May 2020",
+    "Expected cases during May 2020 (95% CI)",
+    "Percentage reduction between the expected and observed cases during May 2020 (95% CI)"
   )
   outputTable <- as.table(outputTableMatrixMay)
   return(outputTable)
@@ -322,3 +327,4 @@ processFile('all_medications_since_2010_no_duplicates.txt', 'Prescriptions', yLa
 processFile('all_diagnoses_since_2010_no_duplicates.txt', 'Diagnoses', yLabel='Frequency', isOneOffData = TRUE)
 
 rmarkdown::render(file.path(here(), 'Analysis', 'supp-material.Rmd'), output_dir = OUTPUT_DIRECTORY)
+

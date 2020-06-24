@@ -1,6 +1,7 @@
 ## @knitr timeSeriesFunctions
 library("xts")
 library(here)
+library('svglite')
 
 DATA_DIRECTORY <- file.path(here(), '..','covid-health-data')
 ALT_DATA_DIRECTORY <- file.path(here(), 'data-extraction', 'one-off-tasks')
@@ -9,6 +10,7 @@ OUTPUT_DIRECTORY <- file.path(here(), 'outputs') # this file needs creating on t
 getWeeklyTimeSeries <- function(dailyData, dateFormat) {
   dailyData$Date <- as.Date(as.character(dailyData$Date), format = dateFormat) # read date variable as dates rather than text
   dailyData <- dailyData[dailyData$Date < "2020-06-01", ]
+  dailyData <- dailyData[dailyData$Date > "2010-01-03", ]
   DF_daily <- xts(dailyData$NumCodes, order.by = dailyData$Date) 
   DF_weekly <- apply.weekly(DF_daily, FUN=sum)
   return(DF_weekly)
@@ -31,6 +33,7 @@ getWeeklyTimeSeriesFormat2 <- function(filename, directory = ALT_DATA_DIRECTORY)
 }
 
 getPlot <- function(data, leftMargin, minYear = 2010, showTitle = FALSE, titleText, isBigChart = FALSE, ymax) {
+  # data<- weeklyTs
   options(scipen=5)
   par(mfrow=c(1,1))
   if(showTitle) {
@@ -38,6 +41,7 @@ getPlot <- function(data, leftMargin, minYear = 2010, showTitle = FALSE, titleTe
   } else {
     par(mar=c(4.5,leftMargin,1,2)+0.1)
   }
+  
   if(isBigChart){
     p <- plot.ts(
       data, ylim=c(0,ymax), ylab="",
@@ -67,42 +71,40 @@ getPlot <- function(data, leftMargin, minYear = 2010, showTitle = FALSE, titleTe
   text(2020.23, lockdownLabelHeight, "Lockdown", pos = 1, srt = 0)
   return(p)
 }
-savePlot <- function(plot, file) {
-  png(file, width = 2400, pointsize = 10, height = 600, res = 300)
-  plot
+savePlot <- function(data, file, leftMargin, minYear, showTitle, titleText, isBigChart = FALSE, ymax) {
+  svg(file, width = 12, pointsize = 10, height = 3)
+  getPlot(data, leftMargin, minYear, showTitle, titleText, isBigChart, ymax)
   dev.off()
 }
 
 generatePlot <- function(data, file, titleText = '', showTitle = FALSE, ymax, leftMargin) {
-  p <- getPlot(data, leftMargin, minYear = 2015, showTitle, titleText, ymax = ymax)
-  savePlot(p, file)
+  savePlot(data, file, leftMargin, minYear = 2015, showTitle, titleText, ymax = ymax)
 }
   
 generatePlots <- function(data, filename, directory = OUTPUT_DIRECTORY, titleText, ymax, leftMargin = 5.5) {
   ## Do plot without title
   generatePlot(
-    data, file = file.path(directory, paste0(filename, '.png')), 
+    data, file = file.path(directory, paste0(filename, '.svg')), 
     ymax = ymax, leftMargin = leftMargin
   )
   
   ## Do plot with title
   generatePlot(
-    data, file = file.path(directory, paste0(filename, '-with-title.png')), 
+    data, file = file.path(directory, paste0(filename, '-with-title.svg')), 
     ymax = ymax, showTitle = TRUE, titleText = titleText, leftMargin = leftMargin
   )
 }
 
 generatePlotFrom2010 <- function(data, file, titleText = '', showTitle = FALSE, ymax) {
-  p <- getPlot(data, leftMargin = 3.5, minYear = 2010, showTitle, titleText, isBigChart = TRUE, ymax = ymax)
-  savePlot(p, file)
+  savePlot(data, file, leftMargin = 3.5, minYear = 2010, showTitle, titleText, isBigChart = TRUE, ymax = ymax)
 }
 
 generatePlotsFrom2010 <- function(data, filename, directory = OUTPUT_DIRECTORY, titleText, showTitle = FALSE, ymax) {
   ## Do plot without title
-  generatePlotFrom2010(data, file = file.path(directory, paste0(filename, '.png')), ymax = ymax)
+  generatePlotFrom2010(data, file = file.path(directory, paste0(filename, '.svg')), ymax = ymax)
   
   ## Do plot with title
-  generatePlotFrom2010(data, file = file.path(directory, paste0(filename, '-with-title.png')), ymax = ymax, showTitle = TRUE, titleText = titleText)
+  generatePlotFrom2010(data, file = file.path(directory, paste0(filename, '-with-title.svg')), ymax = ymax, showTitle = TRUE, titleText = titleText)
 }
 
 ## @knitr ignoreThese
