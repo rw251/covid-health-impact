@@ -3,13 +3,20 @@ library("xts")
 library(here)
 library('svglite')
 
+# Need to change the following if updating
+dateForAnalysisAsString<-"2020-07-01" # Must be 1st of a month
+
+dateForAnalysis<-as.Date(dateForAnalysisAsString, format='%Y-%m-%d')
+analysisYear<-as.numeric(format(dateForAnalysis, '%Y'))
+analysisMonth<-as.numeric(format(dateForAnalysis, '%m'))
+
 DATA_DIRECTORY <- file.path(here(), '..','covid-health-data')
 ALT_DATA_DIRECTORY <- file.path(here(), 'data-extraction', 'one-off-tasks')
 OUTPUT_DIRECTORY <- file.path(here(), 'outputs') # this file needs creating on the local directory
 
 getWeeklyTimeSeries <- function(dailyData, dateFormat) {
   dailyData$Date <- as.Date(as.character(dailyData$Date), format = dateFormat) # read date variable as dates rather than text
-  dailyData <- dailyData[dailyData$Date < "2020-06-01", ]
+  dailyData <- dailyData[dailyData$Date < dateForAnalysisAsString, ]
   dailyData <- dailyData[dailyData$Date > "2010-01-03", ]
   DF_daily <- xts(dailyData$NumCodes, order.by = dailyData$Date) 
   DF_weekly <- apply.weekly(DF_daily, FUN=sum)
@@ -46,7 +53,7 @@ getPlot <- function(data, leftMargin, minYear = 2010, showTitle = FALSE, titleTe
     p <- plot.ts(
       data, ylim=c(0,ymax), ylab="",
       xaxt = "n", 
-      xlim=c(minYear,2020 + 5/12), lwd=0.8,
+      xlim=c(minYear,analysisYear + (analysisMonth - 1)/12), lwd=0.8,
       yaxp=c(0,600000,2)
     )
   } else {
@@ -54,13 +61,13 @@ getPlot <- function(data, leftMargin, minYear = 2010, showTitle = FALSE, titleTe
     p <- plot.ts(
       data, ylim=c(0,ymax), ylab="",
       xaxt = "n", 
-      xlim=c(minYear,2020 + 5/12), lwd=0.8
+      xlim=c(minYear,analysisYear + (analysisMonth - 1)/12), lwd=0.8
     )
   }
   if(showTitle) {
     title(titleText)
   }
-  years <- seq(minYear, 2020, by=1)
+  years <- seq(minYear, analysisYear, by=1)
   labels <- paste0('01/', years)
   # Add 0.04 (=15/365.25) to each axis marker so that Jan 20XX appears in mid January
   axis(1, at=years+0.04, labels)

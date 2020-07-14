@@ -23,24 +23,6 @@ plotFigure <- function() {
 }
 ```
 
-## Negative binomial regression tables
-
-```{r}
-library('knitr')
-outputTableAll <- finaliseTableAll()
-kable(outputTableAll, row.names = FALSE, caption=paste0("Table 1: The expected number of first diagnoses or first prescriptions as generated from the negative binomial regression models, and the number of first diagnoses and first prescriptions observed in the data, for March to ",getNameOfLastAnalysisMonth()," 2020. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors."))
-```
-
-```{r}
-library('knitr')
-months <- c("January","February", "March","April","May","June","July","August","September","October","November","December")
-for(i in seq_along(monthsMarchToAnalysisData)) {
-  monthAsString <- format(monthsMarchToAnalysisData[i],'%m')
-  outputTable <- finaliseTableForMonth(monthAsString)
-  kable(outputTable, row.names = FALSE, caption=paste0("Table S1: The expected number of first diagnoses or first prescriptions as generated from the negative binomial regression models, and the number of first diagnoses and first prescriptions observed in the data, for ",months[as.numeric(monthAsString)]," 2020. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors."))
-}
-```
-
 ## Negative binomial regression charts
 
 Charts showing the observed number of first diagnoses or first prescriptions for each condition and medication analysed.
@@ -116,3 +98,20 @@ allData <- fitModel(allData)
 updateTable(allData,'Malignant cancer');
 plotChart(allData,'Malignant cancer', yLabel='Frequency of first diagnosis', justLastTwoYears = TRUE)
 ```
+
+## Negative binomial regression tables
+
+```{r}
+library('knitr')
+outputTableAll <- finaliseTableAll()
+kable(outputTableAll, row.names = FALSE, caption=paste0("Table 1: The expected number of first diagnoses or first prescriptions as generated from the negative binomial regression models, and the number of first diagnoses and first prescriptions observed in the data, for March to ",getNameOfLastAnalysisMonth()," 2020. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors."))
+```
+
+```{r, results='asis'}
+library('knitr')
+months <- c("January","February", "March","April","May","June","July","August","September","October","November","December")
+for(i in seq_along(monthsMarchToAnalysisData)) {
+  monthAsString <- format(monthsMarchToAnalysisData[i],'%m')
+  outputTable <- finaliseTableForMonth(monthAsString)
+  print(kable(outputTable, row.names = FALSE, caption=paste0("Table S",i,": The expected number of first diagnoses or first prescriptions as generated from the negative binomial regression models, and the number of first diagnoses and first prescriptions observed in the data, for ",months[as.numeric(monthAsString)]," 2020. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors.")))
+}
