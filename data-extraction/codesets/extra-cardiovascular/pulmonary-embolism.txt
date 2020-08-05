@@ -1,0 +1,4 @@
+G401.11	Infarction - pulmonary
+G401.12	Pulmonary embolus
+G401.00	Pulmonary embolism
+G401100	Recurrent pulmonary embolism

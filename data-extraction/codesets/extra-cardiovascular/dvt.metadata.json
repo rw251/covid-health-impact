@@ -1,0 +1,34 @@
+{
+  "includeTerms": [
+    "dvt",
+    "deep vein thrombosis",
+    "deep vein phlebitis",
+    "deep vein thrombophlebitis"
+  ],
+  "excludeTerms": [
+    "postnatal",
+    "antenatal",
+    "administration",
+    "at risk of",
+    "probability of",
+    "personal history",
+    "probability score",
+    "history of",
+    "risk of",
+    "care pathway",
+    "referral to",
+    "dvt drainage bags",
+    "post operative",
+    "h/o",
+    "suspected",
+    "screening"
+  ],
+  "terminology": "Readv2",
+  "version": "v20160401",
+  "createdBy": {
+    "name": "Richard Williams",
+    "email": "1234richardwilliams@gmail.com"
+  },
+  "createdOn": "2020-08-05T13:36:49.994Z",
+  "lastUpdated": "2020-08-05T13:36:54.480Z"
+}

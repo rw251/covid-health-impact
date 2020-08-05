@@ -1,0 +1,25 @@
+{
+  "includeTerms": [
+    "pulmonary embolism",
+    "infarction pulmonary",
+    "pulmonary embolus"
+  ],
+  "excludeTerms": [
+    "obstetric",
+    "amniotic fluid",
+    "suspected",
+    "following abortive pregnancy",
+    "personal history of",
+    "post operative",
+    "probability score",
+    "h/o"
+  ],
+  "terminology": "Readv2",
+  "version": "v20160401",
+  "createdBy": {
+    "name": "Richard Williams",
+    "email": "1234richardwilliams@gmail.com"
+  },
+  "createdOn": "2020-08-05T13:38:43.721Z",
+  "lastUpdated": "2020-08-05T13:38:47.642Z"
+}

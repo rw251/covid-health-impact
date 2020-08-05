@@ -1,0 +1,14 @@
+G801.00	Deep vein phlebitis and thrombophlebitis of the leg
+G801.11	Deep vein thrombosis
+G801.12	Deep vein thrombosis, leg
+G801.13	DVT - Deep vein thrombosis
+G801E00	Deep vein thrombosis of leg related to intravenous drug use
+G801C00	Deep vein thrombosis of leg related to air travel
+G801z00	Deep vein phlebitis and thrombophlebitis of the leg NOS
+G801J00	Provoked deep vein thrombosis
+G801H00	Unprovoked deep vein thrombosis
+G801G00	Recurrent deep vein thrombosis
+G801F00	Deep vein thrombosis of peroneal vein
+G801D00	Deep vein thrombosis of lower limb
+G801B00	Deep vein thrombophlebitis of the leg unspecified
+G801500	Deep vein phlebitis of the leg unspecified
