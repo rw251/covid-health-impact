@@ -11,18 +11,22 @@ library(readr)
 library('rmarkdown')
 library('knitr')
 library('svglite')
+library('ciTools')
+
+# Need to change the following if updating
+dateForAnalysisAsString<-"2020-06-01" # Must be 1st of a month
 
 ## @knitr allFunctions
-# Need to change the following if updating
-dateForAnalysisAsString<-"2020-07-01" # Must be 1st of a month
-
 dateForAnalysis<-as.Date(dateForAnalysisAsString, format='%Y-%m-%d')
 analysisYearAsString<-format(dateForAnalysis, '%Y')
 analysisYear<-as.numeric(analysisYearAsString)
+lastYear<-analysisYear - 1
+lastYearAsString<-toString(lastYear)
 analysisMonthAsString<-format(dateForAnalysis, '%m')
 analysisMonth<-as.numeric(analysisMonthAsString)
 
-monthsMarchToAnalysisData<-head(seq(as.Date("2020-03-01"), dateForAnalysis, by="months"),-1)
+analysisYearMarch = as.Date(paste0(analysisYearAsString,"-03-01"))
+monthsMarchToAnalysisData<-head(seq(analysisYearMarch, dateForAnalysis, by="months"),-1)
 
 ## Whether to display observed and expected separately or as a difference (e.g. # missed diagnoses)
 displayAsDifference <- FALSE;
@@ -36,18 +40,18 @@ getRawOutputForMonth <- function(data, month) {
   if(displayAsDifference) {
     return (c(
       as.numeric(month),
-      data[which(data$month==month & data$year=="2020"),11] - data[which(data$month==month & data$year=="2020"),1],
-      data[which(data$month==month & data$year=="2020"),10] - data[which(data$month==month & data$year=="2020"),1],
-      data[which(data$month==month & data$year=="2020"),9] - data[which(data$month==month & data$year=="2020"),1]
+      data[which(data$month==month & data$year==analysisYearAsString),11] - data[which(data$month==month & data$year==analysisYearAsString),1],
+      data[which(data$month==month & data$year==analysisYearAsString),10] - data[which(data$month==month & data$year==analysisYearAsString),1],
+      data[which(data$month==month & data$year==analysisYearAsString),9] - data[which(data$month==month & data$year==analysisYearAsString),1]
     )
     )
   } else {
     return (c(
       as.numeric(month),
-      data[which(data$month==month & data$year=="2020"),1],
-      round(data[which(data$month==month & data$year=="2020"),11], 0),
-      round(data[which(data$month==month & data$year=="2020"),10], 0),
-      round(data[which(data$month==month & data$year=="2020"),9], 0)
+      data[which(data$month==month & data$year==analysisYearAsString),1],
+      round(data[which(data$month==month & data$year==analysisYearAsString),11], 0),
+      round(data[which(data$month==month & data$year==analysisYearAsString),10], 0),
+      round(data[which(data$month==month & data$year==analysisYearAsString),9], 0)
       )
     )
   }
@@ -56,7 +60,7 @@ getSumOfMonths <- function(data, column) {
   tot <- 0
   for(i in seq_along(monthsMarchToAnalysisData)) {
     monthAsString <- format(monthsMarchToAnalysisData[i],'%m')
-    tot <- tot + data[which(data$month==monthAsString & data$year=="2020"),column]
+    tot <- tot + data[which(data$month==monthAsString & data$year==analysisYearAsString),column]
   }
   return(tot)
 }
@@ -71,26 +75,14 @@ getOutputVector <- function(data) {
   return(c(observed, expected, lowerCI, upperCI, decline, declineLowerCI, declineUpperCI))
 }
 getOutputVectorForMonth <- function(data, month) {
-  observed <- data[which(data$month==month & data$year=="2020"),1]
-  expected <- data[which(data$month==month & data$year=="2020"),11]
-  upperCI <- data[which(data$month==month & data$year=="2020"),9]
-  lowerCI <- data[which(data$month==month & data$year=="2020"),10]
+  observed <- data[which(data$month==month & data$year==analysisYearAsString),1]
+  expected <- data[which(data$month==month & data$year==analysisYearAsString),11]
+  upperCI <- data[which(data$month==month & data$year==analysisYearAsString),9]
+  lowerCI <- data[which(data$month==month & data$year==analysisYearAsString),10]
   decline <- round(100*(expected - observed) / expected,1)
   declineLowerCI <- round(100*(lowerCI - observed) / lowerCI,1)
   declineUpperCI <- round(100*(upperCI - observed) / upperCI,1)
   return(c(observed, expected, lowerCI, upperCI, decline, declineLowerCI, declineUpperCI))
-}
-
-getFinalOutput <- function(data, descriptionForPlotTitles) {
-  output <- getOutputVector(data)
-  observed <- output[1]
-  expected <- output[2]
-  lowerCI <- output[3]
-  upperCI <- output[4]
-  decline <- format(output[5], nsmall = 1)
-  declineLowerCI <- format(output[6], nsmall = 1)
-  declineUpperCI <- format(output[7], nsmall = 1)
-  return(paste0('We observed ', observed, ' first diagnoses of ',descriptionForPlotTitles,' whilst expecting ', round(expected,0) ,' (95% CI: ',round(lowerCI,0),' to ',round(upperCI,0),') based on preceding years, a decline of ',decline,'% (95% CI: ',declineLowerCI,'% to ',declineUpperCI,'%)'))
 }
 getRoundedOutputForMonth <- function(data, month, digits = 0) {
   return(round(getRawOutputForMonth(data, month), digits = digits))
@@ -103,6 +95,7 @@ getData <- function(filename) {
   dat$inc <- dat[,2] # this should be the incidence variable (make sure incidence is always second)
   dat <- dat[,-c(2,3)]
   dat$Date <- as.Date(as.character(dat$Date), format = "%Y-%m-%d") # read date variable as dates rather than text
+  dat <- dat %>% filter(Date <= dateForAnalysis)
   return(dat)
 }
 
@@ -120,9 +113,10 @@ processData <- function(filename, isOneOffData = FALSE) {
   if(isOneOffData) {
     dat <- getOneOffData(filename)
   } else {
+    # filename<-'dx-diabetes-t2dm.txt'
     dat <- getData(filename)
   }
-
+  
   dat <- dat %>%
     mutate(
       year = substr(Date,  1, 4),
@@ -143,17 +137,26 @@ processData <- function(filename, isOneOffData = FALSE) {
 
 fitModel <- function(allData) {
   # Remove data from March 2020 onwards
-  modelData <- head(allData, 3 - (analysisMonth + 12 * (analysisYear - 2020)))
+  modelData <- head(allData, 3 - analysisMonth)
   
-  ## Fit the model, predict the outcomes
-  fit <- glm.nb(inc~ month + t, data = modelData) # could use offset as number of consultations each month
+  # old
+  # fit <- glm.nb(inc~ month + t, data = modelData) # could use offset as number of consultations each month
+  # 
+  # allData <- cbind(allData, predict(fit, allData, type = "link", se.fit=TRUE))
+  # allData <- within(allData, {
+  #   pred <- exp(fit)
+  #   LL <- exp(fit - 1.96 * se.fit)
+  #   UL <- exp(fit + 1.96 * se.fit)
+  # })
   
-  allData <- cbind(allData, predict(fit, allData, type = "link", se.fit=TRUE))
+  # Fit the model, predict the outcomes
+  fit <- glm.nb(inc~ as.factor(month) + t, data = modelData) # could use offset as number of consultations each month
+
+  allData <- cbind(allData, predict(fit, allData, type="response", se.fit = TRUE, interval= "prediction")) # Use type as reponse saves exponentiating later
   allData <- within(allData, {
-    pred <- exp(fit)
-    LL <- exp(fit - 1.96 * se.fit)
-    UL <- exp(fit + 1.96 * se.fit)
+    pred <- fit
   })
+  allData <- add_pi(allData, fit, names = c("LL", "UL"))
   
   ## Data wrangling for ggplot
   altData<-allData
@@ -173,7 +176,7 @@ saveChart <- function(plot, descriptionForPlotTitles, fileSuffix = "inc_10_20.sv
 
 saveWithTitle <- function(plot, yLabel, descriptionForPlotTitles) {
   plot <- plot +
-    labs(x = "Time (month/year)", y = yLabel, color = "Year", title = paste("Expected and observed incidence of", descriptionForPlotTitles,"condition in 2019 and 2020"))
+    labs(x = "Time (month/year)", y = yLabel, color = "Year", title = paste("Expected and observed incidence of", descriptionForPlotTitles,"condition in",lastYearAsString,"and",analysisYearAsString))
   
   ggsave(plot+ expand_limits(y = 0), path=OUTPUT_DIRECTORY, filename = paste(descriptionForPlotTitles,"inc_19_20_with_title.svg"), width=8, dpi=300)
 }
@@ -191,7 +194,7 @@ saveWithTitle <- function(plot, yLabel, descriptionForPlotTitles) {
 ## a ' ' doesn't work as svg ignores it. Hence the unicode \u00A0 to force the space.
 plotChart <- function(allData, descriptionForPlotTitles, yLabel, justLastTwoYears = FALSE) {
   if(justLastTwoYears) {
-    g2 <- allData %>% filter(year=="2020" | year=="2019") %>% ggplot(aes(x=date, y=val))  + 
+    g2 <- allData %>% filter(year==analysisYearAsString | year==lastYearAsString) %>% ggplot(aes(x=date, y=val))  + 
       geom_line(aes(x=date, y=pred, color= "Expected")) +
       geom_line(aes(x=date, y=inc, color = "Observed\u00A0\u00A0\u00A0\u00A0")) +
       scale_colour_manual(name=NULL, breaks=c('Observed\u00A0\u00A0\u00A0\u00A0','Expected'), values = c('Observed\u00A0\u00A0\u00A0\u00A0' = "blue", 'Expected' = "black")) +
@@ -226,14 +229,16 @@ plotChart <- function(allData, descriptionForPlotTitles, yLabel, justLastTwoYear
 }
 
 updateTable <- function(allData,descriptionForPlotTitles) {
+  # descriptionForPlotTitles='tet'
   localData <- allData %>% filter(line=="expected")
   output <- getOutputVector(localData)
-  outputTableMatrixAll <<- rbind(outputTableMatrixAll, c(descriptionForPlotTitles,output[1],  paste0(round(output[2]), ' (',round(output[3]), ' to ', round(output[4]),')'), paste0(format(output[5], nsmall = 1), '% (',format(output[6], nsmall = 1),'% to ',format(output[7], nsmall = 1),'%)')))
+  
+  outputTableMatrixAll <<- rbind(outputTableMatrixAll, c(descriptionForPlotTitles,output[1]$inc, paste0(round(output[4]$pred), ' (', round(output[3]$LL), ' to ', round(output[2]$UL),')'), paste0(format(output[7]$pred, nsmall = 1), '% (',format(output[6]$LL, nsmall = 1),'% to ',format(output[5]$UL, nsmall = 1),'%)')))
   
   for(i in seq_along(monthsMarchToAnalysisData)) {
     monthAsString <- format(monthsMarchToAnalysisData[i],'%m')
     assign(paste0('output', monthAsString), getOutputVectorForMonth(localData, monthAsString))
-    assign(paste0('outputTableMatrix', monthAsString), rbind(get(paste0('outputTableMatrix', monthAsString)), c(descriptionForPlotTitles,get(paste0('output', monthAsString))[1], paste0(round(get(paste0('output', monthAsString))[2]), ' (',round(get(paste0('output', monthAsString))[3]), ' to ', round(get(paste0('output', monthAsString))[4]),')'), paste0(format(get(paste0('output', monthAsString))[5], nsmall = 1), '% (',format(get(paste0('output', monthAsString))[6], nsmall = 1),'% to ',format(get(paste0('output', monthAsString))[7], nsmall = 1),'%)'))), envir = .GlobalEnv)
+    assign(paste0('outputTableMatrix', monthAsString), rbind(get(paste0('outputTableMatrix', monthAsString)), c(descriptionForPlotTitles,get(paste0('output', monthAsString))[1]$inc, paste0(round(get(paste0('output', monthAsString))[4]$pred), ' (', round(get(paste0('output', monthAsString))[3]$LL), ' to ', round(get(paste0('output', monthAsString))[2]$UL),')'), paste0(format(get(paste0('output', monthAsString))[7]$pred, nsmall = 1), '% (',format(get(paste0('output', monthAsString))[6]$LL, nsmall = 1),'% to ', format(get(paste0('output', monthAsString))[5]$UL, nsmall = 1),'%)'))), envir = .GlobalEnv)
   }
 }
 
@@ -244,7 +249,7 @@ writeRedactedData <- function(data, filename) {
 }
 
 processFile <- function (filename, descriptionForPlotTitles, yLabel, isOneOffData = FALSE) {
-  
+
   # filename<-'dx-diabetes-t2dm.txt'
   # isOneOffData = FALSE
   # yLabel <- 'a y label'
@@ -294,9 +299,9 @@ finaliseTableAll <- function() {
   lastAnalysisMonth<-getNameOfLastAnalysisMonth();
   colnames(outputTableMatrixAll) <- c(
     "First Diagnosis / Prescription",
-    paste0("Observed cases between March – ",lastAnalysisMonth," 2020"),
-    paste0("Expected cases between March – ",lastAnalysisMonth," 2020 (95% CI)"),
-    paste0("Percentage reduction between the expected and observed cases between March - ",lastAnalysisMonth," 2020 (95% CI)")
+    paste0("Observed cases between March – ",lastAnalysisMonth," ", analysisYearAsString),
+    paste0("Expected cases between March – ",lastAnalysisMonth," ", analysisYearAsString, " (95% CI)"),
+    paste0("Percentage reduction between the expected and observed cases between March - ",lastAnalysisMonth," ", analysisYearAsString, " (95% CI)")
   )
   outputTable <- as.table(outputTableMatrixAll)
   return(outputTable)
@@ -306,9 +311,9 @@ finaliseTableForMonth <- function(month) {
   localMatrix <- get(paste0('outputTableMatrix', month))
   colnames(localMatrix) <- c(
     "First Diagnosis / Prescription",
-    paste0("Observed cases during ",months[as.numeric(month)]," 2020"),
-    paste0("Expected cases between during ",months[as.numeric(month)]," 2020 (95% CI)"),
-    paste0("Percentage reduction between the expected and observed cases during ",months[as.numeric(month)]," 2020 (95% CI)")
+    paste0("Observed cases during ",months[as.numeric(month)]," ", analysisYearAsString),
+    paste0("Expected cases between during ",months[as.numeric(month)]," ", analysisYearAsString, " (95% CI)"),
+    paste0("Percentage reduction between the expected and observed cases during ",months[as.numeric(month)]," ", analysisYearAsString, " (95% CI)")
   )
   outputTable <- as.table(localMatrix)
   return(outputTable)
@@ -318,16 +323,6 @@ finaliseTables <- function() {
     monthAsString <- format(monthsMarchToAnalysisData[i],'%m')
     print(finaliseTableForMonth(monthAsString))
   }
-}
-finaliseTableMarch <- function() {
-  colnames(outputTableMatrixMarch) <- c(
-    "First Diagnosis / Prescription",
-    "Observed cases during March 2020",
-    "Expected cases between during March 2020 (95% CI)",
-    "Percentage reduction between the expected and observed cases during March 2020 (95% CI)"
-  )
-  outputTable <- as.table(outputTableMatrixMarch)
-  return(outputTable)
 }
 
 ## @knitr ignoreThese
@@ -352,3 +347,4 @@ processFile('all_diagnoses_since_2010_no_duplicates.txt', 'Diagnoses', yLabel='F
 
 rmarkdown::render(file.path(here(), 'Analysis', 'supp-material.Rmd'), output_dir = OUTPUT_DIRECTORY)
 rmarkdown::render(file.path(here(), 'Analysis', 'ccg-report.Rmd'), output_dir = OUTPUT_DIRECTORY)
+# rmarkdown::render(file.path(here(), 'Analysis', 'test.Rmd'), output_dir = OUTPUT_DIRECTORY)

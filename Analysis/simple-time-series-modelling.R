@@ -1,10 +1,10 @@
+# Need to change the following if updating
+dateForAnalysisAsString<-"2020-07-01" # Must be 1st of a month
+
 ## @knitr timeSeriesFunctions
 library("xts")
 library(here)
 library('svglite')
-
-# Need to change the following if updating
-dateForAnalysisAsString<-"2020-07-01" # Must be 1st of a month
 
 dateForAnalysis<-as.Date(dateForAnalysisAsString, format='%Y-%m-%d')
 analysisYear<-as.numeric(format(dateForAnalysis, '%Y'))

@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = FALSE, dpi=300, fig.width = 6.268)
 ```
 
 ```{r}
+dateForAnalysisAsString<-"2020-06-01"
 read_chunk('negative-binomial-modelling.R')
 read_chunk('simple-time-series-modelling.R')
 ```
@@ -220,4 +221,103 @@ for(i in seq_along(monthsMarchToAnalysisData)) {
   outputTable <- finaliseTableForMonth(monthAsString)
   print(kable(outputTable, row.names = FALSE, caption=paste0("Table S",i,": The expected number of first diagnoses or first prescriptions as generated from the negative binomial regression models, and the number of first diagnoses and first prescriptions observed in the data, for ",months[as.numeric(monthAsString)]," 2020. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors.")))
 }
+```
 
+
+## Negative binomial model validation
+
+To validate the negative binomial model we generated a model for data between January 2010 and February 2018. We then used this to predict the values for March - May 2018, to confirm that the observed values fell within the prediction confidence interval of the model. We repeated this for 2019. In both cases, all the observed values fell within the prediction confidence intervals as shown in the following tables
+
+```{r}
+# Reset for model validation
+dateForAnalysisAsString<-"2018-06-01"
+read_chunk('negative-binomial-modelling.R')
+read_chunk('simple-time-series-modelling.R')
+```
+
+```{r allFunctions}
+```
+
+```{r, results='asis'}
+initialiseTable()
+allData <- processData('dx-diabetes-t2dm.txt', isOneOffData = FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Type II Diabetes');
+allData <- processData('dx--metformin.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Metformin');
+allData <- processData('dx-GROUP-circulatory-system.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Circulatory system disease');
+allData <- processData('dx--aspirin-75.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Aspirin 75mg');
+allData <- processData('dx--ccbs.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> CCBs');
+allData <- processData('dx--acei.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> ACEIs');
+allData <- processData('dx--clopidogrel.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Clopidogrel');
+allData <- processData('dx-GROUP-mental-health-mild-moderate.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Common mental health problems');
+allData <- processData('dx--ssri.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> SSRIs');
+allData <- processData('dx-GROUP-cancer.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Malignant cancer');
+library('knitr')
+outputTableAll <- finaliseTableAll()
+kable(outputTableAll, row.names = FALSE, caption=paste0("Table S4: The expected number of first diagnoses or first prescriptions as generated from negative binomial regression models fitted on data from January 2010 to February 2018, and the number of first diagnoses and first prescriptions observed in the data, for March to ",getNameOfLastAnalysisMonth()," 2018. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors."))
+```
+
+```{r}
+# Reset for model validation
+dateForAnalysisAsString<-"2019-06-01"
+read_chunk('negative-binomial-modelling.R')
+read_chunk('simple-time-series-modelling.R')
+```
+
+```{r allFunctions}
+```
+
+```{r, results='asis'}
+initialiseTable()
+allData <- processData('dx-diabetes-t2dm.txt', isOneOffData = FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Type II Diabetes');
+allData <- processData('dx--metformin.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Metformin');
+allData <- processData('dx-GROUP-circulatory-system.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Circulatory system disease');
+allData <- processData('dx--aspirin-75.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Aspirin 75mg');
+allData <- processData('dx--ccbs.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> CCBs');
+allData <- processData('dx--acei.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> ACEIs');
+allData <- processData('dx--clopidogrel.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> Clopidogrel');
+allData <- processData('dx-GROUP-mental-health-mild-moderate.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Common mental health problems');
+allData <- processData('dx--ssri.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'> SSRIs');
+allData <- processData('dx-GROUP-cancer.txt', isOneOffData=FALSE)
+allData <- fitModel(allData)
+updateTable(allData,'Malignant cancer');
+library('knitr')
+outputTableAll <- finaliseTableAll()
+kable(outputTableAll, row.names = FALSE, caption=paste0("Table S5: The expected number of first diagnoses or first prescriptions as generated from negative binomial regression models fitted on data from January 2010 to February 2019, and the number of first diagnoses and first prescriptions observed in the data, for March to ",getNameOfLastAnalysisMonth()," 2019. ACEIs - angiotensin-converting enzyme inhibitors, CCBs - calcium channel blockers, SSRIs - selective serotonin reuptake inhibitors."))
+```

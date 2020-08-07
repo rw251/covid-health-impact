@@ -6,7 +6,7 @@ currentLibPaths <- c(currentLibPaths, './lib')
 .libPaths(currentLibPaths)
 
 # Then we declare the packages that we need
-list.of.packages <- c("ggplot2", "httr", "dplyr", "here", "conflicted", "xts", "readr", "rmarkdown", "knitr", "svglite")
+list.of.packages <- c("ggplot2", "httr", "dplyr", "here", "conflicted", "xts", "readr", "rmarkdown", "knitr", "svglite", "ciTools")
 
 # We check to see which if any are already installed, and if not we install them locally
 # to the ./lib directory
