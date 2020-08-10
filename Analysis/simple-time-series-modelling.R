@@ -1,5 +1,5 @@
 # Need to change the following if updating
-dateForAnalysisAsString<-"2020-07-01" # Must be 1st of a month
+dateForAnalysisAsString<-"2020-06-01" # Must be 1st of a month
 
 ## @knitr timeSeriesFunctions
 library("xts")
