@@ -1,6 +1,6 @@
 # COVID-19 impact on mental and physical health
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3906533.svg)](https://doi.org/10.5281/zenodo.3906533)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3978337.svg)](https://doi.org/10.5281/zenodo.3978337)
 
 Exploring the indirect effects the COVID-19 public health emergency on the reporting, diagnosis and treatment of mental and physical health conditions. There is particular focus on the potential missed diagnoses as a result of patient's avoiding healthcare settings and the widespread move to remote consultations.
 
