@@ -5,7 +5,7 @@ SET NOCOUNT ON;
 IF OBJECT_ID('tempdb..#AllDates') IS NOT NULL DROP TABLE #AllDates;
 CREATE TABLE #AllDates ([date] date);
 declare @dt datetime = '2009-12-28'
-declare @dtEnd datetime = '2020-08-05';
+declare @dtEnd datetime = '2020-08-12';
 WHILE (@dt <= @dtEnd) BEGIN
     insert into #AllDates([date])
         values(@dt)
@@ -17,7 +17,7 @@ END;
 select FirstDiagnosis, count(*) as num into #Incidence from (
 	select NHSNo, min(entrydate) as FirstDiagnosis from journal
 	where ReadCode in ('G401.11','G401.12','G401.00','G401100','G401.','G4011')
-	and entrydate <= '2020-08-05'
+	and entrydate <= '2020-08-12'
 	group by NHSNo
 ) sub 
 where FirstDiagnosis >= '2009-12-28'
@@ -29,7 +29,7 @@ select entrydate, count(*) as num into #Prevalence from (
 	select NHSNo, entrydate from journal
 	where ReadCode in ('G401.11','G401.12','G401.00','G401100','G401.','G4011')
 	and entrydate >= '2009-12-28'
-	and entrydate <= '2020-08-05'
+	and entrydate <= '2020-08-12'
 	group by NHSNo, entrydate
 ) sub 
 group by entrydate
