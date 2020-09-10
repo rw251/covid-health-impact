@@ -14,7 +14,7 @@ library('svglite')
 library('ciTools')
 
 # Need to change the following if updating
-dateForAnalysisAsString<-"2020-06-01" # Must be 1st of a month
+dateForAnalysisAsString<-"2020-09-01" # Must be 1st of a month
 
 ## @knitr allFunctions
 dateForAnalysis<-as.Date(dateForAnalysisAsString, format='%Y-%m-%d')
@@ -66,9 +66,9 @@ getSumOfMonths <- function(data, column) {
 }
 getOutputVector <- function(data) {
   observed <- getSumOfMonths(data, 1)
-  expected <- getSumOfMonths(data, 11)
-  upperCI <- getSumOfMonths(data, 9)
-  lowerCI <- getSumOfMonths(data, 10)
+  expected <- getSumOfMonths(data, 10)
+  upperCI <- getSumOfMonths(data, 12)
+  lowerCI <- getSumOfMonths(data, 11)
   decline <- round(100*(expected - observed) / expected,1)
   declineLowerCI <- round(100*(lowerCI - observed) / lowerCI,1)
   declineUpperCI <- round(100*(upperCI - observed) / upperCI,1)
@@ -76,9 +76,9 @@ getOutputVector <- function(data) {
 }
 getOutputVectorForMonth <- function(data, month) {
   observed <- data[which(data$month==month & data$year==analysisYearAsString),1]
-  expected <- data[which(data$month==month & data$year==analysisYearAsString),11]
-  upperCI <- data[which(data$month==month & data$year==analysisYearAsString),9]
-  lowerCI <- data[which(data$month==month & data$year==analysisYearAsString),10]
+  expected <- data[which(data$month==month & data$year==analysisYearAsString),10]
+  upperCI <- data[which(data$month==month & data$year==analysisYearAsString),12]
+  lowerCI <- data[which(data$month==month & data$year==analysisYearAsString),11]
   decline <- round(100*(expected - observed) / expected,1)
   declineLowerCI <- round(100*(lowerCI - observed) / lowerCI,1)
   declineUpperCI <- round(100*(upperCI - observed) / upperCI,1)
@@ -136,6 +136,10 @@ processData <- function(filename, isOneOffData = FALSE) {
 }
 
 fitModel <- function(allData) {
+  
+  a <- allData$inc[-length(allData$inc)]
+  allData$inc2 <- c(NA,a)
+  
   # Remove data from March 2020 onwards
   modelData <- head(allData, 3 - analysisMonth)
   
@@ -157,6 +161,22 @@ fitModel <- function(allData) {
     pred <- fit
   })
   allData <- add_pi(allData, fit, names = c("LL", "UL"))
+  
+  # acf(resid(fit), main="T2DM - ACF plot of residuals - model in paper")
+  # 
+  # fit1 <- glm.nb(inc~ as.factor(month) + t + inc2, data = modelData) # could use offset as number of consultations each month
+  # acf(resid(fit1), main="T2DM - ACF plot of residuals - after correcting for potential autocorrelation")
+  # allData$p2 <- predict(fit1, allData, type="response",) 
+  # allData <- add_pi(allData, fit, names = c("LL1", "UL1"))
+  # 
+  # Box.test(resid(fit1), lag=10, fitdf=0)
+  # 
+  # allData %>% ggplot(aes(x=date, y=inc))  +
+  #   geom_ribbon(aes(ymax = UL, ymin = LL, fill='red'), alpha= 0.5) +
+  #   geom_ribbon(aes(ymax = UL1, ymin = LL1, fill='blue'), alpha= 0.5) +
+  #   labs(title = "Confidence intervals - red are in current paper, blue are from new model") +
+  #   theme_light()
+
   
   ## Data wrangling for ggplot
   altData<-allData
@@ -233,12 +253,12 @@ updateTable <- function(allData,descriptionForPlotTitles) {
   localData <- allData %>% filter(line=="expected")
   output <- getOutputVector(localData)
   
-  outputTableMatrixAll <<- rbind(outputTableMatrixAll, c(descriptionForPlotTitles,output[1]$inc, paste0(round(output[4]$pred), ' (', round(output[3]$LL), ' to ', round(output[2]$UL),')'), paste0(format(output[7]$pred, nsmall = 1), '% (',format(output[6]$LL, nsmall = 1),'% to ',format(output[5]$UL, nsmall = 1),'%)')))
+  outputTableMatrixAll <<- rbind(outputTableMatrixAll, c(descriptionForPlotTitles,output[1]$inc, paste0(round(output[2]$pred), ' (', round(output[3]$LL), ' to ', round(output[4]$UL),')'), paste0(format(output[5]$pred, nsmall = 1), '% (',format(output[6]$LL, nsmall = 1),'% to ',format(output[7]$UL, nsmall = 1),'%)')))
   
   for(i in seq_along(monthsMarchToAnalysisData)) {
     monthAsString <- format(monthsMarchToAnalysisData[i],'%m')
     assign(paste0('output', monthAsString), getOutputVectorForMonth(localData, monthAsString))
-    assign(paste0('outputTableMatrix', monthAsString), rbind(get(paste0('outputTableMatrix', monthAsString)), c(descriptionForPlotTitles,get(paste0('output', monthAsString))[1]$inc, paste0(round(get(paste0('output', monthAsString))[4]$pred), ' (', round(get(paste0('output', monthAsString))[3]$LL), ' to ', round(get(paste0('output', monthAsString))[2]$UL),')'), paste0(format(get(paste0('output', monthAsString))[7]$pred, nsmall = 1), '% (',format(get(paste0('output', monthAsString))[6]$LL, nsmall = 1),'% to ', format(get(paste0('output', monthAsString))[5]$UL, nsmall = 1),'%)'))), envir = .GlobalEnv)
+    assign(paste0('outputTableMatrix', monthAsString), rbind(get(paste0('outputTableMatrix', monthAsString)), c(descriptionForPlotTitles,get(paste0('output', monthAsString))[1]$inc, paste0(round(get(paste0('output', monthAsString))[2]$pred), ' (', round(get(paste0('output', monthAsString))[3]$LL), ' to ', round(get(paste0('output', monthAsString))[4]$UL),')'), paste0(format(get(paste0('output', monthAsString))[5]$pred, nsmall = 1), '% (',format(get(paste0('output', monthAsString))[6]$LL, nsmall = 1),'% to ', format(get(paste0('output', monthAsString))[7]$UL, nsmall = 1),'%)'))), envir = .GlobalEnv)
   }
 }
 
@@ -249,8 +269,10 @@ writeRedactedData <- function(data, filename) {
 }
 
 processFile <- function (filename, descriptionForPlotTitles, yLabel, isOneOffData = FALSE) {
-
+  # # 
   # filename<-'dx-diabetes-t2dm.txt'
+  # # filename<-'dx-GROUP-circulatory-system.txt'
+  # # filename<-'dx-GROUP-mental-health-mild-moderate.txt'
   # isOneOffData = FALSE
   # yLabel <- 'a y label'
   

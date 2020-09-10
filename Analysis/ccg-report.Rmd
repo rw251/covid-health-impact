@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE, dpi=300, fig.width = 6.268)
 ```
 
 ```{r}
-dateForAnalysisAsString<-"2020-06-01"
+dateForAnalysisAsString<-"2020-09-01"
 read_chunk('negative-binomial-modelling.R')
 read_chunk('simple-time-series-modelling.R')
 ```
