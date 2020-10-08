@@ -4,6 +4,16 @@
 
 Exploring the indirect effects the COVID-19 public health emergency on the reporting, diagnosis and treatment of mental and physical health conditions. There is particular focus on the potential missed diagnoses as a result of patient's avoiding healthcare settings and the widespread move to remote consultations.
 
+**_Publication details_**
+
+<a href="https://www.altmetric.com/details.php?domain=altmetric.com&citation_id=91082197">
+<img align="left" alt="Article has an altmetric score of 1047" width="80" height="80" src="https://badges.altmetric.com/?size=128&score=1047&types=mmbrtttf">
+</a>
+
+Williams R, Jenkins DA, Ashcroft DM, Brown B, Campbell S, Carr MJ, et al. Diagnosis of physical and mental health conditions in primary care during the COVID-19 pandemic: a retrospective cohort study. Lancet Public Heal [Internet]. 2020 Sep;5(10):E543–50. Available from: https://doi.org/10.1016/S2468-2667(20)30201-2
+
+---
+
 ## Instructions
 
 1. Updated codesets are placed in `data-extraction/codesets`
